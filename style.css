@@ -1,6 +1,17 @@
 .header {
   height:90px;
   text-align:center;
-  background-color:lightblue;
+  background-color:#0287e0;
 }
 
+body {
+  background-color:#75588e;
+}
+
+div.box {
+  border:5px solid;
+  height:230px;
+  width:300px;
+  text-align:center;
+  background-color:#d1a2f9;
+}
