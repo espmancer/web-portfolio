@@ -10,8 +10,8 @@ body {
 
 div.box {
   border:5px solid;
-  height:230px;
-  width:300px;
+  display:flex;
+  justify-content:space-between;
   text-align:center;
   background-color:#d1a2f9;
 }
