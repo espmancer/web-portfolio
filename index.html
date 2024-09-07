@@ -1,7 +1,8 @@
 <!--
 Author: Aiden Pike
-Date Updated: 9/7/24
+Date Updated: 9/6/24
 -->
+
 
 <!DOCTYPE html>
 <html>
@@ -21,11 +22,10 @@ Date Updated: 9/7/24
   </p>
 </div>
 
-<!-- Flex container for the boxes -->
-<div class="flex justify-center space-x-8 mt-10">
+<div class="flex justify-center space-x-8 mt-10 flex-wrap">
   <!-- Interests Box -->
   <div class="bg-slate-200 border-slate-500 border-4 w-80 h-auto p-4">
-    <h2 class="font-bold text-lg text-center">Interests</h2>
+    <h2 class="font-bold text-lg">Interests</h2>
     <ul class="list-disc list-inside">
        <li>Logistics</li>
        <li>Linguistics</li>
@@ -64,12 +64,41 @@ Date Updated: 9/7/24
 
   <!-- Hobbies Box -->
   <div class="bg-slate-200 border-slate-500 border-4 w-80 h-auto p-4">
-    <h2 class="font-bold text-lg text-center">Hobbies</h2>
-    <ul>
-      <li>Piano (8 years)</li>
-      <li>French (2 years)</li>
-      <li>Writing</li>
-    </ul> 
+    <h2 class="font-bold text-lg">Hobbies</h2>
+    Piano (8 years)<br/>
+    French (2 years)<br/>
+    Writing<br/>
+  </div>
+
+  <!-- GitHub Stats Box -->
+  <div class="bg-slate-200 border-slate-500 border-4 w-80 h-auto p-4">
+    <h2 class="font-bold text-lg">GitHub Stats</h2>
+    <a>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=aidenpike&layout=compact&theme=radical">
+        <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=aidenpike&layout=compact" alt="aidenpike" />
+      </picture>
+    </a>
+    <br/><br/>
+    <a>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=aidenpike&theme=radical&include_all_commits=true">
+        <img align="center" src="https://github-readme-stats.vercel.app/api?username=aidenpike" alt="Aiden P's GitHub Stats" />
+      </picture>
+    </a>
+  </div>
+  
+  <div class="flex justify-center space-x-8 mt-10 flex-wrap">
+  <!-- Clubs Box -->
+  <div class="bg-slate-200 border-slate-500 border-4 w-80 h-auto p-4">
+    <h2 class="font-bold text-lg">Clubs</h2>
+    <ul class="list-disc list-inside">
+       <li>Tabletop RPG Club [Member]</li>
+       <li>Association for Computing & Machinery [Member]</li>
+       <li>French Club [Member]</li>
+       <li>Computer Programming Club [President, Founder]</li>
+       <li>Purdue FIRST Program [Member]</li>
+     </ul>
   </div>
 </div>
 </body>
