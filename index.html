@@ -9,7 +9,26 @@ Date Updated: 10/2/24
   <meta charset="utf-8">
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="app.js"></script>
 </head>
+
+<script>
+  function updateClock() {
+      const clockElement = document.getElementById('clock');
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      clockElement.textContent = `It is currently ${hours}:${minutes}:${seconds} where I live!`;
+  }
+
+  //Update the clock every second
+  setInterval(updateClock, 1000);
+
+  //Initial call to display the clock immediately when the page loads
+  updateClock();
+</script>
+
 <body>
 <div class="text-center bg-sky-300">
   <h1 class="text-xl">
@@ -17,8 +36,9 @@ Date Updated: 10/2/24
   </h1>
   <p>
     I am a college freshman majoring in computer science.<br/>
-    I'm looking into Software Development, Data Science, or Information Systems.
+    I'm looking into Software Development, Data Science, or Information Systems.<br/>
   </p>
+  <div id="clock"></div>
 </div>
 
 <div class="flex justify-center space-x-6 lg:space-x-8 mt-10 flex-wrap">
