@@ -50,15 +50,16 @@ Date Updated: 10/10/24
     Computer Science Major | Freshman<br/>
   </p>
   <!-- Buttons -->
-  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3">Interests</button>
-  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3">Projects</button>
-  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3">Clubs</button>
-  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3">Favorite Sites</button>
+  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3" onclick="location.href='#Interests';">Interests</button>
+  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3" onclick="location.href='#Projects';">Projects</button>
+  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3" onclick="location.href='#Hobbies';">Hobbies</button>
+  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3" onclick="location.href='#Clubs';">Clubs</button>
+  <button class="outline outline-3 outline-[#DEB888] outline-offset-3 bg-black rounded-full px-3" onclick="location.href='#Sites';">Favorite Sites</button>
   <!-- Just gonna push this down a bit...-->
   <div class="bg-[#172030] py-3"></div>
   <!-- Interests Box -->
   <div class="outline outline-[#CEB888]">
-    <h2 class="font-bold text-lg">Main Interests</h2>
+    <h2 class="font-bold text-lg", id="Interests">Main Interests</h2>
     <ul class="list-disc list-inside">
        <li>Logistics - I love any sort of game or task that makes me figure out how to manage where and how things go.</li>
        <li>Linguistics - I have formed the hobby of conlanging around this! I will babble for ages if you show interest in this.</li>
@@ -67,7 +68,7 @@ Date Updated: 10/10/24
   </div>
   <!-- Projects Box -->
   <div class="outline outline-[#CEB888]">
-    <h2 class="font-bold text-lg">Projects</h2>
+    <h2 class="font-bold text-lg" id="Projects">Projects</h2>
     <ul class="list-disc list-inside">
       <li>
         <a href="https://github.com/aidenpike/cbpr" class="text-blue-500 underline">CBPR</a> – a text-based 4X game
@@ -91,7 +92,7 @@ Date Updated: 10/10/24
   </div>
   <!-- Hobbies Box -->
   <div class="outline outline-[#CEB888]">
-    <h2 class="font-bold text-lg">Hobbies</h2>
+    <h2 class="font-bold text-lg" id="Hobbies">Hobbies</h2>
     <ul class="list-disc list-inside">
       <li>Piano - I've been playing piano for around 7 or 8 years, and I really just like to play what's fun--which is usually jazz or blues. I've also dabbled a bit in composition.</li>
       <li>French - I enjoy learning French alongside others, I'm still pretty novice at it though.</li>
@@ -111,7 +112,7 @@ Date Updated: 10/10/24
   </div>
   <!-- Clubs Box -->
   <div class="outline outline-[#CEB888]">
-    <h2 class="font-bold text-lg">Clubs</h2>
+    <h2 class="font-bold text-lg" id="Clubs">Clubs</h2>
     <ul class="list-disc list-inside">
        <li><a href="https://sites.pfw.edu/acm/" class="text-blue-500 underline">Association for Computing & Machinery</a> [Member]</li>
        <li>French Club [Member]</li>
@@ -120,7 +121,7 @@ Date Updated: 10/10/24
   </div>
   <!-- Favorite Sites Box -->
   <div class="outline outline-[#CEB888]">
-    <h2 class="font-bold text-lg">Favorite Sites</h2>
+    <h2 class="font-bold text-lg" id="Sites">Favorite Sites</h2>
     <ul class="list-disc list-inside">
       <li><a href="https://nohello.net/en/" class="text-blue-500 underline">No Hello</a></li>
       <li><a href="https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13" class="text-blue-500 underline">Cult of Done Manifesto</a></li>
