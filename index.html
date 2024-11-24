@@ -8,9 +8,11 @@ Date Updated: 11/23/24
 <head>
   <meta charset="utf-8">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
 </head>
 
 <script>
+  window.onload = () => {
   function update_clock() {
       const clock_element = document.getElementById('clock');
       
@@ -38,6 +40,28 @@ Date Updated: 11/23/24
 
   //Initial call to display the clock immediately when the page loads
   update_clock();
+
+  //Animate buttons
+  const buttons = document.querySelectorAll('button');
+    buttons.forEach((button, index) => {
+      Motion.animate(
+        button,
+        { opacity: [0, 1], transform: ['translateY(-20px)', 'translateY(0)'] },
+        { delay: index * 0.3, duration: 0.5 }
+      );
+    });
+
+    //Div fade-in
+    const divs = document.querySelectorAll('#section');
+    divs.forEach((div, index) => {
+      const direction = index % 2 === 0 ? '-20px' : '20px';
+      Motion.animate(
+        div,
+        { opacity: [0, 1], transform: [`translateX(${direction})`, 'translateX(0)'] },
+        { delay: index * 0.5, duration: 0.7 }
+      );
+    });
+  };
 </script>
 
 <body>
@@ -49,15 +73,15 @@ Date Updated: 11/23/24
     Computer Science Major | Freshman<br/>
   </p>
   <!-- Buttons -->
-  <button class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Interests';">Interests</button>
-  <button class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Projects';">Projects</button>
-  <button class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Hobbies';">Hobbies</button>
-  <button class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Clubs';">Clubs</button>
-  <button class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Sites';">Favorite Sites</button>
+  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Interests';">Interests</button>
+  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Projects';">Projects</button>
+  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Hobbies';">Hobbies</button>
+  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Clubs';">Clubs</button>
+  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Sites';">Favorite Sites</button>
   <!-- Just gonna push this down a bit...-->
   <div class="bg-[#1a2238] py-3"></div>
   <!-- Interests Box -->
-  <div class="outline outline-[#9daaf2] bg-[#192738]">
+  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
     <h2 class="font-bold text-xl text-[#FFD700]", id="Interests">Main Interests</h2>
     <ul class="list-disc list-inside px-3">
        <li>Logistics - I love any sort of game or task that makes me figure out how to manage where and how things go.</li>
@@ -67,7 +91,7 @@ Date Updated: 11/23/24
   </div>
   <div class="bg-[#1a2238] py-10"></div>
   <!-- Projects Box -->
-  <div class="outline outline-[#9daaf2] bg-[#192738]">
+  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
     <h2 class="font-bold text-xl text-[#FFD700]" id="Projects">Projects</h2>
     <ul class="list-disc list-inside px-3">
       <li>
@@ -92,7 +116,7 @@ Date Updated: 11/23/24
   </div>
   <div class="bg-[#1a2238] py-10"></div>
   <!-- Hobbies Box -->
-  <div class="outline outline-[#9daaf2] bg-[#192738]">
+  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
     <h2 class="font-bold text-xl text-[#FFD700]" id="Hobbies">Hobbies</h2>
     <ul class="list-disc list-inside px-3">
       <li>Piano - I've been playing piano for around 7 or 8 years.</li>
@@ -102,7 +126,7 @@ Date Updated: 11/23/24
   </div>
   <div class="bg-[#1a2238] py-10"></div>
   <!-- Clubs Box -->
-  <div class="outline outline-[#9daaf2] bg-[#192738]">
+  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
     <h2 class="font-bold text-xl text-[#FFD700]" id="Clubs">Clubs</h2>
     <ul class="list-disc list-inside px-3">
        <li><a href="https://sites.pfw.edu/acm/" class="text-[#ff913d] underline">Association for Computing & Machinery</a> [Member]</li>
@@ -112,7 +136,7 @@ Date Updated: 11/23/24
   </div>
   <div class="bg-[#1a2238] py-10"></div>
   <!-- Favorite Sites Box -->
-  <div class="outline outline-[#9daaf2] bg-[#192738]">
+  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
     <h2 class="font-bold text-xl text-[#FFD700]" id="Sites">Favorite Sites</h2>
     <ul class="list-disc list-inside px-3">
       <li><a href="https://nohello.net/en/" class="text-[#ff913d] underline">No Hello</a></li>
