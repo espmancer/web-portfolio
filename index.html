@@ -1,8 +1,8 @@
 <!--
 Author: Ellie Pike
-Date Updated: 2/13/25
+Date Updated: 3/21/25
+Color Scheme: https://coolors.co/032453-043a85-a2bfd0-c8e3e2-3a3e5c
 -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@ Date Updated: 2/13/25
       const utc_minutes = current_time.getUTCMinutes();
       const utc_seconds = current_time.getUTCSeconds();
       
-      let est_hours = utc_hours - 5;
+      let est_hours = utc_hours - 4;
 
       if (est_hours < 0){
         est_hours += 24;
@@ -65,101 +65,104 @@ Date Updated: 2/13/25
 </script>
 
 <body>
-<div class="bg-[#1a2238] text-slate-300 px-1">  
+<div class="bg-[#032453] text-[#c8e3e2] px-1">  
   <h1 class="text-xl">
     Ellie Pike
   </h1>
   <p>
-    Computer Science Major | Freshman<br/>
+    BA in Computer Science | Linguistics Minor | Freshman<br/>
   </p>
   <!-- Buttons -->
-  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Interests';">Interests</button>
-  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Projects';">Projects</button>
-  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Hobbies';">Hobbies</button>
-  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Clubs';">Clubs</button>
-  <button id="button" class="outline outline-3 outline-[#9daaf2] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Sites';">Favorite Sites</button>
+  <button id="button" class="outline outline-3 outline-[#a2bfd0] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Interests';">Interests</button>
+  <button id="button" class="outline outline-3 outline-[#a2bfd0] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Projects';">Projects</button>
+  <button id="button" class="outline outline-3 outline-[#a2bfd0] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Hobbies';">Hobbies</button>
+  <button id="button" class="outline outline-3 outline-[#a2bfd0] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Affiliations';">Affiliations</button>
+  <button id="button" class="outline outline-3 outline-[#a2bfd0] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Sites';">Favorite Sites</button>
+  <button id="button" class="outline outline-3 outline-[#a2bfd0] outline-offset-3 bg-black rounded-full px-3 hover:animate-pulse" onclick="location.href='#Schedule';">Schedule</button>
   <!-- Just gonna push this down a bit...-->
-  <div class="bg-[#1a2238] py-3"></div>
+  <div class="py-3"></div>
   <!-- Interests Box -->
-  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
-    <h2 class="font-bold text-xl text-[#FFD700]", id="Interests">Main Interests</h2>
+  <div id="section" class="outline outline-[#a2bfd0] bg-[#043A85]">
+    <h2 class="font-bold text-xl text-center text-[#A2BFD0]", id="Interests">Main Interests</h2>
     <ul class="list-disc list-inside px-3">
        <li>Logistics - I love any sort of game or task that makes me figure out how to manage where and how things go.</li>
        <li>Optimization - Everything must be fast and efficient, and that's fun for me to figure out.</li>
        <li>Linguistics - I will babble for ages if you show interest in this.</li>
        <li>Programming - It really clicks in my head.</li>
+       <li>System design - I love making systems for my day-to-day life.</li>
      </ul>
   </div>
-  <div class="bg-[#1a2238] py-10"></div>
+  <div class="py-10"></div>
   <!-- Projects Box -->
-  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
-    <h2 class="font-bold text-xl text-[#FFD700]" id="Projects">Projects</h2>
+  <div id="section" class="outline outline-[#a2bfd0] bg-[#043A85]">
+    <h2 class="font-bold text-xl text-center text-[#A2BFD0]" id="Projects">Projects</h2>
     <ul class="list-disc list-inside px-3">
       <li>
-        <a href="https://github.com/aidenpike/cbpr" class="text-[#ff913d] underline">CBPR</a> – a text-based 4X game
+        <a href="https://github.com/aidenpike/cbpr" class="text-[#a2bfd0] underline">CBPR</a> – a text-based 4X game
       </li>
       <li>
-        <a href="https://github.com/aidenpike/edgewood-sales" class="text-[#ff913d] underline">Edgewood Sales</a> – a mock sales manager app
+        <a href="https://github.com/aidenpike/edgewood-sales" class="text-[#a2bfd0] underline">Edgewood Sales</a> – a mock sales manager app
       </li>
       <li>
-        <a href="https://github.com/aidenpike/arcane-cpp" class="text-[#ff913d] underline">Arcane C++</a> – a magic-focused C++-based programming language
+        <a href="https://github.com/aidenpike/arcane-cpp" class="text-[#a2bfd0] underline">Arcane C++</a> – a magic-focused C++-based programming language
       </li>
       <li>
-        <a href="https://github.com/aidenpike/fard-loop" class="text-[#ff913d] underline">Fard Loop</a> – my strangest yet most collaborated-on project
+        <a href="https://github.com/aidenpike/fard-loop" class="text-[#a2bfd0] underline">Fard Loop</a> – my strangest yet most collaborated-on project
       </li>
       <li>
-        <a href="https://github.com/aidenpike/galacticinferno" class="text-[#ff913d] underline">Galactic Inferno</a> – A text-based sci-fi card game 
+        <a href="https://github.com/aidenpike/galacticinferno" class="text-[#a2bfd0] underline">Galactic Inferno</a> – A text-based sci-fi card game 
       </li>
       <li>
         Ictuk – A constructed language with potential online docs coming ;)
       </li>
     </ul>
   </div>
-  <div class="bg-[#1a2238] py-10"></div>
+  <div class="py-10"></div>
   <!-- Hobbies Box -->
-  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
-    <h2 class="font-bold text-xl text-[#FFD700]" id="Hobbies">Hobbies</h2>
+  <div id="section" class="outline outline-[#a2bfd0] bg-[#043A85]">
+    <h2 class="font-bold text-xl text-center text-[#A2BFD0]" id="Hobbies">Hobbies</h2>
     <ul class="list-disc list-inside px-3">
       <li>Piano - I've been playing piano for around 7 or 8 years.</li>
       <li>Conlanging - Conlanging is the process of creating fictional languages as a hobby.</li>
       <li>Rollerblading - I've been rollerblading for about 12 years.</li>
     </ul>
   </div>
-  <div class="bg-[#1a2238] py-10"></div>
+  <div class="py-10"></div>
   <!-- Clubs Box -->
-  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
-    <h2 class="font-bold text-xl text-[#FFD700]" id="Clubs">Clubs</h2>
+  <div id="section" class="outline outline-[#a2bfd0] bg-[#043A85]">
+    <h2 class="font-bold text-xl text-center text-[#A2BFD0]" id="Affiliations">Affiliations</h2>
     <ul class="list-disc list-inside px-3">
-       <li><a href="https://sites.pfw.edu/acm/" class="text-[#ff913d] underline">Association for Computing & Machinery</a> [Member]</li>
-       <li>French Club [Member]</li>
-       <li><a href="http://www.purduefirst.org" class="text-[#ff913d] underline">Purdue FIRST Program</a> [Member]</li>
-     </ul>
-  </div>
-  <div class="bg-[#1a2238] py-10"></div>
+        <li><a href="https://sites.pfw.edu/acm/" class="text-[#a2bfd0] underline">Association for Computing & Machinery</a> [Member]</li>
+        <li>French Club [Member]</li>
+        <li><a href="http://www.purduefirst.org" class="text-[#a2bfd0] underline">Purdue FIRST Program</a> [Member]</li>
+        <li><a href="https://tn-solutions.net/" class="text-[#a2bfd0] underline">TN Solutions</a> [Part-Time Employee]</li>
+    </ul> 
+  </div>  
+  <div class="py-10"></div>
   <!-- Favorite Sites Box -->
-  <div id="section" class="outline outline-[#9daaf2] bg-[#192738]">
-    <h2 class="font-bold text-xl text-[#FFD700]" id="Sites">Favorite Sites</h2>
+  <div id="section" class="outline outline-[#a2bfd0] bg-[#043A85]">
+    <h2 class="font-bold text-xl text-center text-[#A2BFD0]" id="Sites">Favorite Sites</h2>
     <ul class="list-disc list-inside px-3">
-      <li><a href="https://nohello.net/en/" class="text-[#ff913d] underline">No Hello</a></li>
-      <li><a href="https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13" class="text-[#ff913d] underline">Cult of Done Manifesto</a></li>
-      <li><a href="https://monkeytype.com/" class="text-[#ff913d] underline">Monkey Type</a></li>
-      <li><a href="https://rubberduckdebugging.com/" class="text-[#ff913d] underline">Rubber Duck Debugging</a></li>
-      <li><a href="https://www.zompist.com/kitlong.html" class="text-[#ff913d] underline">The Language Construction Kit</a></li>
+      <li><a href="https://nohello.net/en/" class="text-[#a2bfd0] underline">No Hello</a></li>
+      <li><a href="https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13" class="text-[#a2bfd0] underline">Cult of Done Manifesto</a></li>
+      <li><a href="https://monkeytype.com/" class="text-[#a2bfd0] underline">Monkey Type</a></li>
+      <li><a href="https://rubberduckdebugging.com/" class="text-[#a2bfd0] underline">Rubber Duck Debugging</a></li>
+      <li><a href="https://www.zompist.com/kitlong.html" class="text-[#a2bfd0] underline">The Language Construction Kit</a></li>
     </ul>
   </div>
 </div>
-<div class="bg-[#1a2238] py-3"></div>
+<div class="bg-[#032453] py-3"></div>
 <!-- Contacts & Links Box -->
-<div class="bg-[#787f84] px-1">
-  <h2 class="font-bold text-lg text-center">Contacts & Links</h2>
+<div class="bg-[#3A3E5C] px-1 text-[#c8e3e2]">
+  <h2 class="font-bold text-lg text-center text-[#A2BFD0]">Contacts & Links</h2>
   <p class="text-center">
     <div id="clock" class="text-center"></div>
     <!-- TODO: Make these links into icons-->
-    <strong>Discord:</strong> selisine<br/>
-    <a href="mailto:pikeas01@pfw.edu" class="text-blue-300 underline">Email</a><br/>
-    <a href="https://github.com/espmancer" class="text-blue-300 underline">GitHub</a><br/>
-    <a href="https://instagram.com/aidenp06_" class="text-blue-300 underline">Instagram</a><br/>
-    <a href="https://www.linkedin.com/in/aiden-pike-360a54273/" class="text-blue-300 underline">LinkedIn</a>
+    <strong class="text-[#A2BFD0]">Discord:</strong> selisine<br/>
+    <a href="mailto:pikeas01@pfw.edu" class="text-[#a2bfd0] underline">Email</a><br/>
+    <a href="https://github.com/espmancer" class="text-[#a2bfd0] underline">GitHub</a><br/>
+    <a href="https://instagram.com/aidenp06_" class="text-[#a2bfd0] underline">Instagram</a><br/>
+    <a href="https://www.linkedin.com/in/aiden-pike-360a54273/" class="text-[#a2bfd0] underline">LinkedIn</a>
   </p>
 </div>
 </div>
