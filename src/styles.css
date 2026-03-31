@@ -1,0 +1,63 @@
+body {
+    color:#bac2de;
+    background-color:#1e1e2e;
+}
+
+/* Homepage */
+.topBanner {
+    background-color:#6C7086;
+}
+.topBanner #headerSections {
+    width:100%;    
+}
+.topBanner #name {
+    width:65%;
+    text-align:left;
+    margin:auto;
+}
+.topBanner #mainButtons button {
+    background-color:#cdd6f4;
+    height:50px;
+    width:100px;
+}
+.spacer {
+    padding:10px;
+}
+#scheduleTable, th, tr, td {
+    border:1px solid #BAC2DE;
+    text-align:center;
+}
+
+/* Blog Page */
+.headerLink {
+    color:#bac2de;
+    font-weight:bold;
+    text-decoration:none;
+    font-size:x-large;
+}
+.container {
+    width: 100%;
+    margin:auto;
+}
+.container .headerList {
+    width:10%;
+    float:left;
+    height:100%;
+    background-color:#6C7086;
+    text-align:center;
+    color:#bac2de;
+    flex-wrap: wrap;
+}
+.container .headerList body {
+    text-decoration-line: underline;
+}
+.container .textBox {
+    width:80%;
+    float:right;
+    background-color:#6C7086;
+    height: auto;
+    padding:10px;
+}
+.container .clear {
+    clear: both;
+}
