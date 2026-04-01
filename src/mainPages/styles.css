@@ -1,11 +1,20 @@
+/* General */
 body {
     color:#bac2de;
     background-color:#1e1e2e;
+    font-family: 'Cantarell';
+}
+/* a */
+a:link {
+    color:#bac2de;
+}
+a:visited {
+    color:#BA8CFF;
 }
 
-/* Homepage */
+/* Top Banner */
 .topBanner {
-    background-color:#6C7086;
+    background-color:#4D5060;
 }
 .topBanner #headerSections {
     width:100%;    
@@ -28,22 +37,28 @@ body {
     text-align:center;
 }
 
-/* Blog Page */
+/* Container */
+.container {
+    width: 100%;
+    margin:auto;
+}
 .headerLink {
     color:#bac2de;
     font-weight:bold;
     text-decoration:none;
     font-size:x-large;
 }
-.container {
-    width: 100%;
-    margin:auto;
+.headerLink:visited {
+    color:#bac2de;
+    font-weight:bold;
+    text-decoration:none;
+    font-size:x-large;
 }
 .container .headerList {
-    width:10%;
+    width:17%;
     float:left;
     height:100%;
-    background-color:#6C7086;
+    background-color:#4D5060;
     text-align:center;
     color:#bac2de;
     flex-wrap: wrap;
@@ -54,10 +69,13 @@ body {
 .container .textBox {
     width:80%;
     float:right;
-    background-color:#6C7086;
+    background-color:#4D5060;
     height: auto;
     padding:10px;
 }
 .container .clear {
     clear: both;
+}
+.container .headerSeperator {
+    color:#cdd6f4;
 }
