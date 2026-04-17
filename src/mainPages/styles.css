@@ -4,12 +4,17 @@ body {
     background-color:#1e1e2e;
     font-family: 'Cantarell';
 }
+
+i {
+    color:#a6d189;
+}
+
 /* a */
-a:link {
-    color:#bac2de;
+a:link:not(.headerLink) {
+    color:#89dceb;
 }
 a:visited {
-    color:#BA8CFF;
+    color:#74c7ec;
 }
 
 /* Top Banner */
