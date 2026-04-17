@@ -29,7 +29,7 @@
                 <a href="">
                     <button>Grammar</button>
                 </a>
-                <a href="">
+                <a href="#dictionary">
                     <button>Dictionary</button>
                 </a>
             </td>
@@ -37,6 +37,9 @@
     </div>
     <div class="spacer"></div>
 </head>
-<body>
+<body onload="updateResult('');">
     <p>Under construction!</p>
+    <h1>Dictionary</h1>
+    <input type="text" oninput="updateResult(this.value)">
+    <p id="entry"></p>
 </body>
