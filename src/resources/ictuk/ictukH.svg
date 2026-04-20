@@ -1,0 +1,77 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+   width="100" height="150"
+   viewBox="0 0 150 100">
+
+<!-- ===== GLYPH DEFINITIONS (LOCAL COORDS ONLY) ===== -->
+<defs>
+<!-- LETTERS -->
+  <g id="p">
+    <line x1="0" y1="0" x2="0" y2="100"/>
+    <line x1="0" y1="0" x2="50" y2="0"/>
+  </g>
+  <g id="t">
+    <line x1="50" y1="0" x2="50" y2="100"/>
+    <line x1="0" y1="0" x2="50" y2="0"/>
+  </g>
+  <g id="k">
+    <line x1="0" y1="0" x2="0" y2="50"/>
+    <line x1="0" y1="50" x2="50" y2="100"/>
+  </g>
+  <g id="f">
+    <line x1="0" y1="0" x2="0" y2="100"/>
+    <line x1="0" y1="0" x2="50" y2="50"/>
+  </g>
+  <g id="sh">
+    <line x1="0" y1="0" x2="0" y2="100"/>
+    <line x1="0" y1="0" x2="50" y2="0"/>
+    <line x1="0" y1="100" x2="50" y2="100"/>
+  </g>
+  <g id="zh">
+    <line x1="0" y1="0" x2="0" y2="100"/>
+    <line x1="0" y1="0" x2="50" y2="50"/>
+    <line x1="0" y1="100" x2="50" y2="50"/>
+  </g>
+  <g id="h">
+    <line x1="0" y1="0" x2="0" y2="50"/>
+    <line x1="0" y1="50" x2="50" y2="50"/>
+    <line x1="50" y1="50" x2="50" y2="100"/>
+  </g>
+  <g id="u">
+    <line x1="50" y1="0" x2="50" y2="100"/>
+    <line x1="0" y1="100" x2="50" y2="100"/>
+    <line x1="0" y1="0" x2="0" y2="100"/>
+  </g>
+  <g id="o">
+    <line x1="0" y1="0" x2="0" y2="50"/>
+    <line x1="0" y1="50" x2="0" y2="100"/>
+    <line x1="0" y1="0" x2="50" y2="0"/>
+    <line x1="50" y1="50" x2="50" y2="0"/>
+  </g>
+  <g id="a">
+    <line x1="0" y1="0" x2="0" y2="50"/>
+    <line x1="0" y1="0" x2="50" y2="50"/>
+    <line x1="0" y1="50" x2="50" y2="100"/>
+  </g>
+  <g id="kzh">
+    <use href="#k"/>
+    <line x1="50" y1="0" x2="50" y2="100"/>
+  </g>
+  <g id="b">
+    <line x1="0" y1="0" x2="0" y2="50"/>
+    <line x1="0" y1="0" x2="50" y2="0"/>
+    <line x1="0" y1="50" x2="50" y2="100"/>
+  </g>
+  <g id="g">
+    <line x1="0" y1="50" x2="50" y2="0"/>
+    <line x1="0" y1="50" x2="50" y2="100"/>
+  </g>
+</defs>
+
+<g stroke="black" stroke-width="10" stroke-linecap="square" fill="none">
+  <!-- Copy this use tag for as many glyphs as you want. 
+       Change the id to the romanized version of the glyph you want,
+       or if you're using a word/number, change the id to that. --> 
+  <use href="#h" transform="translate(50,0)"/>
+</g>
+</svg>
