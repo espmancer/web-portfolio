@@ -15,6 +15,7 @@ const englishEntries = new Map();
 
 function buildEntryMaps(dictionaryKey){
   rawEntries = dictionaries.get(dictionaryKey)
+  console.log(dictionaryKey)
   
   for (let i = 0; i < rawEntries.length; i++){
     rawEntry = rawEntries[i].split("|");
@@ -90,6 +91,7 @@ function updateResult(query){
 }
 
 function init(dictionaryKey){
+  console.log(dictionaryKey)
   buildEntryMaps(dictionaryKey);
   updateResult('');
 }
