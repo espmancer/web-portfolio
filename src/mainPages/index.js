@@ -1,4 +1,5 @@
 // The best solution I can think of that doesn't involve some weird File I/O workaround.
+// I will turn this code into something more object oriented eventually, probably when I have to make functions not related to the dictionaries
 const dictionaries = new Map();
 let dictionaryKey = ""
 
@@ -48,13 +49,15 @@ function buildEntry(rawEntry){
   }
 
   // Add etymology
-  entry += `</ol>${etymology}`;
-  // Add image
-  entry += `<image src="../../../resources/${dictionaryKey}/glyphs/${key}.svg"></image>`;
+  entry += `</ol>${etymology}<br/>`;
   // Add audio
   entry += `<audio controls><source src="../../../resources/${dictionaryKey}/sounds/${key}.ogg" type="audio/ogg">`;
   entry += `<source src="../../../resources/${dictionaryKey}/sounds/${key}.mp3" type="audio/mp3">`;
-  entry += `Your browser does not support the audio tag.</audio></div><hr class="headerSeperator"/>`;
+  entry += `Your browser does not support the audio tag.</audio></div>`;
+  // Add image
+  entry += `<image src="../../../resources/${dictionaryKey}/glyphs/${key}.svg" alt="${key}"></image>`;
+  // Add separator
+  entry += "<hr class='headerSeperator'/>"
   
   return entry;
 }
