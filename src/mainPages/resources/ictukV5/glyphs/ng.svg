@@ -1,7 +1,6 @@
-
 <svg xmlns="http://www.w3.org/2000/svg"
    width="150" height="150"
-   viewBox="0 0 200 100">
+   viewBox="0 0 225 100">
 
 <!-- ===== GLYPH DEFINITIONS (LOCAL COORDS ONLY) ===== -->
 <defs>
@@ -79,6 +78,6 @@
   <!-- Copy this use tag for as many glyphs as you want. 
        Change the id to the romanized version of the glyph you want,
        or if you're using a word/number, change the id to that. --> 
-  <use href="#g" transform="translate(50,0)"/>
+  <use href="#ng" transform="translate(50,0)"/>
 </g>
 </svg>
