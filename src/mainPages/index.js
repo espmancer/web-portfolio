@@ -46,6 +46,7 @@ function buildEntry(rawEntry, dictionaryKey){
     entry += `<li><i>${types[i]}</i> ${definitions[i]}</li>`;
   }
 
+  console.log(dictionaryKey)
   // Add etymology
   entry += `</ol>${etymology}`;
   // Add image
