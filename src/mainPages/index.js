@@ -1,5 +1,6 @@
 // The best solution I can think of that doesn't involve some weird File I/O workaround.
 const dictionaries = new Map();
+let dictionaryKey = ""
 
 dictionaries.set('ictukV5', [
   "o|no,not,zero|O|No, Not, Zero|Adv.,Adj.,Adj.,Intj.,N.|used as a function word to make negative a group of words or a word,not any,having no magnitude or quantity,not so,an act or instance of refusing or denying by the use of the word no|",
@@ -13,9 +14,8 @@ dictionaries.set('ictukV6', [
 const conlangEntries = new Map();
 const englishEntries = new Map();
 
-function buildEntryMaps(dictionaryKey){
+function buildEntryMaps(){
   rawEntries = dictionaries.get(dictionaryKey)
-  console.log(dictionaryKey)
   
   for (let i = 0; i < rawEntries.length; i++){
     rawEntry = rawEntries[i].split("|");
@@ -32,7 +32,7 @@ function buildEntryMaps(dictionaryKey){
 }
 
 //Helper function to build the entry being displayed
-function buildEntry(rawEntry, dictionaryKey){
+function buildEntry(rawEntry){
   let elements = rawEntry.split('|');
   let key = elements[0];
   let name = elements[2];
@@ -47,7 +47,6 @@ function buildEntry(rawEntry, dictionaryKey){
     entry += `<li><i>${types[i]}</i> ${definitions[i]}</li>`;
   }
 
-  console.log(dictionaryKey)
   // Add etymology
   entry += `</ol>${etymology}`;
   // Add image
@@ -80,7 +79,7 @@ function updateResult(query){
   
   if (entryExists){
     rawEntry = (conlangEntries.has(query)) ? conlangEntries.get(query) : englishEntries.get(query);
-    document.getElementById('entry').innerHTML = buildEntry(rawEntry);
+    document.getElementById('entry').innerHTML = buildEntry(rawEntry, dictionaryKey);
   }
   else if (query === "") {
     document.getElementById('entry').innerHTML = listAllEntries();
@@ -90,8 +89,8 @@ function updateResult(query){
   }
 }
 
-function init(dictionaryKey){
-  console.log(dictionaryKey)
+function init(dictionaryKeyIn){
+  dictionaryKey = dictionaryKeyIn
   buildEntryMaps(dictionaryKey);
   updateResult('');
 }
