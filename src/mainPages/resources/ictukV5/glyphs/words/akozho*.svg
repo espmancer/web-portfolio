@@ -1,7 +1,7 @@
 
 <svg xmlns="http://www.w3.org/2000/svg"
-   width="400" height="150"
-   viewBox="0 0 475 100">
+   width="325" height="150"
+   viewBox="0 0 400 100">
 
 <!-- ===== GLYPH DEFINITIONS (LOCAL COORDS ONLY) ===== -->
 <defs>
@@ -81,8 +81,7 @@
   <use href="#k" transform="translate(125,0)"/>
   <use href="#o" transform="translate(150,0)"/>
   <use href="#zh" transform="translate(225,0)"/>
-  <use href="#a" transform="translate(250,0)"/>
-  <use href="#p" transform="translate(325,0)"/>
-  <use href="#o" transform="translate(400,0)"/>
+  <use href="#o" transform="translate(250,0)"/>
+  <use href="#*" transform="translate(275,0)"/>
 </g>
 </svg>
