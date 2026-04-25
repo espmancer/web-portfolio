@@ -55,7 +55,7 @@ function buildEntry(rawEntry){
   entry += `<source src="../../../resources/${dictionaryKey}/sounds/${key}.mp3" type="audio/mp3">`;
   entry += `Your browser does not support the audio tag.</audio></div>`;
   // Add image
-  entry += `<image src="../../../resources/${dictionaryKey}/glyphs/${key}.svg" alt="${key}"></image>`;
+  entry += `<image src="../../../resources/${dictionaryKey}/glyphs/words/${key}.svg" alt="${key}"></image>`;
   // Add separator
   entry += "<hr class='headerSeperator'/>"
   
