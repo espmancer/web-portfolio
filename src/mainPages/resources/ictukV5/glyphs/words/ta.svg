@@ -1,7 +1,7 @@
 
 <svg xmlns="http://www.w3.org/2000/svg"
-   width="350" height="150"
-   viewBox="0 0 425 100">
+   width="125" height="150"
+   viewBox="0 0 200 100">
 
 <!-- ===== GLYPH DEFINITIONS (LOCAL COORDS ONLY) ===== -->
 <defs>
@@ -73,16 +73,13 @@
     <line x1="0" y1="50" x2="50" y2="0"/>
     <line x1="0" y1="50" x2="50" y2="100"/>
   </g>
-  <g id="ngufo*">
-    <use href="#ng" transform="translate(50,0)"/>
-    <use href="#u" transform="translate(125,0)"/>
-    <use href="#f" transform="translate(200,0)"/>
-    <use href="#o" transform="translate(275,0)"/>
-    <use href="#*" transform="translate(300,0)"/>
+  <g id="ta">
+    <use href="#t" transform="translate(50,0)"/>
+    <use href="#a" transform="translate(125,0)"/>
   </g>
 </defs>
 
 <g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">
-  <use href="#ngufo*"/>
+  <use href="#ta"/>
 </g>
 </svg>

@@ -73,15 +73,17 @@
     <line x1="0" y1="50" x2="50" y2="0"/>
     <line x1="0" y1="50" x2="50" y2="100"/>
   </g>
+  <g id="akozho*">
+    <use href="#a" transform="translate(50,0)"/>
+    <use href="#k" transform="translate(125,0)"/>
+    <use href="#o" transform="translate(150,0)"/>
+    <use href="#zh" transform="translate(225,0)"/>
+    <use href="#o" transform="translate(250,0)"/>
+    <use href="#*" transform="translate(275,0)"/>
+  </g>
 </defs>
 
 <g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">
-
-  <use href="#a" transform="translate(50,0)"/>
-  <use href="#k" transform="translate(125,0)"/>
-  <use href="#o" transform="translate(150,0)"/>
-  <use href="#zh" transform="translate(225,0)"/>
-  <use href="#o" transform="translate(250,0)"/>
-  <use href="#*" transform="translate(275,0)"/>
+  <use href="#akozho*"/>
 </g>
 </svg>

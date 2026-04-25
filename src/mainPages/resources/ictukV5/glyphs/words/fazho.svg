@@ -73,13 +73,15 @@
     <line x1="0" y1="50" x2="50" y2="0"/>
     <line x1="0" y1="50" x2="50" y2="100"/>
   </g>
+  <g id="fazho">
+    <use href="#f" transform="translate(50,0)"/>
+    <use href="#a" transform="translate(125,0)"/>
+    <use href="#zh" transform="translate(200,0)"/>
+    <use href="#o" transform="translate(225,0)"/>
+  </g>
 </defs>
 
 <g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">
-  
-  <use href="#f" transform="translate(50,0)"/>
-  <use href="#a" transform="translate(125,0)"/>
-  <use href="#zh" transform="translate(200,0)"/>
-  <use href="#o" transform="translate(225,0)"/>
+  <use href="#fazho"/>
 </g>
 </svg>

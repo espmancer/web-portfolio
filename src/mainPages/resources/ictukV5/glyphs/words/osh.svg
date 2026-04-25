@@ -73,11 +73,13 @@
     <line x1="0" y1="50" x2="50" y2="0"/>
     <line x1="0" y1="50" x2="50" y2="100"/>
   </g>
+  <g id="osh">
+    <use href="#o" transform="translate(50,0)"/>
+    <use href="#sh" transform="translate(125,0)"/>
+  </g>
 </defs>
 
 <g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">
-  
-  <use href="#o" transform="translate(50,0)"/>
-  <use href="#sh" transform="translate(125,0)"/>
+  <use href="#osh"/>
 </g>
 </svg>

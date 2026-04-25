@@ -1,7 +1,7 @@
 
 <svg xmlns="http://www.w3.org/2000/svg"
-   width="350" height="150"
-   viewBox="0 0 425 100">
+   width="500" height="425"
+   viewBox="0 0 575 200">
 
 <!-- ===== GLYPH DEFINITIONS (LOCAL COORDS ONLY) ===== -->
 <defs>
@@ -73,16 +73,32 @@
     <line x1="0" y1="50" x2="50" y2="0"/>
     <line x1="0" y1="50" x2="50" y2="100"/>
   </g>
-  <g id="ngufo*">
-    <use href="#ng" transform="translate(50,0)"/>
+  <g id="kofa">
+    <use href="#k" transform="translate(50,0)"/>
+    <use href="#o" transform="translate(100,0)"/>
+    <use href="#f" transform="translate(175,0)"/>
+    <use href="#a" transform="translate(250,0)"/>
+  </g>
+  <g id="fash">
+    <use href="#f" transform="translate(50,0)"/>
+    <use href="#a" transform="translate(125,0)"/>
+    <use href="#sh" transform="translate(200,0)"/>
+  </g>
+  <g id="tuf">
+    <use href="#t" transform="translate(50,0)"/>
     <use href="#u" transform="translate(125,0)"/>
     <use href="#f" transform="translate(200,0)"/>
-    <use href="#o" transform="translate(275,0)"/>
-    <use href="#*" transform="translate(300,0)"/>
+  </g>
+  <g id="ta">
+    <use href="#t" transform="translate(50,0)"/>
+    <use href="#a" transform="translate(125,0)"/>
   </g>
 </defs>
 
 <g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">
-  <use href="#ngufo*"/>
+  <use href="#kofa" transform="translate(0,0)" stroke="#bac2de"/>
+  <use href="#fash" transform="translate(225,-125)" stroke="#bac2de"/>
+  <use href="#tuf" transform="translate(225,0)" stroke="#bac2de"/>
+  <use href="#ta" transform="translate(225,125)" stroke="#bac2de"/>
 </g>
 </svg>

@@ -73,14 +73,16 @@
     <line x1="0" y1="50" x2="50" y2="0"/>
     <line x1="0" y1="50" x2="50" y2="100"/>
   </g>
+  <g id="uktuf">
+    <use href="#u" transform="translate(50,0)"/>
+    <use href="#k" transform="translate(125,0)"/>
+    <use href="#t" transform="translate(150,0)"/>
+    <use href="#u" transform="translate(225,0)"/>
+    <use href="#f" transform="translate(300,0)"/>
+  </g>
 </defs>
 
 <g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">
-  
-  <use href="#u" transform="translate(50,0)"/>
-  <use href="#k" transform="translate(125,0)"/>
-  <use href="#t" transform="translate(150,0)"/>
-  <use href="#u" transform="translate(225,0)"/>
-  <use href="#f" transform="translate(300,0)"/>
+  <use href="#uktuf"/>
 </g>
 </svg>
