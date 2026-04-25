@@ -49,7 +49,7 @@ function buildEntry(rawEntry){
   }
 
   // Add etymology
-  entry += `</ol>${etymology}<br/>`;
+  entry += `</ol>${etymology}<br>`;
   // Add audio
   entry += `<audio controls><source src="../../../resources/${dictionaryKey}/sounds/${key}.ogg" type="audio/ogg">`;
   entry += `<source src="../../../resources/${dictionaryKey}/sounds/${key}.mp3" type="audio/mp3">`;
