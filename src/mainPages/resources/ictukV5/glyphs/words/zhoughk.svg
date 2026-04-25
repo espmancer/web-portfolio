@@ -79,9 +79,8 @@
   <!-- Copy this use tag for as many glyphs as you want. 
        Change the id to the romanized version of the glyph you want,
        or if you're using a word/number, change the id to that. --> 
-  <use href="#f" transform="translate(50,0)"/>
-  <use href="#a" transform="translate(125,0)"/>
-  <use href="#zh" transform="translate(200,0)"/>
-  <use href="#o" transform="translate(225,0)"/>
+  <use href="#zh" transform="translate(50,0)"/>
+  <use href="#ough" transform="translate(75,0)"/>
+  <use href="#k" transform="translate(150,0)"/>
 </g>
 </svg>
