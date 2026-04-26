@@ -1,0 +1,37 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+   width="150" height="150"
+   viewBox="-10 0 150 100">
+
+<!-- ===== GLYPH DEFINITIONS (LOCAL COORDS ONLY) ===== -->
+<defs>
+  <g id=".">
+    <line x1="0" y1="0" x2="0" y2="50"/>
+    <line x1="0" y1="50" x2="50" y2="100"/>
+    <line x1="0" y1="50" x2="-50" y2="100"/>
+  </g>
+  <g id="?">
+    <use href="#." transform="translate(0,100) scale(1,-1)"/>
+  </g>
+  <g id="!" transform="translate(0,50)">
+    <line x1="0" y1="50" x2="0" y2="-50"/>
+    <line x1="0" y1="50" x2="50" y2="0"/>
+    <line x1="0" y1="-50" x2="50" y2="-50"/>
+  </g>
+  <g id=",">
+    <line x1="0" y1="0" x2="0" y2="200"/>
+  </g>
+  <g id="staQuote">
+    <line x1="0" y1="0" x2="0" y2="50"/>
+    <line x1="0" y1="0" x2="50" y2="0"/>
+  </g>
+  <g id="endQuote">
+    <line x1="0" y1="0" x2="0" y2="50"/>
+    <line x1="0" y1="0" x2="50" y2="50"/>
+  </g>
+</defs>
+
+<g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">
+  <use href="#?" transform="translate(50,0)"/>
+</g>
+</svg>
