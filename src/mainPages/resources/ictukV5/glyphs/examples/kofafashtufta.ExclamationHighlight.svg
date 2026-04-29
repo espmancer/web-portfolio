@@ -1,7 +1,7 @@
 
 <svg xmlns="http://www.w3.org/2000/svg"
-   width="550" height="425"
-   viewBox="0 0 625 200">
+   width="500" height="425"
+   viewBox="0 0 575 200">
 
 <!-- ===== GLYPH DEFINITIONS (LOCAL COORDS ONLY) ===== -->
 <defs>
@@ -84,31 +84,27 @@
     <use href="#a" transform="translate(125,0)"/>
     <use href="#sh" transform="translate(200,0)"/>
   </g>
-  <g id="but">
-    <use href="#b" transform="translate(50,0)"/>
-    <use href="#u" transform="translate(75,0)"/>
-    <use href="#t" transform="translate(150,0)"/>
+  <g id="tuf">
+    <use href="#t" transform="translate(50,0)"/>
+    <use href="#u" transform="translate(125,0)"/>
+    <use href="#f" transform="translate(200,0)"/>
   </g>
   <g id="ta">
     <use href="#t" transform="translate(50,0)"/>
     <use href="#a" transform="translate(125,0)"/>
   </g>
-  <g id=".">
-    <line x1="0" y1="0" x2="0" y2="50"/>
-    <line x1="0" y1="50" x2="50" y2="100"/>
-    <line x1="0" y1="50" x2="-50" y2="100"/>
-  </g>
-  <g id="?" transform="translate(0,100) scale(1,-1)">
-    <line x1="0" y1="0" x2="0" y2="50"/>
-    <line x1="0" y1="50" x2="50" y2="100"/>
-    <line x1="0" y1="50" x2="-50" y2="100"/>
+  <g id="!" transform="translate(0,50)">
+    <line x1="0" y1="50" x2="0" y2="-50"/>
+    <line x1="0" y1="50" x2="50" y2="0"/>
+    <line x1="0" y1="-50" x2="50" y2="-50"/>
   </g>
 </defs>
 
 <g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">
   <use href="#kofa" transform="translate(0,0)" stroke="#bac2de"/>
-  <use href="#fash" transform="translate(275,-125)" stroke="#bac2de"/>
-  <use href="#but" transform="translate(275,0)" stroke="#bac2de"/>
-  <use href="#?" transform="translate(550,0)" stroke="#a6d189"/>
+  <use href="#fash" transform="translate(225,-125)" stroke="#bac2de"/>
+  <use href="#tuf" transform="translate(225,0)" stroke="#bac2de"/>
+  <use href="#ta" transform="translate(225,125)" stroke="#bac2de"/>
+  <use href="#!" transform="translate(500,0)" stroke="#a6d189"/>
 </g>
 </svg>
