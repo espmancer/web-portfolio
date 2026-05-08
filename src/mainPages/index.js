@@ -1,11 +1,18 @@
+/*
+  DICTIONARY CODE
+  Handles conlang dictionary entries and queries.
+  Raw entries are formatted key|englishKey|word|translations|types|definitions|etymology
+*/
 class Dictionary {
   conlangEntries;
   englishEntries;
   rawEntries;
+  className;
 
-  constructor() {
+  constructor(className) {
     this.conlangEntries = new Map();
     this.englishEntries = new Map();
+    this.className = className;
   }
 
   buildEntryMaps() {
@@ -25,7 +32,6 @@ class Dictionary {
 
   //Helper function to build the entry being displayed
   buildEntry(rawEntry) {
-    let dictionaryKey = "i";
     let elements = rawEntry.split("|");
     let key = elements[0];
     let name = elements[2];
@@ -43,11 +49,11 @@ class Dictionary {
     // Add etymology
     entry += `</ol>${etymology}<br>`;
     // Add audio
-    entry += `<audio controls><source src="../../../resources/${dictionaryKey}/sounds/${key}.ogg" type="audio/ogg">`;
-    entry += `<source src="../../../resources/${dictionaryKey}/sounds/${key}.mp3" type="audio/mp3">`;
+    entry += `<audio controls><source src="../../../resources/${this.className}/sounds/${key}.ogg" type="audio/ogg">`;
+    entry += `<source src="../../../resources/${this.className}/sounds/${key}.mp3" type="audio/mp3">`;
     entry += `Your browser does not support the audio tag.</audio></div>`;
     // Add image
-    entry += `<image src="../../../resources/${dictionaryKey}/glyphs/words/${key}.svg" alt="${key}"></image>`;
+    entry += `<image src="../../../resources/${this.className}/glyphs/words/${key}.svg" alt="${key}"></image>`;
     // Add separator
     entry += "<hr class='headerSeperator'/>";
 
@@ -93,8 +99,8 @@ class IctukV5 extends Dictionary {
     "kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
   ];
 
-  constructor() {
-    super();
+  constructor(className) {
+    super(className);
   }
 }
 
@@ -104,16 +110,16 @@ class IctukV6 extends Dictionary {
     'kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|From Zhoktuk "gofa", "being, existence", from Kzhokuut "goa", "living thing", from Kzhkaa "ka", "living person", from Kzh "k", "person"',
   ];
 
-  constructor() {
-    super();
+  constructor(className) {
+    super(className);
   }
 }
 
 const classMap = new Map();
 
 // Add all classes into map
-classMap.set("ictukV5", new IctukV5());
-classMap.set("ictukV6", new IctukV6());
+classMap.set("ictukV5", new IctukV5("ictukV5"));
+classMap.set("ictukV6", new IctukV6("ictukV6"));
 let o;
 
 // Function for bridging the html call to the class function
@@ -126,3 +132,4 @@ function init(className) {
   o.buildEntryMaps();
   o.updateResult();
 }
+
