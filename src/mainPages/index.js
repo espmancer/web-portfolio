@@ -120,16 +120,100 @@ const classMap = new Map();
 // Add all classes into map
 classMap.set("ictukV5", new IctukV5("ictukV5"));
 classMap.set("ictukV6", new IctukV6("ictukV6"));
-let o;
+let conlang;
 
 // Function for bridging the html call to the class function
 function updateResult(query) {
-  o.updateResult(query);
+  conlang.updateResult(query);
 }
 
-function init(className) {
-  o = classMap.get(className);
-  o.buildEntryMaps();
-  o.updateResult();
+function dictionaryInit(className) {
+  conlang = classMap.get(className);
+  conlang.buildEntryMaps();
+  conlang.updateResult();
 }
 
+/*
+  BLOG CODE
+  Helps to compress index.html by putting all of the blogs in a delimited string list and building them onload
+  Raw entries are formatted datetime|header|content
+*/
+class Blog {
+  rawEntries = [
+    "d033026t1740|Hello, world!|I wanted to overhaul my website a bit, as it was a little gross to look at. Coincidentally, I'm rebuilding it exactly one year after I last updated it. I would like to post semi-frequently here, no promises though, school has me pretty swamped, but maybe that's something I can talk about. Who knows! Admittedly, I'm still not experienced at all in HTML, but I have a little more patience to research now than I was last year. Still though, I'm warning you now if you decide to tread through my code, as it could be pretty attrocious, I dunno (I promise I'm better at backend, lol).",
+    "d040126t1432|Shutting this site down...|April fools! I'm probably about 75% of the way there with getting this site done. My biggest endeavor, which I saved for last, is the <a href=\"interestsPage.html\">interests page</a>, and its constituent pages. I intend on implementing the documentation for <a href=\"docPages/galusSystem.html\">my world</a> and all of my conlangs, which luckily both things already have docs that I just need to organize in HTML.<br> In other news, I am behind on school work, which is dreadful, but after making a to-do list of the things I need to do, it doesn't seem nearly as lengthy as it's felt.",
+    "d040226t1000|Creative Writing Prompt 1|When I was in highschool, I was in a creative writing club. This particular post had 4 restrictions: <ol> <li>Limit: 250 words (I used 247)</li> <li>Genre: Drama</li> <li>Phrase (large idea of narrative): People watching</li> <li>Word Required: Enter/enters</li> </ol> <strong>Fun Fact:</strong> The 1st couple sections (or paragraphs technically) are pulled from the prologue of my book at the time. <br><strong>What I Wrote</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The surrounding area makes a stinging iciness run down my spine that makes my heart pound harder than a hammer to a nail. Visions rush to my mind, an excruciating shock plunging deeply into the very depths of my body. Before I could even think of acting, agonizing pain and chill vanishes in an instant, and the discernment of anything dissipates. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The only perceptible sense was sight, as if my imagination had suddenly sparked like it had done in my early years of childhood. The glare of what seemed to be a star grows at a blinding rate, before revealing green fields, the warmth of a summer day feeding nostalgia of my past. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Panicked, I turned towards the direction of the question. Staring at me with a curious look was a little girl, about 5 years old, with long braided hair. A brunette, hazel eyes, that looked of Spanish descent. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>What?</i> The word becomes lost, air escaping my lips like it was ripped out of my body. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"That you helped destroy them?\" Her innocence was unearthly. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A piercing headache cuts through my mind and a vision of blurry humanoids forms into my line of sight. Loud beeping pounds my eardrums, and the only meager detail I can apprehend is the fear of everyone watching and working as they try to solve the cause of their distress.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several more people enter the room with great haste, panicked sweat glistening in fluorescent lighting. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"We\'re losing her!\"",
+    "d040726t2210|Karaoke + Linux (Inevitable Jank)|I've recently learned that there is software to program karaoke songs, so I may have a new hobby. For some context, my girlfriend's family loves to do karaoke, and the software they use is called <a href=\"https://www.karafun.com\">Karafun</a>. The program I currently use is called CDG Magic, which in order to run on my work laptop (that runs <a href=\"https://mxlinux.org\">MX Linux</a>), I had to run a program called <a href=\"https://usebottles.com\">Bottles</a>. Then, I realized the program only took WAV files, and required a very specific header format. To fix this, I found a <a href=\"https://www.reddit.com/r/ffmpeg/comments/kepmsa/comment/gg9esxk/?force-legacy-sct=1\">forum post</a> that recommended using sox to convert an mp3 into a WAV, and that finally worked. So now I'm making a karaoke file for <a href=\"https://www.youtube.com/watch?v=xIoXE4q-Jes\">Against the Kitchen Floor</a> by Will Wood.",
+    "d041726t1327|It was only a matter of time|"
+  
+  ]
+
+  // Helper method for buildAllEntries
+  buildEntry(rawEntry){
+    let elements = rawEntry.split("|");
+    let datetime = elements[0];
+    let header = elements[1];
+    let content = elements[2];
+    let entry = `<div id="${datetime}"><h1>${header}</h1><sub>`;
+    
+    //Format datettime for subtext
+    let month = datetime.substr(1, 2);
+    let day = datetime.substr(3, 2);
+    let year = "20" + datetime.substr(5, 2);
+    let militaryHour = parseInt(datetime.substr(8, 2));
+    let minute = datetime.substr(10, 2);
+    let hour =
+        (militaryHour % 12 === 0)
+        ? 12
+        : militaryHour % 12;
+    let meridiem =
+        (militaryHour >= 12)
+        ? "PM"
+        : "AM";
+    
+    entry += `${month}/${day}/${year} `;
+    entry += `${hour}:${minute} ${meridiem}`;
+    entry += `</sub><br><p>${content}</p></div>`;
+    entry += `<hr class="headerSeperator"/>`;
+
+    return entry;
+  }
+
+  // Helper method for buildAllEntries
+  buildHeaderLink(rawEntry){
+    let elements = rawEntry.split('|');
+    let datetime = elements[0];
+    let header = elements[1];
+    let entry = `<a class="headerLink" href="#${datetime}">${header}</a>`
+    entry += "<hr class=\"headerSeperator\">"
+
+    return entry;
+  }
+
+  buildHeaderLists(){
+    let list = "";
+
+    for (let i = this.rawEntries.length; i > 0; i--) {
+      list += this.buildHeaderLink(this.rawEntries[i-1]);
+    }
+
+    document.getElementById("headers").innerHTML = list;
+  }
+
+  listAllEntries() {
+    let list = "";
+
+    for (let i = this.rawEntries.length; i > 0; i--) {
+      list += this.buildEntry(this.rawEntries[i-1]);
+    }
+
+    document.getElementById("entry").innerHTML = list;
+  }
+}
+
+let blog = new Blog();
+
+function blogInit(){
+  blog.buildHeaderLists();
+  blog.listAllEntries();
+}

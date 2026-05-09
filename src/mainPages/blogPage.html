@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles.css"/>
+    <script src="index.js"></script>
     <!-- Top Header -->
     <div class="topBanner">
         <table id="headerSections">
@@ -26,9 +27,10 @@
     </div>
     <div class="spacer"></div>
 </head>
-<body>
+<body onload="blogInit();">
     <div class="container">
         <div class="headerList">
+            <p id="headers"></p>
             <a class="headerLink" href="#d041726t1327">It was only a matter of time</a>
             <hr class="headerSeperator"/>
             <a class="headerLink" href="#d040726t2210">Karaoke + Linux (Inevitable Jank)</a>
@@ -40,6 +42,7 @@
             <a class="headerLink" href="#d033026t1740">Hello, world!</a>
         </div>
         <div class="textBox">
+            <p id="entry"></p>
             <!-- 
                 Post id's are formated as such:
                     d - Date
@@ -50,98 +53,13 @@
                     17 - Hour
                     40 - Minute
             -->
-            <div id="d041726t1327">
-                <h1>It was only a matter of time</h1>
+            <div id="">
+                <h1></h1>
                 <sub>4/17/2026 1:23 pm</sub>
                 <p>
-                    I avoided it for as long as I can, but alas, I finally had to use JavaScript. 
-                    I know, it's a terrible fate, I accept your grievances...
-                    <br>Anyhow, I had to use it to make a dictionary lookup thing for the (WIP) 6th version of <a href="docPages/ictuk/ictukV6.html">Ictuk</a>.
-                    I'm honestly pretty proud of it, it took some time and a lot of <a href="https://www.w3schools.com">w3schools</a> lookups.
-                    My hope for the dictionary is to make an easy-to-use word search for when someone forgets a word when using the language. 
-                    My original solution to this problem was to make a "light dictionary" tab in a Google sheet I used to V5, with one column being Ictuk words and the other being English,
-                    and it worked...okay, but Ictuk shares some letters with English, and CTRL+F on Google sheets uses some form of <a href="https://en.wikipedia.org/wiki/Regular_expression">Regex</a>,
-                    so more often than not I'd still end up sifting through the dictionary that was intended not to be sifted through in the first place.
-                    With my new dictionary code, you can look up a specific word from either Ictuk or English, and it will pop up if there's a match (not case sensitive). 
-                    As of making this post, there are only 2 Ictuk words, <i>kofa</i> and <i>o</i>.
+                    
                 </p>
             </div>
-            <div id="d040726t2210">
-                <h1>Karaoke + Linux (Inevitable Jank)</h1>
-                <sub>4/07/2026 10:10 pm</sub>
-                <p>
-                   I've recently learned that there is software to program karaoke songs, 
-                   so I may have a new hobby. 
-                   For some context, my girlfriend's family loves to do karaoke, 
-                   and the software they use is called <a href="https://www.karafun.com">Karafun</a>. 
-                   The program I currently use is called CDG Magic, 
-                   which in order to run on my work laptop (that runs <a href="https://mxlinux.org">MX Linux</a>), 
-                   I had to run a program called <a href="https://usebottles.com">Bottles</a>. 
-                   Then, I realized the program only took WAV files, and required a very specific header format. 
-                   To fix this, I found a <a href="https://www.reddit.com/r/ffmpeg/comments/kepmsa/comment/gg9esxk/?force-legacy-sct=1">forum post</a> 
-                   that recommended using sox to convert an mp3 into a WAV, and that finally worked. 
-                   So now I'm making a karaoke file for <a href="https://www.youtube.com/watch?v=xIoXE4q-Jes">Against the Kitchen Floor</a> by Will Wood.
-                </p>
-            </div>
-            <hr class="headerSeperator"/>
-            <div id="d040226t1000">
-                <h1>Creative Writing Prompt 1</h1>
-                <sub>4/02/2026 10:00 am</sub>
-                <p>
-                    When I was in highschool, I was in a creative writing club. This particular post had 4 restrictions:
-                    <ol>
-                        <li>Limit: 250 words (I used 247)</li>
-                        <li>Genre: Drama</li>
-                        <li>Phrase (large idea of narrative): People watching</li>
-                        <li>Word Required: Enter/enters</li>
-                    </ol>
-                    <strong>Fun Fact:</strong> The 1st couple sections (or paragraphs technically) are pulled from the prologue of my book at the time.
-                    <br><strong>What I Wrote</strong>
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The surrounding area makes a stinging iciness run down my spine that makes my heart pound harder than a hammer to a nail. 
-                    Visions rush to my mind, an excruciating shock plunging deeply into the very depths of my body.
-                    Before I could even think of acting, agonizing pain and chill vanishes in an instant, and the discernment of anything dissipates.
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The only perceptible sense was sight, as if my imagination had suddenly sparked like it had done in my early years of childhood. 
-                    The glare of what seemed to be a star grows at a blinding rate, before revealing green fields, the warmth of a summer day feeding nostalgia of my past.
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Panicked, I turned towards the direction of the question.
-                    Staring at me with a curious look was a little girl, about 5 years old, with long braided hair. 
-                    A brunette, hazel eyes, that looked of Spanish descent.
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>What?</i> The word becomes lost, air escaping my lips like it was ripped out of my body.
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“That you helped destroy them?” Her innocence was unearthly.
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A piercing headache cuts through my mind and a vision of blurry humanoids forms into my line of sight.
-                    Loud beeping pounds my eardrums, and the only meager detail I can apprehend is the fear of everyone watching and working as they try to solve the cause of their distress.<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several more people enter the room with great haste, panicked sweat glistening in fluorescent lighting.
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“We’re losing her!”
-                </p>
-            </div>  
-            <hr class="headerSeperator"/> 
-            <div id="d040126t1432">
-                <h1>Shutting this site down...</h1>
-                <sub>4/01/2026 2:32 pm</sub>
-                <p>
-                    April fools! I'm probably about 75% of the way there with getting this site done. 
-                    My biggest endeavor, which I saved for last, is the <a href="interestsPage.html">interests page</a>, and its constituent pages.
-                    I intend on implementing the documentation for <a href="docPages/galusSystem.html">my world</a> and all of my conlangs, 
-                    which luckily both things already have docs that I just need to organize in HTML.<br>
-                    In other news, I am behind on school work, which is dreadful, but after making a to-do list of the things I need to do, 
-                    it doesn't seem nearly as lengthy as it's felt. 
-                </p>
-            </div>  
-            <hr class="headerSeperator"/>      
-            <div id="d033026t1740">
-                <h1>Hello, world!</h1>
-                <sub>3/30/2026 5:40 pm</sub>
-                <p>
-                    I wanted to overhaul my website a bit, as it was a little gross to look at.
-                    Coincidentally, I'm rebuilding it exactly one year after I last updated it.
-                    I would like to post semi-frequently here, no promises though, school has me 
-                    pretty swamped, but maybe that's something I can talk about. Who knows!
-                    Admittedly, I'm still not experienced at all in HTML, but I have a little more
-                    patience to research now than I was last year. Still though, 
-                    I'm warning you now if you decide to tread through my code, as
-                    it could be pretty attrocious, I dunno (I promise I'm better at backend, lol).
-                </p>
-            </div>
-        </div>
         <div class="clear"></div>
     </div>
     <sub>This page was inspired by <a href="http://system64.cc/blog.html">this page</a></sub>
