@@ -199,7 +199,7 @@ class IctukV5 extends Dictionary {
     "kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
   ];
   invisible = ['/', '|'];
-  thin = ['|', 'zh', 'b'];
+  thin = ['|', 'zh'];
   wide = ['.', '?', '*'];
   short = ['o', 'f', 'zh', 'u', 'ou', 'sh'];
   doubles = ['sh', 'zh', 'mb', 'ou', 'ng'];
