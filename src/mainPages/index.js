@@ -1,6 +1,7 @@
 /*
   DICTIONARY CODE
   Handles conlang dictionary entries and queries.
+  I am also throwing the SVG parsing code in here temporarily. Later down the line I will refactor again but I don't want to right now
   Raw entries are formatted key|englishKey|word|translations|types|definitions|etymology
 */
 class Dictionary {
@@ -8,11 +9,20 @@ class Dictionary {
   englishEntries;
   rawEntries;
   className;
+  invisible;
+  thin;
+  wide;
+  short;
+  doubles;
+  svgWidth;
+  svgHeight;
 
   constructor(className) {
     this.conlangEntries = new Map();
     this.englishEntries = new Map();
     this.className = className;
+    this.svgWidth = 0;
+    this.svgHeight = 0;
   }
 
   buildEntryMaps() {
@@ -91,6 +101,90 @@ class Dictionary {
         "<div><p>Entry not found.</p></div>";
     }
   }
+
+  // Parse the numbers in the phrase and return an array of said numbers
+  getLineNumbers(phrase) {
+    let lineNumbers = [];
+    
+    for (let i = 0; i < phrase.length; i++){
+        if (!isNaN(phrase[i])){
+            lineNumbers.push(parseInt(phrase[i]));
+        }
+        else if (phrase[i] === '-'){
+            i++;
+            lineNumbers.push(parseInt(phrase[i]) * -1);
+        }
+    }
+    
+    return lineNumbers;
+  }
+
+  // Parse the full phrase and tokenize each relevant character into an array, and return that array
+  tokenize(phrase){
+    let tokens = [];
+    phrase = phrase.replaceAll(' ', '');
+    let lineNumbers = this.getLineNumbers(phrase);
+    //Get highest line number
+    const highestLine = Math.max(...lineNumbers);
+    // For every non number, tokenize
+    let lineNumberIndex = 0;
+    let currentX = 0;
+
+    for (let i = 0; i < phrase.length; i++){
+        let currentLine = lineNumbers[lineNumberIndex];
+        let char = phrase[i];
+        // Check for doubles
+        const pair = phrase.slice(i, i + 2);
+            if (this.doubles.includes(pair)) {
+            char = pair;
+            i++;
+        }
+        // Check token
+        if (!/[\d-]/.test(phrase[i])){
+            const isThin = this.thin.includes(char);
+	    const isWide = this.wide.includes(char);
+            const isShort = this.short.includes(char);
+            let token = {
+                name: "",
+                line: currentLine,
+                x: currentX,
+                y: 125 * (highestLine - currentLine) + (isShort && currentLine > 0 ? 50 : 0)
+            }
+	    let xShift = isThin ? 25 : isWide ? 125 : 75;
+            currentX += xShift;
+	    this.svgWidth += xShift;
+                
+            // Check if invisible glyph
+            if (!this.invisible.includes(char)){
+                token.name = char;
+                tokens.push(token);
+            }
+        }
+        else if (/[\d]/.test(char) && i !== 0){
+            lineNumberIndex++;
+            currentX = 0;
+        }
+    }
+    // Set height and width of screen
+    this.svgHeight = 125 + 125 * highestLine;
+         
+    return tokens;
+  }
+
+  //Generate and append the svg code for the phrase provided
+  draw(phrase){
+    const tokens = this.tokenize(phrase);
+    let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
+    viewBox="-12.5 -12.5 ${this.svgWidth} ${this.svgHeight}"><g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">`
+    
+    for (const token of tokens){
+        output += `<use href="#${token.name}" transform="translate(${token.x}, ${token.y})"/>`
+    }
+    
+    output += "</g></svg>";
+    
+    return output;
+  }
 }
 
 class IctukV5 extends Dictionary {
@@ -98,6 +192,11 @@ class IctukV5 extends Dictionary {
     "o|no,not,zero|O|No, Not, Zero|Adv.,Adj.,Adj.,Intj.,N.|used as a function word to make negative a group of words or a word,not any,having no magnitude or quantity,not so,an act or instance of refusing or denying by the use of the word no|",
     "kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
   ];
+  invisible = ['/', '|'];
+  thin = ['k', '|', 'zh', 'b'];
+  wide = ['.', '?', '*'];
+  short = ['o', 'f', 'zh', 'u', 'ou', 'sh'];
+  doubles = ['sh', 'zh', 'mb', 'ou'];
 
   constructor(className) {
     super(className);
@@ -122,16 +221,23 @@ classMap.set("ictukV5", new IctukV5("ictukV5"));
 classMap.set("ictukV6", new IctukV6("ictukV6"));
 let conlang;
 
-// Function for bridging the html call to the class function
-function updateResult(query) {
+//For html calling
+function updateResult(query = ""){
   conlang.updateResult(query);
 }
 
-function dictionaryInit(className) {
+window.dictionaryInit = function(className) {
   conlang = classMap.get(className);
   conlang.buildEntryMaps();
   conlang.updateResult();
-}
+
+  const glyphs = document.querySelectorAll(".draw");
+
+  for (var i = 0; i < glyphs.length; i++) {
+    let svg = conlang.draw(glyphs[i].dataset.phrase);
+    glyphs[i].innerHTML = svg;
+  }
+};
 
 /*
   BLOG CODE
