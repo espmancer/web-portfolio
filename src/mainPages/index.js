@@ -103,9 +103,9 @@ class Dictionary {
   }
 
   // Parse the numbers in the phrase and return an array of said numbers
-  getLineNumbers(phrase) {
+  getLineNumbers(phrase = "") {
     let lineNumbers = [];
-    
+
     for (let i = 0; i < phrase.length; i++){
         if (!isNaN(phrase[i])){
             lineNumbers.push(parseInt(phrase[i]));
@@ -115,7 +115,11 @@ class Dictionary {
             lineNumbers.push(parseInt(phrase[i]) * -1);
         }
     }
-    
+
+    if (phrase.length === 0 || lineNumbers.length === 0){
+      lineNumbers = [0];
+    }	
+
     return lineNumbers;
   }
 
@@ -173,6 +177,8 @@ class Dictionary {
 
   //Generate and append the svg code for the phrase provided
   draw(phrase){
+	this.svgWidth = 0;
+    this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
     let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
     viewBox="-12.5 -12.5 ${this.svgWidth} ${this.svgHeight}"><g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">`
@@ -193,10 +199,10 @@ class IctukV5 extends Dictionary {
     "kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
   ];
   invisible = ['/', '|'];
-  thin = ['k', '|', 'zh', 'b'];
+  thin = ['|', 'zh', 'b'];
   wide = ['.', '?', '*'];
   short = ['o', 'f', 'zh', 'u', 'ou', 'sh'];
-  doubles = ['sh', 'zh', 'mb', 'ou'];
+  doubles = ['sh', 'zh', 'mb', 'ou', 'ng'];
 
   constructor(className) {
     super(className);
