@@ -14,12 +14,17 @@ class Dictionary {
   wide;
   short;
   doubles;
+  colors;
   svgWidth;
   svgHeight;
 
   constructor(className) {
     this.conlangEntries = new Map();
     this.englishEntries = new Map();
+	this.colors = new Map([
+		["#d", "#bac2de"],
+		["#h", "#a6d189"] 
+	]);
     this.className = className;
     this.svgWidth = 0;
     this.svgHeight = 0;
@@ -133,6 +138,7 @@ class Dictionary {
     // For every non number, tokenize
     let lineNumberIndex = 0;
     let currentX = 0;
+	let currentColor = this.colors.get("#n");
 
     for (let i = 0; i < phrase.length; i++){
         let currentLine = lineNumbers[lineNumberIndex];
@@ -143,16 +149,27 @@ class Dictionary {
             char = pair;
             i++;
         }
+		// Check for color token
+        if (phrase[i] === '#') {
+            const colorToken = phrase.slice(i, i + 2);
+        
+            if (colors.has(colorToken)) {
+                currentColor = this.colors.get(colorToken);
+                i++;
+                continue;
+            }
+        }
         // Check token
         if (!/[\d-]/.test(phrase[i])){
             const isThin = this.thin.includes(char);
-	    const isWide = this.wide.includes(char);
+	    	const isWide = this.wide.includes(char);
             const isShort = this.short.includes(char);
             let token = {
                 name: "",
                 line: currentLine,
                 x: currentX,
-                y: 125 * (highestLine - currentLine) + (isShort && currentLine > 0 ? 50 : 0)
+                y: 125 * (highestLine - currentLine) + (isShort && currentLine > 0 ? 50 : 0),
+				color: currentColor
             }
 	    let xShift = isThin ? 25 : isWide ? 125 : 75;
             currentX += xShift;
@@ -181,10 +198,10 @@ class Dictionary {
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
     let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
-    viewBox="-12.5 -12.5 ${this.svgWidth} ${this.svgHeight}"><g stroke="#bac2de" stroke-width="10" stroke-linecap="square" fill="none">`
+    viewBox="-12.5 -12.5 ${this.svgWidth} ${this.svgHeight}"><g stroke-width="10" stroke-linecap="square" fill="none">`
     
     for (const token of tokens){
-        output += `<use href="#${token.name}" transform="translate(${token.x}, ${token.y})"/>`
+        output += `<use href="#${token.name}" transform="translate(${token.x}, ${token.y})" stroke="${token.color}"/>`
     }
     
     output += "</g></svg>";
