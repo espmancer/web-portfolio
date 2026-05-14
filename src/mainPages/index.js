@@ -153,7 +153,7 @@ class Dictionary {
         if (phrase[i] === '#') {
             const colorToken = phrase.slice(i, i + 2);
         
-            if (colors.has(colorToken)) {
+            if (this.colors.has(colorToken)) {
                 currentColor = this.colors.get(colorToken);
                 i++;
                 continue;
