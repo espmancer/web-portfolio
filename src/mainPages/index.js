@@ -128,8 +128,6 @@ class Dictionary {
     return lineNumbers;
   }
 
-  }
-
   // Parse the full phrase and tokenize each relevant character into an array, and return that array
   tokenize(phrase){
     let tokens = [];
