@@ -129,68 +129,78 @@ class Dictionary {
   }
 
   // Parse the full phrase and tokenize each relevant character into an array, and return that array
-  tokenize(phrase){
+  tokenize(phrase) {
     let tokens = [];
-    phrase = phrase.replaceAll(' ', '');
-    let lineNumbers = this.getLineNumbers(phrase);
-    //Get highest line number
-    const highestLine = Math.max(...lineNumbers);
-    // For every non number, tokenize
-    let lineNumberIndex = 0;
-    let currentX = 0;
-	let currentColor = this.colors.get("#n");
 
-    for (let i = 0; i < phrase.length; i++){
-        let currentLine = lineNumbers[lineNumberIndex];
-        let char = phrase[i];
-        // Check for doubles
-        const pair = phrase.slice(i, i + 2);
-            if (this.doubles.includes(pair)) {
-            char = pair;
-            i++;
+    phrase = phrase.replaceAll(' ', '');
+
+    let currentLine = 0;
+    let currentX = 0;
+    let currentColor = this.colors.get("#n");
+    let maxWidth = 0;
+
+    for (let i = 0; i < phrase.length; i++) {
+        // Parse line numbers
+        if (phrase[i] === '-' || /\d/.test(phrase[i])) {
+            let sign = 1;
+
+            if (phrase[i] === '-') {
+                sign = -1;
+                i++;
+            }
+
+            currentLine = parseInt(phrase[i]) * sign;
+            currentX = 0;
+
+            continue;
         }
-		// Check for color token
+
+        // Parse color tokens
         if (phrase[i] === '#') {
             const colorToken = phrase.slice(i, i + 2);
-        
+
             if (this.colors.has(colorToken)) {
                 currentColor = this.colors.get(colorToken);
                 i++;
                 continue;
             }
         }
-        // Check token
-        if (!/[\d-]/.test(phrase[i])){
-            const isThin = this.thin.includes(char);
-	    	const isWide = this.wide.includes(char);
-            const isShort = this.short.includes(char);
-            let token = {
-                name: "",
+
+        // Parse double tokens
+        let char = phrase[i];
+
+        const pair = phrase.slice(i, i + 2);
+
+        if (this.doubles.includes(pair)) {
+            char = pair;
+            i++;
+        }
+
+        // Get size variables
+        const isThin = this.thin.includes(char);
+        const isWide = this.wide.includes(char);
+        const isShort = this.short.includes(char);
+        const width = isThin ? 25 : isWide ? 125 : 75;
+
+        // Parse visible tokens
+        if (!this.invisible.includes(char)) {
+            tokens.push({
+                name: char,
                 line: currentLine,
                 x: currentX,
-                y: 125 * (highestLine - currentLine) + (isShort && currentLine > 0 ? 50 : 0),
-				color: currentColor
-            }
-	    let xShift = isThin ? 25 : isWide ? 125 : 75;
-            currentX += xShift;
-	    this.svgWidth += xShift;
-                
-            // Check if invisible glyph
-            if (!this.invisible.includes(char)){
-                token.name = char;
-                tokens.push(token);
-            }
+                y: 125 * (1 - currentLine) + (isShort && currentLine > 0 ? 50 : 0),
+                color: currentColor
+            });
         }
-        else if (/[\d]/.test(char) && i !== 0){
-            lineNumberIndex++;
-            currentX = 0;
-        }
+        currentX += width;
+        maxWidth = Math.max(maxWidth, currentX);
     }
-    // Set height and width of screen
-    this.svgHeight = 125 + 125 * highestLine;
-         
+
+    this.svgWidth = maxWidth;
+    this.svgHeight = 500;
+
     return tokens;
-  }
+}
 
   //Generate and append the svg code for the phrase provided
   draw(phrase){
