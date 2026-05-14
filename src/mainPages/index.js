@@ -22,7 +22,7 @@ class Dictionary {
     this.conlangEntries = new Map();
     this.englishEntries = new Map();
 	this.colors = new Map([
-		["#d", "#bac2de"],
+		["#n", "#bac2de"],
 		["#h", "#a6d189"] 
 	]);
     this.className = className;
