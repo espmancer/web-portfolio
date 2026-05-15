@@ -21,7 +21,7 @@ class Dictionary {
   constructor(className) {
     this.conlangEntries = new Map();
     this.englishEntries = new Map();
-	this.colors = new Map([
+	  this.colors = new Map([
 		["#n", "#bac2de"],
 		["#h", "#a6d189"] 
 	]);
@@ -68,7 +68,7 @@ class Dictionary {
     entry += `<source src="../../../resources/${this.className}/sounds/${key}.mp3" type="audio/mp3">`;
     entry += `Your browser does not support the audio tag.</audio></div>`;
     // Add image
-    entry += `<image src="../../../resources/${this.className}/glyphs/words/${key}.svg" alt="${key}"></image>`;
+    entry += this.draw(key);
     // Add separator
     entry += "<hr class='headerSeperator'/>";
 
@@ -220,6 +220,7 @@ class IctukV5 extends Dictionary {
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
+  wide = [];
   short = ['o', 'f', 'zh', 'u', 'ou', 'sh', 'Eq', 'Sq'];
   doubles = ['sh', 'zh', 'mb', 'ou', 'ng', 'Eq', 'Sq'];
 
