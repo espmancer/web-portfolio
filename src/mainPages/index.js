@@ -138,7 +138,7 @@ class Dictionary {
     // For every non number, tokenize
     let lineNumberIndex = 0;
     let currentX = 0;
-	let currentColor = this.colors.get("#n");
+	  let currentColor = this.colors.get("#n");
 
     for (let i = 0; i < phrase.length; i++){
         let currentLine = lineNumbers[lineNumberIndex];
@@ -220,7 +220,6 @@ class IctukV5 extends Dictionary {
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
-  wide = ['.', '?', '*'];
   short = ['o', 'f', 'zh', 'u', 'ou', 'sh', 'Eq', 'Sq'];
   doubles = ['sh', 'zh', 'mb', 'ou', 'ng', 'Eq', 'Sq'];
 
