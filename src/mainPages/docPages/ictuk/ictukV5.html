@@ -1015,10 +1015,13 @@
                 Like line numbers, the most recent color is what the glyphs will be colored.
                 <br>"0<strong><i>#h</i></strong>kofa<strong><i>#n</i></strong>tuf. 1////fash"
             </li>
+            <li>
+                This is still a work in progress.
+            </li>
         </ul>
-        <input type="text" oninput="drawAsync();">
+        <input id="userParser" type="text">
     </p>
-    <span class="drawAsync" data-phrase=""></span>
+    <span id="drawAsync" data-phrase=""></span>
     <h1 id="dictionary">Dictionary</h1>
     <p>Enter an English or Ictuk word here.</p>
     <input type="text" oninput="updateResult(this.value)">

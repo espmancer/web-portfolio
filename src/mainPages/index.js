@@ -252,17 +252,25 @@ function updateResult(query = ""){
   conlang.updateResult(query);
 }
 
+
 window.dictionaryInit = function(className) {
   conlang = classMap.get(className);
   conlang.buildEntryMaps();
   conlang.updateResult();
-
+  
   const glyphs = document.querySelectorAll(".draw");
-
+  
   for (var i = 0; i < glyphs.length; i++) {
     let svg = conlang.draw(glyphs[i].dataset.phrase);
     glyphs[i].innerHTML = svg;
   }
+  //Listen for user parser event
+  const userParser = document.getElementById("userParser");
+  
+  userParser.addEventListener("input", function (event) {
+	console.log(parserValue);
+    document.getElementById("drawAsync").innerHTML = conlang.draw(userParser.value);
+  });
 };
 
 /*
