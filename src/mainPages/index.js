@@ -268,7 +268,7 @@ window.dictionaryInit = function(className) {
   const userParser = document.getElementById("userParser");
 
   userParser.addEventListener("input", function (event) {
-    document.getElementById("drawAsync").innerHTML = conlang.draw(userParser.value);
+    document.getElementById("drawAsync").innerHTML = conlang.draw(userParser.value.toLowerCase());
   });
 };
 
