@@ -9,6 +9,11 @@ i {
     color:#a6d189;
 }
 
+button {
+    background-color:#cdd6f4;
+    height:50px;
+    width:100px;
+}
 /* a */
 a:link:not(.headerLink) {
     color:#89dceb;
@@ -28,11 +33,6 @@ a:visited {
     width:65%;
     text-align:left;
     margin:auto;
-}
-.topBanner #mainButtons button {
-    background-color:#cdd6f4;
-    height:50px;
-    width:100px;
 }
 .spacer {
     padding:10px;
