@@ -217,6 +217,22 @@ class IctukV5 extends Dictionary {
   rawEntries = [
     "o|no,not,zero|O|No, Not, Zero|Adv.,Adj.,Adj.,Intj.,N.|used as a function word to make negative a group of words or a word,not any,having no magnitude or quantity,not so,an act or instance of refusing or denying by the use of the word no|",
     "kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
+    "u|only,single,just,one|U|Only, Single, Just, One|Adj.,Adj.,Adv.,Adv.,Adv.|alone in a class or category,consisting of or having only one part, feature, or portion,exactly,simply,barely|",
+    "fash|good,yes|Fash|Good, Yes|Adj.,Adv.|of a high or desired quality,used as a function word to express assent or agreement|",
+    "apa|day|Apa|Day|N.,N.|the time of light between one night and the next,about 36 hours|",
+    "mbupa|week|Mbupa|Week|N.|any six consecutive days|",
+    "fotap|fight|Fotap|Fight|V.,V.,N.,N.|to contend in battle or physical combat,to struggle to endure or surmount,a hostile encounter,a verbal disagreement|",
+    "fotash|hello|Fotash|Hello|N.|an expression or gesture of greeting|",
+    "fotazhupa|goodbye|Fotazhupa|Goodbye|N.|a concluding remark or gesture at parting|",
+    "akozh|fear,scare,scary|Akozh|Fear, Scare, Scary|N.,V.,V.,Adj.|an unpleasant often strong emotion caused by anticipation or awareness of danger,to be filled with concern or regret over an unwanted situation,to frighten especially suddenly,causing fright|",
+    "but|you|But|You|Pn.|the one being addressed|",
+    "buzh|you all,y'all,you|Buzh|You All, You|Pn.,Pn.|plural form of you,the ones being addressed|",
+    "fazhk|future,forward|Fazhk|Future, Forward|Adj.,N.,Adj.,Adv.|existing or occurring at a later time,time that is to come,near/being at/belonging to the forepart,to or toward what is ahead or in front|",
+    "fazho|over|Fazho|Over|Adv.,Adv.,Prep.|from one person or side to another,beyond some quantity/limit/norm often by a specified amount or to a specified degree,used as a function word to indicate position on or motion to the other side or beyond|",
+    "fushkazhk|top|Fushkazhk|Top|Adj.|of, relating to, or being at the top|",
+    "fazhouk|go|Fazhouk|Go|V.,V.,V.|to move or travel in a particular way or direction or for a particular distance, to take a certain course or follow a certain procedure, to begin an action or motion|",
+    "nguho|think,thought,idea|Nguho|Think, Thought, Idea|V.,V.,N.,N.|to form or have in the mind,to have as an opinion,something formed in the mind,a formulated thought or opinion|",
+    "nguhoq|know,knowledge|Nguhoq|Know, Knowledge|V.,N.|to have understanding of,information/understanding//skill that you get from experience or education"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
