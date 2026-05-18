@@ -13,6 +13,7 @@ button {
     background-color:#cdd6f4;
     height:50px;
     width:100px;
+    text-wrap: wrap;
 }
 /* a */
 a:link:not(.headerLink) {
