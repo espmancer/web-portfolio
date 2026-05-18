@@ -232,7 +232,7 @@ class IctukV5 extends Dictionary {
     "fushkazhk|top|Fushkazhk|Top|Adj.|of, relating to, or being at the top|",
     "fazhouk|go|Fazhouk|Go|V.,V.,V.|to move or travel in a particular way or direction or for a particular distance, to take a certain course or follow a certain procedure, to begin an action or motion|",
     "nguho|think,thought,idea|Nguho|Think, Thought, Idea|V.,V.,N.,N.|to form or have in the mind,to have as an opinion,something formed in the mind,a formulated thought or opinion|",
-    "nguhoq|know,knowledge|Nguhoq|Know, Knowledge|V.,N.|to have understanding of,information/understanding//skill that you get from experience or education"
+    "nguhoq|know,knowledge|Nguhoq|Know, Knowledge|V.,N.|to have understanding of,information/understanding/skill that you get from experience or education|"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
