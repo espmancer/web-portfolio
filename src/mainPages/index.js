@@ -2,7 +2,7 @@
   DICTIONARY CODE
   Handles conlang dictionary entries and queries.
   I am also throwing the SVG parsing code in here temporarily. Later down the line I will refactor again but I don't want to right now
-  Raw entries are formatted key|englishKey|word|translations|types|definitions|etymology
+  Raw entries are formatted key|englishKey|types|definitions|etymology
 */
 class Dictionary {
   conlangEntries;
@@ -45,15 +45,23 @@ class Dictionary {
     }
   }
 
+  // https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript
+  toTitleCase(str) {
+    return str.replace(
+      /\w\S*/g,
+      text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+    );
+  }
+
   //Helper function to build the entry being displayed
   buildEntry(rawEntry) {
     let elements = rawEntry.split("|");
     let key = elements[0];
-    let name = elements[2];
-    let translation = elements[3];
-    let types = elements[4].split(",");
-    let definitions = elements[5].split(",");
-    let etymology = elements[6];
+    let name = key;
+    let translation = toTitleCase(elements[1]);
+    let types = elements[2].split(",");
+    let definitions = elements[3].split(",");
+    let etymology = elements[4];
     let entry = `<div>${name} | ${translation}<ol>`;
 
     // Format definitions
@@ -215,34 +223,34 @@ class Dictionary {
 
 class IctukV5 extends Dictionary {
   rawEntries = [
-    "o|no,not,zero|O|No, Not, Zero|Adv.,Adj.,Adj.,Intj.,N.|used as a function word to make negative a group of words or a word,not any,having no magnitude or quantity,not so,an act or instance of refusing or denying by the use of the word no|",
-    "kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
-    "u|only,single,just,one|U|Only, Single, Just, One|Adj.,Adj.,Adv.,Adv.,Adv.|alone in a class or category,consisting of or having only one part/feature/portion,exactly,simply,barely|",
-    "fash|good,yes|Fash|Good, Yes|Adj.,Adv.|of a high or desired quality,used as a function word to express assent or agreement|",
-    "apa|day|Apa|Day|N.,N.|the time of light between one night and the next,about 36 hours|",
-    "mbupa|week|Mbupa|Week|N.|any six consecutive days|",
-    "fotap|fight|Fotap|Fight|V.,V.,N.,N.|to contend in battle or physical combat,to struggle to endure or surmount,a hostile encounter,a verbal disagreement|",
-    "fotash|hello|Fotash|Hello|N.|an expression or gesture of greeting|",
-    "fotazhupa|goodbye|Fotazhupa|Goodbye|N.|a concluding remark or gesture at parting|",
-    "akozh|fear,scare,scary|Akozh|Fear, Scare, Scary|N.,V.,V.,Adj.|an unpleasant often strong emotion caused by anticipation or awareness of danger,to be filled with concern or regret over an unwanted situation,to frighten especially suddenly,causing fright|",
-    "but|you|But|You|Pn.|the one being addressed|",
-    "buzh|you all,y'all,you|Buzh|You All, You|Pn.,Pn.|plural form of you,the ones being addressed|",
-    "fazhk|future,forward|Fazhk|Future, Forward|Adj.,N.,Adj.,Adv.|existing or occurring at a later time,time that is to come,near/being at/belonging to the forepart,to or toward what is ahead or in front|",
-    "fazho|over|Fazho|Over|Adv.,Adv.,Prep.|from one person or side to another,beyond some quantity/limit/norm often by a specified amount or to a specified degree,used as a function word to indicate position on or motion to the other side or beyond|",
-    "fushkazhk|top|Fushkazhk|Top|Adj.|of, relating to, or being at the top|",
-    "fazhouk|go|Fazhouk|Go|V.,V.,V.|to move or travel in a particular way or direction or for a particular distance, to take a certain course or follow a certain procedure, to begin an action or motion|",
-    "nguho|think,thought,idea|Nguho|Think, Thought, Idea|V.,V.,N.,N.|to form or have in the mind,to have as an opinion,something formed in the mind,a formulated thought or opinion|",
-    "nguhoq|know,knowledge|Nguhoq|Know, Knowledge|V.,N.|to have understanding of,information/understanding/skill that you get from experience or education|",
-    "ouktuk|ictuk|Ouktuk|Ictuk|N.|the primary language of the Ictuza|",
-    "ouktuzha|ictuza|Ouktuzha|Ictuza|Adj.,N.|of/relating to/or characteristic of ictuza|one or more bipedal Synoeca vespids|",
-    "pung|let|Pung|Let|V.|to give opportunity to or fail to prevent|",
-    "tuf|i|Tuf|I|Pn.|the one who is speaking or writing|",
-    "tuzh|we|Tuzh|We|Pn.|I and the rest of a group that includes me|",
-    "uk|hook,of,pin|Uk|Hook, Of, Pin|N.,N.,V.,Prep.|a curved or bent device for catching/holding/pulling,something intended to attract and ensnare,to get the attention of someone,used as a function word to indicate origin or derivation|",
-    "ukosh|death,die,dead,low,less|Ukosh|Death, Die, Dead, Low, Less|N.,V.,Adj.,Adj.,Adj.,Adj.,Adj.,Adj.|a permanent cessation of all vital functions,to pass from physical life,deprived of life; no longer alive,inanimate,situated or passing below the normal level/surface/base of measurement/the mean elevation,small in number or amount,of lesser degree/size/amount than average or ordinary,constituting a more limited number or amount|",
-    "zhoub|job,do|Zhoub|Job, Do|N.,Adj.,V.|a specific duty/role/function,of or relating to a job or to employment,perform/execute|",
-    "kou|at|Kou|At|Prep.|used as a function word to indicate presence or occurrence in/on/near|",
-    "osh|it,thing|Osh|It, Thing|Pn.,N.|that one; used as subject or direct object or indirect object of a verb or object of a preposition usually in reference to a lifeless thing,an object or entity not precisely designated or capable of being designated|"
+    "o|no,not,zero|Adv.,Adj.,Adj.,Intj.,N.|used as a function word to make negative a group of words or a word,not any,having no magnitude or quantity,not so,an act or instance of refusing or denying by the use of the word no|",
+    "kofa|be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
+    "u|only,single,just,one|Adj.,Adj.,Adv.,Adv.,Adv.|alone in a class or category,consisting of or having only one part/feature/portion,exactly,simply,barely|",
+    "fash|good,yes|Adj.,Adv.|of a high or desired quality,used as a function word to express assent or agreement|",
+    "apa|day|N.,N.|the time of light between one night and the next,about 36 hours|",
+    "mbupa|week|N.|any six consecutive days|",
+    "fotap|fight|V.,V.,N.,N.|to contend in battle or physical combat,to struggle to endure or surmount,a hostile encounter,a verbal disagreement|",
+    "fotash|hello|N.|an expression or gesture of greeting|",
+    "fotazhupa|goodbye|N.|a concluding remark or gesture at parting|",
+    "akozh|fear,scare,scary|N.,V.,V.,Adj.|an unpleasant often strong emotion caused by anticipation or awareness of danger,to be filled with concern or regret over an unwanted situation,to frighten especially suddenly,causing fright|",
+    "but|you|Pn.|the one being addressed|",
+    "buzh|you all,y'all,you|Pn.,Pn.|plural form of you,the ones being addressed|",
+    "fazhk|future,forward|Adj.,N.,Adj.,Adv.|existing or occurring at a later time,time that is to come,near/being at/belonging to the forepart,to or toward what is ahead or in front|",
+    "fazho|over|Adv.,Adv.,Prep.|from one person or side to another,beyond some quantity/limit/norm often by a specified amount or to a specified degree,used as a function word to indicate position on or motion to the other side or beyond|",
+    "fushkazhk|top|Adj.|of, relating to, or being at the top|",
+    "fazhouk|go|V.,V.,V.|to move or travel in a particular way or direction or for a particular distance, to take a certain course or follow a certain procedure, to begin an action or motion|",
+    "nguho|think,thought,idea|V.,V.,N.,N.|to form or have in the mind,to have as an opinion,something formed in the mind,a formulated thought or opinion|",
+    "nguhoq|know,knowledge|V.,N.|to have understanding of,information/understanding/skill that you get from experience or education|",
+    "ouktuk|ictuk|N.|the primary language of the Ictuza|",
+    "ouktuzha|ictuza|Adj.,N.|of/relating to/or characteristic of ictuza|one or more bipedal Synoeca vespids|",
+    "pung|let|V.|to give opportunity to or fail to prevent|",
+    "tuf|i|Pn.|the one who is speaking or writing|",
+    "tuzh|we|Pn.|I and the rest of a group that includes me|",
+    "uk|hook,of,pin|N.,N.,V.,Prep.|a curved or bent device for catching/holding/pulling,something intended to attract and ensnare,to get the attention of someone,used as a function word to indicate origin or derivation|",
+    "ukosh|death,die,dead,low,less|N.,V.,Adj.,Adj.,Adj.,Adj.,Adj.,Adj.|a permanent cessation of all vital functions,to pass from physical life,deprived of life; no longer alive,inanimate,situated or passing below the normal level/surface/base of measurement/the mean elevation,small in number or amount,of lesser degree/size/amount than average or ordinary,constituting a more limited number or amount|",
+    "zhoub|job,do|N.,Adj.,V.|a specific duty/role/function,of or relating to a job or to employment,perform/execute|",
+    "kou|at|Prep.|used as a function word to indicate presence or occurrence in/on/near|",
+    "osh|it,thing|Pn.,N.|that one; used as subject or direct object or indirect object of a verb or object of a preposition usually in reference to a lifeless thing,an object or entity not precisely designated or capable of being designated|"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
