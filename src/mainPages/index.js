@@ -217,7 +217,7 @@ class IctukV5 extends Dictionary {
   rawEntries = [
     "o|no,not,zero|O|No, Not, Zero|Adv.,Adj.,Adj.,Intj.,N.|used as a function word to make negative a group of words or a word,not any,having no magnitude or quantity,not so,an act or instance of refusing or denying by the use of the word no|",
     "kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
-    "u|only,single,just,one|U|Only, Single, Just, One|Adj.,Adj.,Adv.,Adv.,Adv.|alone in a class or category,consisting of or having only one part, feature, or portion,exactly,simply,barely|",
+    "u|only,single,just,one|U|Only, Single, Just, One|Adj.,Adj.,Adv.,Adv.,Adv.|alone in a class or category,consisting of or having only one part/feature/portion,exactly,simply,barely|",
     "fash|good,yes|Fash|Good, Yes|Adj.,Adv.|of a high or desired quality,used as a function word to express assent or agreement|",
     "apa|day|Apa|Day|N.,N.|the time of light between one night and the next,about 36 hours|",
     "mbupa|week|Mbupa|Week|N.|any six consecutive days|",
