@@ -232,7 +232,17 @@ class IctukV5 extends Dictionary {
     "fushkazhk|top|Fushkazhk|Top|Adj.|of, relating to, or being at the top|",
     "fazhouk|go|Fazhouk|Go|V.,V.,V.|to move or travel in a particular way or direction or for a particular distance, to take a certain course or follow a certain procedure, to begin an action or motion|",
     "nguho|think,thought,idea|Nguho|Think, Thought, Idea|V.,V.,N.,N.|to form or have in the mind,to have as an opinion,something formed in the mind,a formulated thought or opinion|",
-    "nguhoq|know,knowledge|Nguhoq|Know, Knowledge|V.,N.|to have understanding of,information/understanding/skill that you get from experience or education|"
+    "nguhoq|know,knowledge|Nguhoq|Know, Knowledge|V.,N.|to have understanding of,information/understanding/skill that you get from experience or education|",
+    "ouktuk|ictuk|Ouktuk|Ictuk|N.|the primary language of the Ictuza|",
+    "ouktuzha|ictuza|Ouktuzha|Ictuza|Adj.,N.|of/relating to/or characteristic of ictuza|one or more bipedal Synoeca vespids|",
+    "pung|let|Pung|Let|V.|to give opportunity to or fail to prevent|",
+    "tuf|i|Tuf|I|Pn.|the one who is speaking or writing|",
+    "tuzh|we|Tuzh|We|Pn.|I and the rest of a group that includes me|",
+    "uk|hook,of,pin|Uk|Hook, Of, Pin|N.,N.,V.,Prep.|a curved or bent device for catching/holding/pulling,something intended to attract and ensnare,to get the attention of someone,used as a function word to indicate origin or derivation|",
+    "ukosh|death,die,dead,low,less|Ukosh|Death, Die, Dead, Low, Less|N.,V.,Adj.,Adj.,Adj.,Adj.,Adj.,Adj.|a permanent cessation of all vital functions,to pass from physical life,deprived of life; no longer alive,inanimate,situated or passing below the normal level/surface/base of measurement/the mean elevation,small in number or amount,of lesser degree/size/amount than average or ordinary,constituting a more limited number or amount|",
+    "zhoub|job,do|Zhoub|Job, Do|N.,Adj.,V.|a specific duty/role/function,of or relating to a job or to employment,perform/execute|",
+    "kou|at|Kou|At|Prep.|used as a function word to indicate presence or occurrence in/on/near|",
+    "osh|it,thing|Osh|It, Thing|Pn.,N.|that one; used as subject or direct object or indirect object of a verb or object of a preposition usually in reference to a lifeless thing,an object or entity not precisely designated or capable of being designated|"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
