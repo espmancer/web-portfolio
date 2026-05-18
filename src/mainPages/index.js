@@ -197,10 +197,10 @@ class Dictionary {
 
   //Generate and append the svg code for the phrase provided
   draw(phrase){
-	this.svgWidth = 0;
+	  this.svgWidth = 0;
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
-    let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
+    let output = `<svg width="${this.svgWidth / 1.5}" height="${this.svgHeight / 1.5}"
     viewBox="-12.5 -12.5 ${this.svgWidth} ${this.svgHeight}"><g stroke-width="10" stroke-linecap="square" fill="none">`
     
     for (const token of tokens){
