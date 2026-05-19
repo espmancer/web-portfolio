@@ -58,7 +58,7 @@ class Dictionary {
     let elements = rawEntry.split("|");
     let key = elements[0];
     let name = key;
-    let translation = this.toTitleCase(elements[1]);
+    let translation = this.toTitleCase(elements[1].replaceAll(',', ", "));
     let types = elements[2].split(",");
     let definitions = elements[3].split(",");
     let etymology = elements[4];
