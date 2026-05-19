@@ -250,7 +250,18 @@ class IctukV5 extends Dictionary {
     "ukosh|death,die,dead,low,less|N.,V.,Adj.,Adj.,Adj.,Adj.,Adj.,Adj.|a permanent cessation of all vital functions,to pass from physical life,deprived of life; no longer alive,inanimate,situated or passing below the normal level/surface/base of measurement/the mean elevation,small in number or amount,of lesser degree/size/amount than average or ordinary,constituting a more limited number or amount|",
     "zhoub|job,do|N.,Adj.,V.|a specific duty/role/function,of or relating to a job or to employment,perform/execute|",
     "kou|at|Prep.|used as a function word to indicate presence or occurrence in/on/near|",
-    "osh|it,thing|Pn.,N.|that one; used as subject or direct object or indirect object of a verb or object of a preposition usually in reference to a lifeless thing,an object or entity not precisely designated or capable of being designated|"
+    "osh|it,thing|Pn.,N.|that one; used as subject or direct object or indirect object of a verb or object of a preposition usually in reference to a lifeless thing,an object or entity not precisely designated or capable of being designated|",
+    "fazh|occurence,time|N.,N.|the action or fact of happening or occurring,the measured or measurable period during which an action/process/condition exists or continues|",
+    "ofazh|past|Adj.,Prep.|just gone or elapsed,at the farther side of|",
+    "ta|also|Adv.|in addition|",
+    "ngu|question,ask|N.,V.|an interrogative expression often used to test knowledge,to call on for an answer|",
+    "nguposh|who|Pn.|what or which person or persons|",
+    "nguosh|what|Pn.|used as an interrogative expressing inquiry about the identity/nature/value of an object or matter|",
+    "ngufazh|when|Adv.,Cjn.|at what time,at or during the time that|",
+    "ngupapsho|where|Adv.|at/in/or to what situation/position/direction/circumstances/respect",
+    "nguu|why|Adv.,Cjn.|for what cause/reason/purpose,the cause/reason/purpose for which|",
+    "ngufazho|how|Adv.,Cjn.|in what manner or way,the way or manner in which|",
+    "posh|they|Pn.|that person|"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
