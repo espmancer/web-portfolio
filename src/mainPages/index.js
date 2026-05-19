@@ -227,7 +227,7 @@ class IctukV5 extends Dictionary {
     "kofa|be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
     "u|only,single,just,one|Adj.,Adj.,Adv.,Adv.,Adv.|alone in a class or category,consisting of or having only one part/feature/portion,exactly,simply,barely|",
     "fash|good,yes|Adj.,Adv.|of a high or desired quality,used as a function word to express assent or agreement|",
-    "apa|day|N.,N.|the time of light between one night and the next,about 36 hours|",
+    "apa|unit|N.|a determinate quantity adopted as a standard of measurement|",
     "mbupa|week|N.|any six consecutive days|",
     "fotap|fight|V.,V.,N.,N.|to contend in battle or physical combat,to struggle to endure or surmount,a hostile encounter,a verbal disagreement|",
     "fotash|hello|N.|an expression or gesture of greeting|",
@@ -283,7 +283,22 @@ class IctukV5 extends Dictionary {
     "shouzh|those|Pn.|the ideas/concepts indicated/mentioned/understood from the situation|",
     "foupuzh|every|Adj.|being each individual or part of a group without exception|",
     "foupuzhosh|everything|Pn.|all that relates to the subject|",
-    "aa|and|Cjn.|used as a function word to indicate connection or addition especially of items within the same class or type|"
+    "aa|and|Cjn.|used as a function word to indicate connection or addition especially of items within the same class or type|",
+    "ushkofazhapa|year|N.|a cycle in the Ictuza calendar of 108 days|",
+    "akozhkofazhapa|enemy month|N.|the 15 day period based on Cetus\'s moon \"Fo\"|",
+    "fotapkofazhapa|battle month|N.|the 57 day period based on Cetus\'s moons \"Fo\" and \"Shako\"|",
+    "fashkofazhapa|victory month|N.|the 36 day celebratory period based on Cetus\'s moon \"Shako\"|",
+    "kofazhapa|month,month unit|N.|an arbitrary unit to represent the concept of a month|",
+    "mbufazhapa|week|N.|any six consecutive days|",
+    "fazhapa|day|N.,N.|the time of light between one night and the next,about 32 hours|",
+    "afazhapa|hour|N.,N.|the 32nd part of a day,32 minutes|",
+    "aafazhapa|minute|N.,N.|the 32nd part of an hour,32 seconds|",
+    "aofazhapa|second|N.,N.|the 32nd part of a minute,1/32768th of a day|",
+    "oakozhosh|brave,strong|Adj.,Adj.,Adj.|having or showing mental or moral strength to face danger/fear/difficulty,having or marked by great physical power,having moral/emotional/intellectual power or ability|",
+    "oakozhposh|soldier|N.|one engaged in military service|",
+    "ukozhku|stupid|Adj.,Adj.|given to unintelligent decisions or acts,acting in an unintelligent or careless manner|",
+    "akozhoq|require,owe|V.,V.|to demand as necessary or essential,to be under obligation to render something|",
+    "papsho|body|N.,N.|the main/central/principal part,the organized physical substance of an animal or plant either living or dead|"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
