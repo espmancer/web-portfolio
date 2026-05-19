@@ -274,7 +274,7 @@ class IctukV5 extends Dictionary {
     "fazhkoupu|through|Prep.|used as a function wd to indicate movement into something at one side  point and out at another and especially the opposite side of|",
     "fazhku|toward|Prep.|in the direction of|",
     "akozho|need|N.,V.,V.|a lack of something requisite/desirable/useful,to be necessary,to require|",
-    "hapo|have|V.|to hold  maintain (something tangible/intangible) as a possession/privilege/entitlement/responsibility",
+    "hapo|have|V.|to hold  maintain (something tangible/intangible) as a possession/privilege/entitlement/responsibility|",
     "sho|this|Pn.|the person/thing that is present  near in place/time/thought that has just been mentioned|",
     "sha|that|Pn.|the person/thing indicated/mentioned/understood from the situation|",
     "shou|this|Pn.|the idea/concept that is present  near in place/time/thought that has just been mentioned|",
