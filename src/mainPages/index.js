@@ -251,7 +251,7 @@ class IctukV5 extends Dictionary {
     "zhoub|job,do|N.,Adj.,V.|a specific duty/role/function,of or relating to a job or to employment,perform/execute|",
     "kou|at|Prep.|used as a function word to indicate presence or occurrence in/on/near|",
     "osh|it,thing|Pn.,N.|that one; used as subject or direct object or indirect object of a verb or object of a preposition usually in reference to a lifeless thing,an object or entity not precisely designated or capable of being designated|",
-    "fazh|occurence,time|N.,N.|the action or fact of happening or occurring,the measured or measurable period during which an action/process/condition exists or continues|",
+    "fazh|occurence|N.|the action or fact of happening or occurring|",
     "ofazh|past|Adj.,Prep.|just gone or elapsed,at the farther side of|",
     "ta|also|Adv.|in addition|",
     "ngu|question,ask|N.,V.|an interrogative expression often used to test knowledge,to call on for an answer|",
@@ -283,6 +283,7 @@ class IctukV5 extends Dictionary {
     "shouzh|those|Pn.|the ideas/concepts indicated/mentioned/understood from the situation|",
     "foupuzh|every|Adj.|being each individual or part of a group without exception|",
     "foupuzhosh|everything|Pn.|all that relates to the subject|",
+    "foupuzhpozh|everyone|Pn.|every person|",
     "aa|and|Cjn.|used as a function word to indicate connection or addition especially of items within the same class or type|",
     "ushkofazhapa|year|N.|a cycle in the Ictuza calendar of 108 days|",
     "akozhkofazhapa|enemy month|N.|the 15 day period based on Cetus\'s moon \"Fo\"|",
@@ -298,7 +299,22 @@ class IctukV5 extends Dictionary {
     "oakozhposh|soldier|N.|one engaged in military service|",
     "ukozhku|stupid|Adj.,Adj.|given to unintelligent decisions or acts,acting in an unintelligent or careless manner|",
     "akozhoq|require,owe|V.,V.|to demand as necessary or essential,to be under obligation to render something|",
-    "papsho|body|N.,N.|the main/central/principal part,the organized physical substance of an animal or plant either living or dead|"
+    "papsho|body|N.,N.|the main/central/principal part,the organized physical substance of an animal or plant either living or dead|",
+    "papshongu|brain,mind|N.|the organ inside the head that controls all body functions of a vertebrate,the element or complex of elements in an individual that feels/perceives/thinks/wills/reasons|",
+    "papshopaa|heart,love|N.,N.,N.,V.|a hollow muscular organ of vertebrate animals that by its rhythmic contraction acts as a force pump maintaining the circulation of the blood,strong affection for another arising out of kinship or personal ties,warm attachment/enthusiasm/devotion,to feel great affection for|",
+    "paa|like|V.|to feel attraction toward or take pleasure in|",
+    "ota|but,exception|Cjn.,Prep.|except for the fact,other than|",
+    "fazhapapshopaa|sorry,apology,apologize|Adj.,N.,V.|feeling extreme sorrow or sympathy,an admission of great error or discourtesy accompanied by an expression of great regret,to express great regret for something done or said|",
+    "fazhapaa|sorry,apology,apologize,excuse|Adj.,N.,V.,V.,V.|feeling sorrow or sympathy,an admission of error or discourtesy accompanied by an expression of regret,to express regret for something done or said,to make apology for,to forgive entirely or disregard as of trivial import|",
+    "shako|god,god queen|N.|the being perfect in power/wisdom/goodness who is worshipped by Ictuza as ruler and conqueror of the universe|",
+    "fazhop|up|Adv.,Prep.|in or into a higher position or level,used as a function word to indicate motion to or toward or situation at a higher point of|",
+    "fazhup|down|Adv.,Adv.,Prep.|toward or in a lower physical position,to or toward a point away from the speaker or the speaker's point of reference,to a lower point or along/around/through/toward/in/into/on|",
+    "fazhopapa|high|Adj.,Adv.,N.|rising or extending upward a great distance or a distance greater than others of its kind,at or to a high place/altitude/level/degree,a high point or level|",
+    "fazhupapa|low|Adj.,N.|situated or passing below the normal level/surface/base of measurement/the mean elevation,something that is low|",
+    "opapa|more|Adj.,Adv.|greater,to a greater or higher degree|",
+    "upapa|less|Adj.|constituting a more limited number or amount|",
+    "ushko|very|Adv.|to a high degree|",
+    "shap|than|Conj.,Prep.|used as a function word to indicate the second member or the member taken as the point of departure in a comparison expressive of inequality,in comparison with|"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
