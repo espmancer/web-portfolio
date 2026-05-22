@@ -23,6 +23,11 @@ a:visited {
     color:#74c7ec;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 /* Top Banner */
 .topBanner {
     background-color:#4D5060;
