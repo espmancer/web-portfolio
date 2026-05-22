@@ -314,7 +314,13 @@ class IctukV5 extends Dictionary {
     "opapa|more|Adj.,Adv.|greater,to a greater or higher degree|",
     "upapa|less|Adj.|constituting a more limited number or amount|",
     "ushko|very|Adv.|to a high degree|",
-    "shap|than|Conj.,Prep.|used as a function word to indicate the second member or the member taken as the point of departure in a comparison expressive of inequality,in comparison with|"
+    "shap|than|Conj.,Prep.|used as a function word to indicate the second member or the member taken as the point of departure in a comparison expressive of inequality,in comparison with|",
+    "fashofash|somewhat,so-so,normal|Adv.,Adj.,Adj.|in some degree or measure,moderately well,conforming to a type/standard/regular pattern|",
+    "ushkonguho|confident|Adj.|full of conviction",
+    "oouktuzha|foreign,weak|Adj.,Adj.|born in/belonging to/characteristic of some place or country other than the one under consideration,physically/mentally/intellectually deficient|",
+    "paazh|want,desire|V.,N.|to have or feel need,conscious impulse toward something that promises enjoyment or satisfaction in its attainment|",
+    "opa|from|Prep.|used as a function word to indicate a starting point of a physical movement or a starting point in measuring or reckoning or in a statement of limits|",
+    "fazhu|under|Adv.,Prep.|in or into a position below or beneath something,below or beneath so as to be overhung/surmounted/covered/protected/concealed by|"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh'];
