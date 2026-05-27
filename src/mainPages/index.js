@@ -326,7 +326,7 @@ class IctukV5 extends Dictionary {
   thin = ['|', 'zh'];
   wide = [];
   short = ['o', 'f', 'zh', 'u', 'ou', 'sh', 'Qu'];
-  doubles = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu'];
+  doubles = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','Sp'];
 
   constructor(className) {
     super(className);
