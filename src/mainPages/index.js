@@ -323,10 +323,10 @@ class IctukV5 extends Dictionary {
     "fazhu|under|Adv.,Prep.|in or into a position below or beneath something,below or beneath so as to be overhung/surmounted/covered/protected/concealed by|"
   ];
   invisible = ['/', '|'];
-  thin = ['|', 'zh'];
+  thin = ['|', 'zh', 'Ss'];
   wide = [];
   short = ['o', 'f', 'zh', 'u', 'ou', 'sh', 'Qu'];
-  doubles = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','Sp'];
+  doubles = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','Ss'];
 
   constructor(className) {
     super(className);
