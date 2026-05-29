@@ -335,7 +335,7 @@ class IctukV5 extends Dictionary {
     "fazhuku|front|N.,Adj.|the forward part or surface,of/relating to/situated at the front|",
     "fazhoku|back (1)|Adv.,Adj.|in or into the past,being at or in the back|",
     "fazhokupapsho|back (2)|N.|the rear part of the Ictuza body|",
-    "zhu|wing,failure,fail,|N.,N.,V.|one of the movable feathered or membranous paired appendages by means of which a bird/bat/insect is able to fly,lack of success,to be or become absent or inadequate|",
+    "zhu|wing,failure,fail|N.,N.,V.|one of the movable feathered or membranous paired appendages by means of which a bird/bat/insect is able to fly,lack of success,to be or become absent or inadequate|",
     "zhuzh|wings,fly,honor|N.,V.,N.|plural of wing,to move in or pass through the air with wings,respect that is given to someone who is admired|",
     "fazhupapsho|leg|N.|a limb of an animal used especially for supporting the body and for walking",
     "zhupsho|penis,fuck (1)|N.,V.|a male copulatory and erogenous organ,to engage in coitus with|",
