@@ -302,7 +302,7 @@ class IctukV5 extends Dictionary {
     "ukozhku|stupid|Adj.,Adj.|given to unintelligent decisions or acts,acting in an unintelligent or careless manner|",
     "akozhoq|require,owe|V.,V.|to demand as necessary or essential,to be under obligation to render something|",
     "papsho|body|N.,N.|the main/central/principal part,the organized physical substance of an animal or plant either living or dead|",
-    "papshongu|brain,mind|N.|the organ inside the head that controls all body functions of a vertebrate,the element or complex of elements in an individual that feels/perceives/thinks/wills/reasons|",
+    "papshongu|brain,mind|N.,N.|the organ inside the head that controls all body functions of a vertebrate,the element or complex of elements in an individual that feels/perceives/thinks/wills/reasons|",
     "papshopaa|heart,love|N.,N.,N.,V.|a hollow muscular organ of vertebrate animals that by its rhythmic contraction acts as a force pump maintaining the circulation of the blood,strong affection for another arising out of kinship or personal ties,warm attachment/enthusiasm/devotion,to feel great affection for|",
     "paa|like|V.|to feel attraction toward or take pleasure in|",
     "ota|but,exception|Cjn.,Prep.|except for the fact,other than|",
@@ -323,7 +323,7 @@ class IctukV5 extends Dictionary {
     "paazh|want,desire|V.,N.|to have or feel need,conscious impulse toward something that promises enjoyment or satisfaction in its attainment|",
     "opa|from|Prep.|used as a function word to indicate a starting point of a physical movement or a starting point in measuring or reckoning or in a statement of limits|",
     "fazhu|under|Adv.,Prep.|in or into a position below or beneath something,below or beneath so as to be overhung/surmounted/covered/protected/concealed by|",
-    "fazhko|for|Prep.|used as a function word to indicate purpose|",
+    "fazhko|for,because|Prep.,Conj.|used as a function word to indicate purpose,for the reason that|",
     "fazhuu|beside|Prep.|by the side of|",
     "fazhapapshongu|mouth|N.|the natural opening through which food passes into the body of an animal|",
     "asho|eat|V.|to take in through the mouth as food|",
@@ -342,7 +342,12 @@ class IctukV5 extends Dictionary {
     "psho|fuck (2), fucking|Intj.,Adj.,Adv.|expression of anger/contempt/disgust,used to intensify a word,used to intensify a word|",
     "zhuzha|vagina|N.|a canal in a female Ictuza comprised of an ovipositor and ovipore|",
     "faazhupapsho|foot|N.|the terminal part of a leg upon which an individual stands|",
-    "aazhusho|kick|V.|to strike, thrust, or hit with the foot|"
+    "aazhusho|kick|V.|to strike, thrust, or hit with the foot|",
+    "shop|here|Adv.,N.|in or at this place,this place|",
+    "shap|there|Adv.,N.,Pn.|in or at that place,that place,used as a function word to introduce a sentence or clause|",
+    "shafo|away|Adv.,Adj.|from this or that place,distant in space or time|",
+    "opunguho|say|V.|to express in words|",
+    "ngusho|feel|V.,V.|to receive or be able to receive a tactile sensation,to be conscious of an inward impression/state of mind/physical condition|"
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh', 'Ss'];
