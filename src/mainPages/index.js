@@ -295,7 +295,7 @@ class IctukV5 extends Dictionary {
     "akozho|need|N.,V.,V.|a lack of something requisite/desirable/useful,to be necessary,to require|",
     "hapo|have|V.|to hold  maintain (something tangible/intangible) as a possession/privilege/entitlement/responsibility|",
     "sho|this (1)|Pn.|the person/thing that is present  near in place/time/thought that has just been mentioned|",
-    "sha|that|Pn.|the person/thing indicated/mentioned/understood from the situation|",
+    "sha|that|Pn.,Cjn.|the person/thing indicated/mentioned/understood from the situation,—used as a function word to introduce a noun clause that is usually the subject or object of a verb or a predicate nominative|",
     "shou|this (2)|Pn.|the idea/concept that is present  near in place/time/thought that has just been mentioned|",
     "shozh|these|Pn.|the people/things that are present near in place/time/thought that have just been mentioned|",
     "shazh|those (1)|Pn.|the people/things indicated/mentioned/understood from the situation|",
