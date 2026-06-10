@@ -219,6 +219,23 @@ class Dictionary {
     
     return output;
   }
+
+  checkQuestion(id, correctAnswer){
+    const entry = document.getElementById(`entry${id}`).value.toLowerCase;
+    const status = document.getElementById(`status${id}`)
+    const answers = correctAnswer.split('|');
+    let correct;
+    
+    for (let i = 0; i < answers.length; i++){
+      if (entry === answers[i]){
+        status.innerHTML = `<p id="status${id}">Correct!</p>`
+        break;
+      }
+      else {
+        status.innerHTML = `<p id="status${id}">Incorrect!</p>`
+      }
+    }
+  }
 }
 
 class IctukV5 extends Dictionary {
@@ -383,6 +400,9 @@ function updateResult(query = ""){
   conlang.updateResult(query);
 }
 
+function checkQuestion(id, correctAnswer){
+  conlang.checkQuestion(id, correctAnswer);
+}
 
 window.dictionaryInit = function(className) {
   conlang = classMap.get(className);
