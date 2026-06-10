@@ -221,7 +221,7 @@ class Dictionary {
   }
 
   checkQuestion(id, correctAnswer){
-    const entry = document.getElementById(`entry${id}`).value.toLowerCase;
+    const entry = document.getElementById(`entry${id}`).value.toLowerCase();
     const status = document.getElementById(`status${id}`)
     const answers = correctAnswer.split('|');
     let correct;
