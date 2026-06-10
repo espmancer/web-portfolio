@@ -364,7 +364,9 @@ class IctukV5 extends Dictionary {
     "shap|there|Adv.,N.,Pn.|in or at that place,that place,used as a function word to introduce a sentence or clause|",
     "shafo|away|Adv.,Adj.|from this or that place,distant in space or time|",
     "opunguho|say|V.|to express in words|",
-    "ngusho|feel|V.,V.|to receive or be able to receive a tactile sensation,to be conscious of an inward impression/state of mind/physical condition|"
+    "ngusho|feel|V.,V.|to receive or be able to receive a tactile sensation,to be conscious of an inward impression/state of mind/physical condition|",
+    "oa|but,except|Cjn.,Cjn.,Prep.|except for the fact,with this exception,with the exception of|"
+  
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh', 'Ss'];
