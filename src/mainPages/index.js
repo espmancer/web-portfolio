@@ -401,9 +401,72 @@ let conlang;
 function updateResult(query = ""){
   conlang.updateResult(query);
 }
-
 function checkQuestion(id, correctAnswer){
   conlang.checkQuestion(id, correctAnswer);
+}
+
+async function copyToClipboard() {
+    const container = document.getElementById("drawAsync");
+    
+	if (!container) throw new Error("drawAsync not found");
+
+    const svg = container.querySelector("svg");
+    
+	if (!svg) throw new Error("No SVG inside drawAsync");
+
+    // Clone svg
+    const clonedSvg = svg.cloneNode(true);
+    // Ensure defs are inside cloned SVG
+    const defs = document.querySelector("svg defs");
+    
+	if (defs && !clonedSvg.querySelector("defs")) {
+        clonedSvg.prepend(defs.cloneNode(true));
+    }
+
+    // Ensure namespaces
+    clonedSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    clonedSvg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+	
+    // Serialize
+    const serializer = new XMLSerializer();
+    const svgString = serializer.serializeToString(clonedSvg);
+    // Blob URL
+    const svgBlob = new Blob([svgString], { type: "image/svg+xml;charset=utf-8" });
+    const url = URL.createObjectURL(svgBlob);
+    // Load image
+    const img = new Image();
+
+    await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+        img.src = url;
+    });
+
+    // Canvas sizing
+    const vb = svg.viewBox?.baseVal;
+    const width = vb?.width || svg.clientWidth || 300;
+    const height = vb?.height || svg.clientHeight || 150;
+    const canvas = document.createElement("canvas");
+    
+	canvas.width = width;
+    canvas.height = height;
+
+    const ctx = canvas.getContext("2d");
+	
+    ctx.drawImage(img, 0, 0, width, height);
+    URL.revokeObjectURL(url);
+
+    // Export as PNG
+    const pngBlob = await new Promise(resolve => {
+        canvas.toBlob(resolve, "image/png");
+    });
+
+    if (!pngBlob) throw new Error("PNG conversion failed");
+
+	// Write to clipboard
+    await navigator.clipboard.write([
+        new ClipboardItem({ "image/png": pngBlob })
+    ]);
 }
 
 window.dictionaryInit = function(className) {
