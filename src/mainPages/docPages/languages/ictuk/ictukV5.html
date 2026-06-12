@@ -133,11 +133,11 @@
             <g id="Qu">
                 <line x1="50" y1="0" x2="0" y2="50"/>
             </g>
-            <g id="S">
+            <g id="S/">
                 <line x1="50" y1="0" x2="0" y2="100"/>
 		        <line x1="50" y1="0" x2="50" y2="100"/>
             </g>
-            <g id="Ss">
+            <g id="S|">
                 <line x1="0" y1="0" x2="0" y2="100"/>
             </g>
         </defs>
@@ -1365,15 +1365,11 @@
                 This is not a translator, and the phrases will look different to how they're pronounced and actually written.
             </li>
             <li>
-                Spaces between words don't mean anything, and are more for readability.
+                Use spaces to seperate lines.
                 <br>"0kofatuf. 1////fash -1////ta"
             </li>
             <li>
                 Numbers represent the line that the glyphs are on, relative to the <a href="#primaryLine">primary line</a> at 0.
-                You must start your phrase with what's on the primary line. 
-                Anything above the primary line will be greater than 0, and anything below will be less than zero. 
-                I'm planning to fix it, but any negative numbers currently need to be placed at the end of the phrase. 
-                Until it gets to the next number, all glyphs assume the most recent line as the one they will be on.
                 <br>"<strong><i>0</i></strong>kofatuf. <strong><i>1</i></strong>////fash -1////ta"
             </li>
             <li>
@@ -1388,6 +1384,13 @@
                 "0kofatuf. 1<strong><i>////</i></strong>fash -1<strong><i>////</i></strong>ta"
             </li>
             <li>
+                Normal and thin spacer glyphs are represented as S/ and S| respectively. 
+            </li>
+            <li>
+                Currently, glyphs have specific spacing, even if there is room to squeeze them closer. 
+                Eventually, I plan for it to automatically compress.
+            </li>
+            <li>
                 Colors are an optional feature with 2 default colors: <i>highlighted</i> and normal. 
                 I made this primarily for examples where I needed to highlight certain glyphs.
                 <br>Normal is indicated with "#n", and highlighted is indicated with "#h".
@@ -1399,9 +1402,6 @@
             </li>
             <li>
                 All punctuation can be typed as they are in English, except for the quotation mark, which is represented with "Qu".
-            </li>
-            <li>
-                The short and long spacer glyphs are "Ss" and "S" respectively.
             </li>
             <li>
                 This is still a work in progress.

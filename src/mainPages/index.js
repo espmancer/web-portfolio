@@ -12,8 +12,7 @@ class Dictionary {
   invisible;
   thin;
   wide;
-  short;
-  doubles;
+  double;
   colors;
   svgWidth;
   svgHeight;
@@ -115,101 +114,89 @@ class Dictionary {
     }
   }
 
-  // Parse the numbers in the phrase and return an array of said numbers
-  getLineNumbers(phrase = "") {
-    let lineNumbers = [];
-
-    for (let i = 0; i < phrase.length; i++){
-        if (!isNaN(phrase[i])){
-            lineNumbers.push(parseInt(phrase[i]));
-        }
-        else if (phrase[i] === '-'){
-            i++;
-            lineNumbers.push(parseInt(phrase[i]) * -1);
-        }
-    }
-
-    if (phrase.length === 0 || lineNumbers.length === 0){
-      lineNumbers = [0];
-    }	
-
-    return lineNumbers;
-  }
-
   // Parse the full phrase and tokenize each relevant character into an array, and return that array
   tokenize(phrase){
-    let tokens = [];
-    phrase = phrase.replaceAll(' ', '');
-    let lineNumbers = this.getLineNumbers(phrase);
-    //Get highest line number
-    const highestLine = Math.max(...lineNumbers);
-    // For every non number, tokenize
-    let lineNumberIndex = 0;
-    let currentX = 0;
-	  let currentColor = this.colors.get("#n");
-
-    for (let i = 0; i < phrase.length; i++){
-        let currentLine = lineNumbers[lineNumberIndex];
-        let char = phrase[i];
+    //Lines and line numbers
+    const lineNumbers = (phrase.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g) || [])
+    .map(Number);
+    const min = Math.min(...lineNumbers);
+    const shiftedLineNumbers = lineNumbers.map(n =>
+        (Number.isInteger(n) ? n : n + 0.1) * -1
+    );
+    const ys = shiftedLineNumbers.map(n => n * 125);
+    const minY = Math.min(...ys);
+    const maxY = Math.max(...ys);
+    const noColorLines = phrase.replace(/[-+]?(?:\d*\.\d+|\d+\.?\d*)|#(\p{L})/gu, "").split(' ');
+    const lines = phrase.replace(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g, "").split(' ');
+    //Size and position vars
+    this.svgHeight = lineNumbers.length * 125;
+    this.viewboxYShift = minY;
+    this.svgHeight = maxY - minY + 150;
+    const longestLineLength = Math.max(...noColorLines.map(str => str.length));
+    this.svgWidth = longestLineLength * 75;
+    let currentX;
+    //Tokens and types
+    const tokens = new Array();
+    let currentColor = this.colors.get('#n');
+    
+    for (let i = 0; i < shiftedLineNumbers.length; i++){
+        currentX = 0;
         
-		// Check for color token
-        if (phrase[i] === '#') {
-            const colorToken = phrase.slice(i, i + 2);
-        
-            if (this.colors.has(colorToken)) {
-                currentColor = this.colors.get(colorToken);
-                i++;
-                continue;
+        for (let x = 0; x < lines[i].length; x++){
+          let glyph = lines[i][x];
+          const tempDouble = glyph + lines[i][x + 1];
+          
+          //Check for color tags
+          const isColor = this.colors.has(tempDouble);
+          if (isColor){
+              currentColor = this.colors.get(tempDouble);
+              x += isColor;
+              continue;
+          }
+          else { 
+            //Check for doubles
+            const isDouble = this.double.includes(tempDouble)
+            glyph = isDouble ? tempDouble : glyph;
+            x += isDouble;
+            //Define rest of flags
+            const isInvisible = this.invisible.includes(glyph);
+            const isWide = this.wide.includes(glyph);
+            const isThin = this.thin.includes(glyph);
+            
+            if (!isInvisible){
+                tokens.push({
+                    name: glyph,
+                    x: currentX,
+                    y: shiftedLineNumbers[i] * 125,
+                    color: currentColor
+                })
             }
+            
+            const width = isThin ? 25 : isWide ? 75 : 50;
+            currentX += 25 + width;
         }
-        
-        // Check for doubles
-        const pair = phrase.slice(i, i + 2);
-            if (this.doubles.includes(pair)) {
-            char = pair;
-            i++;
-        }
-        
-        // Check token
-        if (!/[\d-]/.test(phrase[i])){
-            const isThin = this.thin.includes(char);
-	    	const isWide = this.wide.includes(char);
-            const isShort = this.short.includes(char);
-            let token = {
-                name: "",
-                line: currentLine,
-                x: currentX,
-                y: 125 * (highestLine - currentLine) + (isShort && currentLine > 0 ? 50 : 0),
-				color: currentColor
-            }
-	    let xShift = isThin ? 25 : isWide ? 125 : 75;
-            currentX += xShift;
-	    this.svgWidth += xShift;
-                
-            // Check if invisible glyph
-            if (!this.invisible.includes(char)){
-                token.name = char;
-                tokens.push(token);
-            }
-        }
-        else if (/[\d]/.test(char) && i !== 0){
-            lineNumberIndex++;
-            currentX = 0;
-        }
+      }
     }
-    // Set height and width of screen
-    this.svgHeight = 125 * lineNumbers.length;
-         
+    //Debug
+    // console.log("Raw Entry:", phrase);
+    // console.log("Colorless Lines:", noColorLines);
+    // console.log("Lines:", lines);
+    // console.log("Line Numbers:", lineNumbers);
+    // console.log("Shifted Line Numbers:", shiftedLineNumbers);
+    // console.log("SVG Height:", this.svgHeight);
+    // console.log("SVG Width:", this.svgWidth);
+    
     return tokens;
-  }
+}
 
   //Generate and append the svg code for the phrase provided
   draw(phrase){
-	  this.svgWidth = 0;
+	this.svgWidth = 0;
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
-    let output = `<svg width="${this.svgWidth / 1.5}" height="${this.svgHeight / 1.5}"
-    viewBox="-12.5 -12.5 ${this.svgWidth} ${this.svgHeight}"><g stroke-width="10" stroke-linecap="square" fill="none">`
+    const sizeFactor = 0.5;
+    let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
+    viewBox="-12.5 ${this.viewboxYShift} ${this.svgWidth} ${this.svgHeight -25}"><g stroke-width="10" stroke-linecap="square" fill="none">`
     
     for (const token of tokens){
         output += `<use href="#${token.name}" transform="translate(${token.x}, ${token.y})" stroke="${token.color}"/>`
@@ -369,10 +356,9 @@ class IctukV5 extends Dictionary {
   
   ];
   invisible = ['/', '|'];
-  thin = ['|', 'zh', 'Ss'];
+  thin = ['|', 'zh', 'S|'];
   wide = [];
-  short = ['o', 'f', 'zh', 'u', 'ou', 'sh', 'Qu'];
-  doubles = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','Ss'];
+  doubles = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','S/', 'S|'];
 
   constructor(className) {
     super(className);
