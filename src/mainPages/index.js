@@ -117,7 +117,7 @@ class Dictionary {
   // Parse the full phrase and tokenize each relevant character into an array, and return that array
   tokenize(phrase){
     //Lines and line numbers
-    const lineNumbers = (phrase.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g) || [])
+    const lineNumbers = (phrase.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g) || [0])
     .map(Number);
     const min = Math.min(...lineNumbers);
     const shiftedLineNumbers = lineNumbers.map(n =>
@@ -194,8 +194,8 @@ class Dictionary {
 	this.svgWidth = 0;
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
-    const sizeFactor = 0.5;
-    let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
+    const sizeFactor = 0.75;
+    let output = `<svg width="${this.svgWidth * sizeFactor}" height="${this.svgHeight * sizeFactor}"
     viewBox="-12.5 ${this.viewboxYShift} ${this.svgWidth} ${this.svgHeight -25}"><g stroke-width="10" stroke-linecap="square" fill="none">`
     
     for (const token of tokens){
