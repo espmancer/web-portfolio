@@ -172,7 +172,7 @@ class Dictionary {
                 })
             }
             
-            const width = isThin ? 25 : isWide ? 75 : 50;
+            const width = isThin ? 0 : isWide ? 75 : 50;
             currentX += 25 + width;
         }
       }
@@ -194,7 +194,7 @@ class Dictionary {
 	this.svgWidth = 0;
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
-    const sizeFactor = 0.75;
+    const sizeFactor = 0.50;
     let output = `<svg width="${this.svgWidth * sizeFactor}" height="${this.svgHeight * sizeFactor}"
     viewBox="-12.5 ${this.viewboxYShift} ${this.svgWidth} ${this.svgHeight -25}"><g stroke-width="10" stroke-linecap="square" fill="none">`
     
@@ -211,7 +211,6 @@ class Dictionary {
     const entry = document.getElementById(`entry${id}`).value.toLowerCase();
     const status = document.getElementById(`status${id}`)
     const answers = correctAnswer.split('|');
-    let correct;
     
     for (let i = 0; i < answers.length; i++){
       if (entry === answers[i]){
