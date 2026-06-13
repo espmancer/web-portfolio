@@ -351,8 +351,9 @@ class IctukV5 extends Dictionary {
     "shafo|away|Adv.,Adj.|from this or that place,distant in space or time|",
     "opunguho|say|V.|to express in words|",
     "ngusho|feel|V.,V.|to receive or be able to receive a tactile sensation,to be conscious of an inward impression/state of mind/physical condition|",
-    "oa|but,except|Cjn.,Cjn.,Prep.|except for the fact,with this exception,with the exception of|"
-  
+    "oa|but,except|Cjn.,Cjn.,Prep.|except for the fact,with this exception,with the exception of|",
+	"nguhoqosh|understand|V.|to grasp the meaning of|"
+
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh', 'S|'];
