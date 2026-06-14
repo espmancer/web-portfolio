@@ -340,7 +340,7 @@ class IctukV5 extends Dictionary {
     "fazhokupapsho|back (2)|N.|the rear part of the Ictuza body|",
     "zhu|wing,failure,fail|N.,N.,V.|one of the movable feathered or membranous paired appendages by means of which a bird/bat/insect is able to fly,lack of success,to be or become absent or inadequate|",
     "zhuzh|wings,fly,honor|N.,V.,N.|plural of wing,to move in or pass through the air with wings,respect that is given to someone who is admired|",
-    "fazhupapsho|leg|N.|a limb of an animal used especially for supporting the body and for walking",
+    "fazhupapsho|leg|N.|a limb of an animal used especially for supporting the body and for walking|",
     "zhupsho|penis,fuck (1)|N.,V.|a male copulatory and erogenous organ,to engage in coitus with|",
     "psho|fuck (2), fucking|Intj.,Adj.,Adv.|expression of anger/contempt/disgust,used to intensify a word,used to intensify a word|",
     "zhuzha|vagina|N.|a canal in a female Ictuza comprised of an ovipositor and ovipore|",
@@ -353,7 +353,30 @@ class IctukV5 extends Dictionary {
     "ngusho|feel|V.,V.|to receive or be able to receive a tactile sensation,to be conscious of an inward impression/state of mind/physical condition|",
     "oa|but,except|Cjn.,Cjn.,Prep.|except for the fact,with this exception,with the exception of|",
 	"nguhoqosh|understand|V.|to grasp the meaning of|"
-
+    /*
+      WORDS TO WRITE
+      "ngupapa|happy
+      "ngupapau|hopeful
+      "ngupapaa|excited
+      "ngupo|sad
+      "nguposho|melancholic
+      "nguqa|surprised
+      "ngub|numb
+      "nguosha|neutral
+      "nguhoshazh|angry
+      "nguhoshazhko|furious
+      "nguhongu|curious
+      "nguhob|doubtful
+      "akozhat|disgust
+      "akozhoo|guilt
+      "akozhqa|stressed
+      "akozhqashta|anxious
+      "akozhto|embarassed
+      "akozhob|powerless
+      "opupapshongu|head
+      "fazhukupapsho|chest
+      "fazhokupapsho|back
+    */
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh', 'S|'];
