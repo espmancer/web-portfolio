@@ -121,7 +121,7 @@ class Dictionary {
     .map(Number);
     const min = Math.min(...lineNumbers);
     const shiftedLineNumbers = lineNumbers.map(n =>
-        (Number.isInteger(n) ? n : n + 0.1) * -1
+        (Number.isInteger(n) ? n : n + n > 0 ? 0.55 : -0.55) * -1
     );
     const ys = shiftedLineNumbers.map(n => n * 125);
     const minY = Math.min(...ys);
@@ -158,6 +158,10 @@ class Dictionary {
             const isDouble = this.double.includes(tempDouble)
             glyph = isDouble ? tempDouble : glyph;
             x += isDouble;
+            //Check for horizontal shifter
+            const horizontalShift = glyph === '<' ? 125 : 0;
+            currentX -= horizontalShift;
+            this.svgWidth -= horizontalShift;
             //Define rest of flags
             const isInvisible = this.invisible.includes(glyph);
             const isWide = this.wide.includes(glyph);
@@ -191,7 +195,7 @@ class Dictionary {
 
   //Generate and append the svg code for the phrase provided
   draw(phrase){
-	this.svgWidth = 0;
+	  this.svgWidth = 0;
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
     const sizeFactor = 0.50;
@@ -377,7 +381,7 @@ class IctukV5 extends Dictionary {
 
     // TODO Add sounds for lines 356-376
   ];
-  invisible = ['/', '|'];
+  invisible = ['/', '|', '<'];
   thin = ['|', 'zh', 'S|'];
   wide = [];
   double = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','S/', 'S|'];

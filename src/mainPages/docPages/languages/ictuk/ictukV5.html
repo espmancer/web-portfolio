@@ -1200,6 +1200,11 @@
                 <br>"<strong><i>0</i></strong>kofatuf. <strong><i>.5</i></strong>////fash -1////ta"
             </li>
             <li>
+                Use &lt; to shift characters one glyph left where empty space can be filled.
+                <br>
+                "0k<strong><i>&lt;</i></strong>ofab<strong><i>&lt;</i></strong>t 1////fash"
+            </li>
+            <li>
                 / and | are both considered glyph spaces. They are invisible in the render, but they space out other glyphs.
                 This is important for glyphs on other lines, as if these spaces aren't used, 
                 all of the words outside of the primary line will be above the first word.
@@ -1234,7 +1239,7 @@
                 This is still a work in progress.
             </li>
         </ul>
-        <input id="userParser" type="text">
+        <input id="userParser" style="width: 300px;" type="text">
         <br>
         <button onclick="copyToClipboard();">Copy</button>
     </p>
