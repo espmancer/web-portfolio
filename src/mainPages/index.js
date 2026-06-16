@@ -159,9 +159,10 @@ class Dictionary {
             glyph = isDouble ? tempDouble : glyph;
             x += isDouble;
             //Check for horizontal shifter
-            const horizontalShift = glyph === '<' ? 125 : 0;
+            const isShifter = glyph === '<'; 
+            const horizontalShift = isShifter ? 125 : 0;
             currentX -= horizontalShift;
-            this.svgWidth -= horizontalShift;
+            this.svgWidth -= isShifter ? horizontalShift - 87.5 : 0; // 75 + 12.5 px spacing
             //Define rest of flags
             const isInvisible = this.invisible.includes(glyph);
             const isWide = this.wide.includes(glyph);
