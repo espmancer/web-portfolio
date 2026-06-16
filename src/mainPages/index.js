@@ -120,8 +120,8 @@ class Dictionary {
     const lineNumbers = (phrase.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g) || [0])
     .map(Number);
     const min = Math.min(...lineNumbers);
-    const shiftedLineNumbers = lineNumbers.map(n =>
-        (Number.isInteger(n) ? n : n + n > 0 ? 0.55 : -0.55) * -1
+    const shiftedLineNumbers = lineNumbers.map(n => 
+        (Number.isInteger(n) ? n : n + (n > 0 ? 0.05 : -0.05)) * -1
     );
     const ys = shiftedLineNumbers.map(n => n * 125);
     const minY = Math.min(...ys);
@@ -133,7 +133,7 @@ class Dictionary {
     this.viewboxYShift = minY;
     this.svgHeight = maxY - minY + 150;
     const longestLineLength = Math.max(...noColorLines.map(str => str.length));
-    this.svgWidth = longestLineLength * 75;
+    this.svgWidth = 62.5 * longestLineLength; //62.5 is glyph width + 12.5 px of space
     let currentX;
     //Tokens and types
     const tokens = new Array();
