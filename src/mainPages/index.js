@@ -340,7 +340,7 @@ class IctukV5 extends Dictionary {
     "fazhokupapsho|back (2)|N.|the rear part of the Ictuza body|",
     "zhu|wing,failure,fail|N.,N.,V.|one of the movable feathered or membranous paired appendages by means of which a bird/bat/insect is able to fly,lack of success,to be or become absent or inadequate|",
     "zhuzh|wings,fly,honor|N.,V.,N.|plural of wing,to move in or pass through the air with wings,respect that is given to someone who is admired|",
-    "fazhupapsho|leg|N.|a limb of an animal used especially for supporting the body and for walking|",
+    "fazhupapsho|leg|N.|a limb of  an animal used especially for supporting the body and for walking|",
     "zhupsho|penis,fuck (1)|N.,V.|a male copulatory and erogenous organ,to engage in coitus with|",
     "psho|fuck (2), fucking|Intj.,Adj.,Adv.|expression of anger/contempt/disgust,used to intensify a word,used to intensify a word|",
     "zhuzha|vagina|N.|a canal in a female Ictuza comprised of an ovipositor and ovipore|",
@@ -352,31 +352,30 @@ class IctukV5 extends Dictionary {
     "opunguho|say|V.|to express in words|",
     "ngusho|feel|V.,V.|to receive or be able to receive a tactile sensation,to be conscious of an inward impression/state of mind/physical condition|",
     "oa|but,except|Cjn.,Cjn.,Prep.|except for the fact,with this exception,with the exception of|",
-	"nguhoqosh|understand|V.|to grasp the meaning of|"
-    /*
-      WORDS TO WRITE
-      "ngupapa|happy
-      "ngupapau|hopeful
-      "ngupapaa|excited
-      "ngupo|sad
-      "nguposho|melancholic
-      "nguqa|surprised
-      "ngub|numb
-      "nguosha|neutral
-      "nguhoshazh|angry
-      "nguhoshazhko|furious
-      "nguhongu|curious
-      "nguhob|doubtful
-      "akozhat|disgust
-      "akozhoo|guilt
-      "akozhqa|stressed
-      "akozhqashta|anxious
-      "akozhto|embarassed
-      "akozhob|powerless
-      "opupapshongu|head
-      "fazhukupapsho|chest
-      "fazhokupapsho|back
-    */
+	  "nguhoqosh|understand|V.|to grasp the meaning of|",
+    "ngupapa|happy,happiness|Adj.,N.|enjoying or characterized by well-being and contentment,a state of well-being and contentment|",
+    "ngupapau|hopeful,hope|Adj.,N.|having qualities which inspire hope,a feeling of expectation and desire for a particular thing to happen|",
+    "ngupapaa|excited,excitement|Adj.,N.|having/showing/or characterized by a heightened state of energy/enthusiasm/eagerness,the state of being excited|",
+    "ngupo|sad,sadness|Adj.,N.|affected with or expressive of grief or unhappiness,the quality or state of being sad|",
+    "nguposho|melancholic,melancholy|Adj.,N.|of/relating to/subject to melancholy,depression of spirits|",
+    "nguqa|surprised,surprise|Adj.,N.|feeling or showing surprise because of something unexpected,the feeling caused by something unexpected or unusual|",
+    "ngub|numb,numbness|Adj.,Adj.,V.,N.|unable to think/feel/react normally because of something that shocks or upsets you,unable to feel anything in a particular part of your body,to make (someone or something) numb,a lack of emotion or emotional expressiveness|",
+    "nguosha|neutral,neutrality|Adj.,N.|not decided or pronounced as to characteristics,the quality or state of being neutral|",
+    "nguhoshazh|angry,anger|Adj.,N.|feeling or showing anger,a strong feeling of displeasure and usually of antagonism|",
+    "nguhoshazhko|furious,fury|Adj.,N.|exhibiting or goaded by anger,intense/disordered/often destructive rage|",
+    "nguhongu|curious,curiosity|Adj.,N.|marked by desire to investigate and learn,desire to know|",
+    "nguhob|doubtful,doubtfulness|Adj.,N.|lacking a definite opinion/conviction/determination,the quality or state of being doubtful|",
+    "akozhat|disgusted,gross,disgust|Adj.,Adj.,N.,V.|disturbed physically or mentally by something distasteful,glaringly noticeable usually because of inexcusable badness or objectionableness,marked aversion aroused by something highly distasteful,to provoke to loathing/repugnance/aversion|",
+    "akozhoo|guilty,guilt|Adj.,Adj.,N.|aware of or suffering from guilt,justly chargeable with or responsible for a usually grave breach of conduct or a crime,feelings of deserving blame especially for imagined offenses or from a sense of inadequacy|",
+    "akozhqa|stressed,stress|Adj.,N.|subjected to or affected by stress,a physical/chemical/emotional factor that causes bodily or mental tension|",
+    "akozhqashta|anxious,anxiety|Adj.,N.|characterized by extreme uneasiness of mind or brooding fear about some contingency,apprehensive uneasiness or nervousness usually over an impending or anticipated misfortune|",
+    "akozhto|embarassed,embarassment|Adj.,N.|feeling or showing a state of self-conscious confusion and distress,the state of being embarrassed|",
+    "akozhob|powerless,powerlessness|Adj.,N.|devoid of strength or resources,the quality or state of being powerless|",
+    "opupapshongu|head|N.|the upper or anterior division of the Ictuza body that contains the brain/the chief sense organs/the mouth/mandibles/antannae|",
+    "fazhukupapsho|chest|N.|the part of the Ictuza body enclosed by the ribs and sternum|",
+    "fazhuouk|almost|very nearly but not exactly or entirely|"
+
+    // TODO Add sounds for lines 356-376
   ];
   invisible = ['/', '|'];
   thin = ['|', 'zh', 'S|'];
