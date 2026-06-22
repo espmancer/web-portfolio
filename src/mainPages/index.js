@@ -122,7 +122,7 @@ class Dictionary {
     const tokens = new Array();
     //Seperate numbers and letters
     const phrases = phrase.split(' ').map(n => ({
-        lineNumber: n.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g)[0],
+        lineNumber: n.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g)?.[0] ?? '0',
         line: n.replace(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g, "")
     }));
     const highestLine = Math.max(...phrases.map(n => n.lineNumber));
@@ -131,63 +131,78 @@ class Dictionary {
     const longestLineLength = Math.max(...phrases.map(n => n.line.length))
     
     for (phrase of phrases){
-        const line = phrase.line;
-        let currentX = 0;
-        let currentY = (highestLine - phrase.lineNumber) * 125;
-        let nextY = 0;
-        let prevCompressed = false;
+      const line = phrase.line;
+      const lineNumber = phrase.lineNumber;
+      let currentX = 0;
+      let currentY = (highestLine - lineNumber) * 125;
+      let nextY = 0;
+      let prevCompressed = false;
+      
+      for (let i = 0; i < line.length; i++){
+        //Capture glyphs
+        let previousGlyph = line[i-1];
+        let currentGlyph = line[i];
+        let nextGlyph = line[i+1];
+        let advance = 75;
+        //Check for doubles
+        const tempDouble = currentGlyph + (nextGlyph ?? "");
+        const isDouble = this.double.includes(tempDouble);
         
-        for (let i = 0; i < line.length; i++){
-            let previousGlyph = line[i-1];
-            let currentGlyph = line[i];
-            let nextGlyph = line[i+1];
-            let advance = 75;
-            //Check for doubles
-            const tempDouble = currentGlyph + (nextGlyph ?? "");
-            
-            if (this.double.includes(tempDouble)){
-                currentGlyph = tempDouble;
-                i++;
-                nextGlyph = line[i+1];
-            }
-            //Check for if current is thin
-            if (this.thin.includes(currentGlyph)){
-                advance = 25;
-            }
-    
-            //Check for if current is topThin and next bottomThin or short
-            let compressed = false;
-            let glyphY = currentY + nextY;
-            nextY = 0;
-            
-            if (this.topThin.includes(currentGlyph) && (this.bottomThin.includes(nextGlyph) || this.short.includes(nextGlyph))){
-                advance = 25;
-                compressed = true;
-            }
-            //Check for if current and next are short, don't advance X and lower Y of next
-            if (!prevCompressed && this.short.includes(currentGlyph) && this.short.includes(nextGlyph)){
-                nextY += 75;
-                advance = 0;
-                compressed = true;
-            }
-            //Check if not invisible and push token
-            if (!this.invisible.includes(currentGlyph)){
-                tokens.push({
-                    name: currentGlyph,
-                    x: currentX,
-                    y: glyphY,
-                    color: "#bac2de"
-                });
-            }
-            
-            prevCompressed = compressed;
-            //Advance X
-            currentX += advance;
-            
-            if (line.length === longestLineLength){
-                this.svgWidth = currentX;
-            }
+        if (isDouble){
+            currentGlyph = tempDouble;
+            i++;
+            nextGlyph = line[i+1];
         }
+
+        //Flags
+        const isThin = this.thin.includes(currentGlyph);
+        const isTopThin = this.topThin.includes(currentGlyph);
+        const isShort = this.short.includes(currentGlyph);
+        const isInvisible = this.invisible.includes(currentGlyph);
+        const isBottomThin = this.bottomThin.includes(currentGlyph);
+        const isNextBottomThin = this.bottomThin.includes(nextGlyph);
+        const isNextShort = this.short.includes(nextGlyph);
+        
+        advance = isThin ? 25 : 75;
+  
+        //Check for if current is topThin and next is bottomThin or short
+        let compressed = false;
+        let glyphY = currentY + nextY;
+        nextY = 0;
+          
+        if (isTopThin && (isNextBottomThin || isNextShort)){
+          advance = 25;
+          compressed = true;
+        }
+        if (isBottomThin && isNextShort){
+          nextY += 50;
+          advance = 25;
+          compressed = true;
+        }
+        if (!prevCompressed && isShort && isNextShort){
+            nextY += 75;
+            advance = 0;
+            compressed = true;
+
+            //TODO: fix upper level short stacked glyphs
+        }
+        if (!isInvisible){
+            tokens.push({
+                name: currentGlyph,
+                x: currentX,
+                y: glyphY,
+                color: "#bac2de"
+            });
+        }
+          
+        prevCompressed = compressed;
+        //Advance X
+        currentX += advance;
+        
+        if (line.length === longestLineLength){
+            this.svgWidth = currentX;
+        }
+      }
     }
     
     return tokens;
@@ -198,8 +213,9 @@ class Dictionary {
     this.svgWidth = 0;
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
+    const sizeFactor = .75;
     let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
-    viewBox="-12.5 -12.5 ${this.svgWidth + 25} ${this.svgHeight + 25}"><g stroke-width="10" stroke-linecap="square" fill="none">`;
+    viewBox="-12.5 -12.5 ${this.svgWidth + 25} ${this.svgHeight + 25}"><g stroke-width="10" stroke-linecap="square" fill="none" transform="scale(${sizeFactor})">`;
 
     for (const token of tokens){
         output += `<use href="#${token.name}" transform="translate(${token.x}, ${token.y})" stroke="${token.color}"/>`;
@@ -381,9 +397,9 @@ class IctukV5 extends Dictionary {
     // TODO Add sounds for lines 356-376
   ];
   invisible = ['/', '|', '<'];
-  topThin = ['k','b','a']
+  topThin = ['k','b']
   thin = ['|', 'zh', 'S|'];
-  bottomThin = ['p','ng','mb','t'];
+  bottomThin = ['p','ng'];
   short = ['zh','u','o','sh','ou','f'];
   wide = [];
   double = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','S/', 'S|'];
