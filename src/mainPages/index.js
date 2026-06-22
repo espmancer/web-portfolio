@@ -10,7 +10,10 @@ class Dictionary {
   rawEntries;
   className;
   invisible;
+  topThin;
   thin;
+  bottomThin;
+  short;
   wide;
   double;
   colors;
@@ -116,99 +119,94 @@ class Dictionary {
 
   // Parse the full phrase and tokenize each relevant character into an array, and return that array
   tokenize(phrase){
-    //Lines and line numbers
-    const lineNumbers = (phrase.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g) || [0])
-    .map(Number);
-    const min = Math.min(...lineNumbers);
-    const shiftedLineNumbers = lineNumbers.map(n => 
-        (Number.isInteger(n) ? n : n + (n > 0 ? 0.05 : -0.05)) * -1
-    );
-    const ys = shiftedLineNumbers.map(n => n * 125);
-    const minY = Math.min(...ys);
-    const maxY = Math.max(...ys);
-    const noColorLines = phrase.replace(/[-+]?(?:\d*\.\d+|\d+\.?\d*)|#(\p{L})/gu, "").split(' ');
-    const lines = phrase.replace(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g, "").split(' ');
-    //Size and position vars
-    this.svgHeight = lineNumbers.length * 125;
-    this.viewboxYShift = minY;
-    this.svgHeight = maxY - minY + 150;
-    const longestLineLength = Math.max(...noColorLines.map(str => str.length));
-    this.svgWidth = 62.5 * longestLineLength; //62.5 is glyph width + 12.5 px of space
-    let currentX;
-    //Tokens and types
     const tokens = new Array();
-    let currentColor = this.colors.get('#n');
+    //Seperate numbers and letters
+    const phrases = phrase.split(' ').map(n => ({
+        lineNumber: n.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g)[0],
+        line: n.replace(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/g, "")
+    }));
+    const highestLine = Math.max(...phrases.map(n => n.lineNumber));
+    const lowestLine = Math.min(...phrases.map(p => p.lineNumber));
+    this.svgHeight = ((highestLine - lowestLine) + 1) * 125;
+    const longestLineLength = Math.max(...phrases.map(n => n.line.length))
     
-    for (let i = 0; i < shiftedLineNumbers.length; i++){
-        currentX = 0;
+    for (phrase of phrases){
+        const line = phrase.line;
+        let currentX = 0;
+        let currentY = (highestLine - phrase.lineNumber) * 125;
+        let nextY = 0;
+        let prevCompressed = false;
         
-        for (let x = 0; x < lines[i].length; x++){
-          let glyph = lines[i][x];
-          const tempDouble = glyph + lines[i][x + 1];
-          
-          //Check for color tags
-          const isColor = this.colors.has(tempDouble);
-          if (isColor){
-              currentColor = this.colors.get(tempDouble);
-              x += isColor;
-              continue;
-          }
-          else { 
+        for (let i = 0; i < line.length; i++){
+            let previousGlyph = line[i-1];
+            let currentGlyph = line[i];
+            let nextGlyph = line[i+1];
+            let advance = 75;
             //Check for doubles
-            const isDouble = this.double.includes(tempDouble)
-            glyph = isDouble ? tempDouble : glyph;
-            x += isDouble;
-            //Check for horizontal shifter
-            const isShifter = glyph === '<'; 
-            const horizontalShift = isShifter ? 125 : 0;
-            currentX -= horizontalShift;
-            this.svgWidth -= isShifter ? horizontalShift - 87.5 : 0; // 75 + 12.5 px spacing
-            //Define rest of flags
-            const isInvisible = this.invisible.includes(glyph);
-            const isWide = this.wide.includes(glyph);
-            const isThin = this.thin.includes(glyph);
+            const tempDouble = currentGlyph + (nextGlyph ?? "");
             
-            if (!isInvisible){
+            if (this.double.includes(tempDouble)){
+                currentGlyph = tempDouble;
+                i++;
+                nextGlyph = line[i+1];
+            }
+            //Check for if current is thin
+            if (this.thin.includes(currentGlyph)){
+                advance = 25;
+            }
+    
+            //Check for if current is topThin and next bottomThin or short
+            let compressed = false;
+            let glyphY = currentY + nextY;
+            nextY = 0;
+            
+            if (this.topThin.includes(currentGlyph) && (this.bottomThin.includes(nextGlyph) || this.short.includes(nextGlyph))){
+                advance = 25;
+                compressed = true;
+            }
+            //Check for if current and next are short, don't advance X and lower Y of next
+            if (!prevCompressed && this.short.includes(currentGlyph) && this.short.includes(nextGlyph)){
+                nextY += 75;
+                advance = 0;
+                compressed = true;
+            }
+            //Check if not invisible and push token
+            if (!this.invisible.includes(currentGlyph)){
                 tokens.push({
-                    name: glyph,
+                    name: currentGlyph,
                     x: currentX,
-                    y: shiftedLineNumbers[i] * 125,
-                    color: currentColor
-                })
+                    y: glyphY,
+                    color: "#bac2de"
+                });
             }
             
-            const width = isThin ? 0 : isWide ? 75 : 50;
-            currentX += 25 + width;
+            prevCompressed = compressed;
+            //Advance X
+            currentX += advance;
+            
+            if (line.length === longestLineLength){
+                this.svgWidth = currentX;
+            }
         }
-      }
     }
-    //Debug
-    // console.log("Raw Entry:", phrase);
-    // console.log("Colorless Lines:", noColorLines);
-    // console.log("Lines:", lines);
-    // console.log("Line Numbers:", lineNumbers);
-    // console.log("Shifted Line Numbers:", shiftedLineNumbers);
-    // console.log("SVG Height:", this.svgHeight);
-    // console.log("SVG Width:", this.svgWidth);
     
     return tokens;
-}
+  }
 
   //Generate and append the svg code for the phrase provided
   draw(phrase){
-	  this.svgWidth = 0;
+    this.svgWidth = 0;
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
-    const sizeFactor = 0.50;
-    let output = `<svg width="${this.svgWidth * sizeFactor}" height="${this.svgHeight * sizeFactor}"
-    viewBox="-12.5 ${this.viewboxYShift} ${this.svgWidth} ${this.svgHeight -25}"><g stroke-width="10" stroke-linecap="square" fill="none">`
-    
+    let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
+    viewBox="-12.5 -12.5 ${this.svgWidth + 25} ${this.svgHeight + 25}"><g stroke-width="10" stroke-linecap="square" fill="none">`;
+
     for (const token of tokens){
-        output += `<use href="#${token.name}" transform="translate(${token.x}, ${token.y})" stroke="${token.color}"/>`
+        output += `<use href="#${token.name}" transform="translate(${token.x}, ${token.y})" stroke="${token.color}"/>`;
     }
-    
+
     output += "</g></svg>";
-    
+
     return output;
   }
 
@@ -383,7 +381,10 @@ class IctukV5 extends Dictionary {
     // TODO Add sounds for lines 356-376
   ];
   invisible = ['/', '|', '<'];
+  topThin = ['k','b','a']
   thin = ['|', 'zh', 'S|'];
+  bottomThin = ['p','ng','mb','t'];
+  short = ['zh','u','o','sh','ou','f'];
   wide = [];
   double = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','S/', 'S|'];
 
