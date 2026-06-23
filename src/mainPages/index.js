@@ -242,10 +242,10 @@ class Dictionary {
           advance = 25;
         }
         /*
-          This glyph's top half slants forward down, and the next glyph's back bottom half is thin,
+          This glyph's top half slants forward down or is thin, and the next glyph's back bottom half is thin,
           so advance 25 px
         */
-        if ((isTopSlant || wasStackedTopSlant) && isNextBackBottomThin){
+        if ((isTopSlant || wasStackedTopSlant || isTopThin) && isNextBackBottomThin){
           advance = 25;
         }
         /*
