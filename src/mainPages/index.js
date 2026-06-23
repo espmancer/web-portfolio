@@ -12,7 +12,11 @@ class Dictionary {
   invisible;
   topThin;
   thin;
+  topSlant;
   bottomThin;
+  bottomSlant;
+  backBottomThin;
+  backBottomSlant;
   short;
   wide;
   double;
@@ -118,6 +122,7 @@ class Dictionary {
   }
 
   // Parse the full phrase and tokenize each relevant character into an array, and return that array
+  // Parse the full phrase and tokenize each relevant character into an array, and return that array
   tokenize(phrase){
     const tokens = new Array();
     //Seperate numbers and letters
@@ -127,7 +132,7 @@ class Dictionary {
     }));
     const highestLine = Math.max(...phrases.map(n => n.lineNumber));
     const lowestLine = Math.min(...phrases.map(p => p.lineNumber));
-    this.svgHeight = ((highestLine - lowestLine) + 1) * 125;
+    this.svgHeight = ((highestLine - lowestLine) + 1) * 87.5;
     const longestLineLength = Math.max(...phrases.map(n => n.line.length))
     
     for (phrase of phrases){
@@ -137,6 +142,7 @@ class Dictionary {
       let currentY = (highestLine - lineNumber) * 125;
       let nextY = 0;
       let prevCompressed = false;
+	    let stackedTopSlant = false;  
       
       for (let i = 0; i < line.length; i++){
         //Capture glyphs
@@ -144,48 +150,104 @@ class Dictionary {
         let currentGlyph = line[i];
         let nextGlyph = line[i+1];
         let advance = 75;
+        const wasStackedTopSlant = stackedTopSlant;
+        stackedTopSlant = false;
         //Check for doubles
         const tempDouble = currentGlyph + (nextGlyph ?? "");
         const isDouble = this.double.includes(tempDouble);
         
         if (isDouble){
-            currentGlyph = tempDouble;
-            i++;
-            nextGlyph = line[i+1];
+          currentGlyph = tempDouble;
+          i++;
+          nextGlyph = line[i+1];
         }
 
         //Flags
         const isThin = this.thin.includes(currentGlyph);
         const isTopThin = this.topThin.includes(currentGlyph);
         const isShort = this.short.includes(currentGlyph);
+        const isTopSlant = this.topSlant.includes(currentGlyph);
+        const isBottomSlant = this.bottomSlant.includes(currentGlyph);
+        const isNextBackBottomThin = this.backBottomThin.includes(nextGlyph);
+        const isNextBackBottomSlant = this.backBottomSlant.includes(nextGlyph);
         const isInvisible = this.invisible.includes(currentGlyph);
         const isBottomThin = this.bottomThin.includes(currentGlyph);
         const isNextBottomThin = this.bottomThin.includes(nextGlyph);
         const isNextShort = this.short.includes(nextGlyph);
-        
-        advance = isThin ? 25 : 75;
-  
-        //Check for if current is topThin and next is bottomThin or short
+        const isAbovePrimaryLine = lineNumber > 0;
+        const isBelowPrimaryLine = lineNumber < 0;
+
         let compressed = false;
         let glyphY = currentY + nextY;
         nextY = 0;
           
+        /*
+          This glyph is completely thin, 
+          so advance 25 px
+        */
+        if (isThin){
+          advance = 25;
+        }
+        /*
+          This glyph's top half is thin, and the next glyph is short or its bottom half is thin, 
+          so advance 25 px and flag that a short glyph is already compressed
+        */
         if (isTopThin && (isNextBottomThin || isNextShort)){
           advance = 25;
           compressed = true;
         }
+        /*
+          This glyph's bottom half is thin, and the next glyph is short,
+          so advance 25 px and flag that a short glyph is already compressed
+        */
         if (isBottomThin && isNextShort){
           nextY += 50;
           advance = 25;
           compressed = true;
         }
-        if (!prevCompressed && isShort && isNextShort){
-            nextY += 75;
-            advance = 0;
-            compressed = true;
-
-            //TODO: fix upper level short stacked glyphs
+        /*
+          This glyph is short, and the next glyph is short,
+          so if this glyph isn't already compressed, and isn't on the primary line,
+          advance none and shift the next glyph's Y by 75 px,
+          and flag that a short glyph is already compressed
+        */
+        if (!prevCompressed && isShort && isNextShort && !isAbovePrimaryLine){
+          nextY += 75;
+          advance = 0;
+          compressed = true;
+          stackedTopSlant = isTopSlant;
         }
+        /*
+          This glyph is short, isn't already compressed, is above the primary line, and the next glyph isn't short,
+          shift this glyph's Y by 50 px
+        */
+        if (isShort && isAbovePrimaryLine){
+          glyphY += 50;
+        }
+        /*
+          This glyph is short, isn't already compressed, is below the primary line, and the next glyph isn't short,
+          shift this glyph's Y by -50 px
+        */
+        /* if (!prevCompressed && isShort && isBelowPrimaryLine && !isNextShort){
+          glyphY += 25;
+        } */
+        /*
+          This glyph's bottom half slants forward down, and the next glyph's back bottom half slants forward down,
+          so advance 25 px
+        */
+        if (isBottomSlant && isNextBackBottomSlant){
+          advance = 25;
+        }
+        /*
+          This glyph's top half slants forward down, and the next glyph's back bottom half is thin,
+          so advance 25 px
+        */
+        if ((isTopSlant || wasStackedTopSlant) && isNextBackBottomThin){
+          advance = 25;
+        }
+        /*
+          This glyph is visible, so push it to the tokens array
+        */
         if (!isInvisible){
             tokens.push({
                 name: currentGlyph,
@@ -194,16 +256,35 @@ class Dictionary {
                 color: "#bac2de"
             });
         }
-          
+              
         prevCompressed = compressed;
         //Advance X
         currentX += advance;
         
         if (line.length === longestLineLength){
-            this.svgWidth = currentX;
+            this.svgWidth = Math.max(this.svgWidth, currentX + 75);
         }
-      }
-    }
+        
+        //Debug
+        /* console.log(`
+        PREV CURR NEXT
+        ${previousGlyph}\t\t${currentGlyph}\t${nextGlyph}
+        
+        RULES
+        isThin: ${isThin}
+        isTopThin: ${isTopThin}
+        isShort: ${isShort}
+        isTopSlant: ${isTopSlant}
+        isBottomSlant: ${isBottomSlant}
+        isNextBackBottomThin: ${isNextBackBottomThin}
+        isNextBackBottomSlant: ${isNextBackBottomSlant}
+        isInvisible: ${isInvisible}
+        isBottomThin: ${isBottomThin}
+        isNextBottomThin: ${isNextBottomThin}
+        isNextShort: ${isNextShort}
+        `); */
+          }
+        }
     
     return tokens;
   }
@@ -213,9 +294,9 @@ class Dictionary {
     this.svgWidth = 0;
     this.svgHeight = 0;
     const tokens = this.tokenize(phrase);
-    const sizeFactor = .75;
+    const sizeFactor = .7;
     let output = `<svg width="${this.svgWidth}" height="${this.svgHeight}"
-    viewBox="-12.5 -12.5 ${this.svgWidth + 25} ${this.svgHeight + 25}"><g stroke-width="10" stroke-linecap="square" fill="none" transform="scale(${sizeFactor})">`;
+    viewBox="-12.5 -12.5 ${this.svgWidth} ${this.svgHeight}"><g stroke-width="10" stroke-linecap="square" fill="none" transform="scale(${sizeFactor})">`;
 
     for (const token of tokens){
         output += `<use href="#${token.name}" transform="translate(${token.x}, ${token.y})" stroke="${token.color}"/>`;
@@ -397,10 +478,14 @@ class IctukV5 extends Dictionary {
     // TODO Add sounds for lines 356-376
   ];
   invisible = ['/', '|', '<'];
-  topThin = ['k','b']
+  topThin = ['k','b','.']
   thin = ['|', 'zh', 'S|'];
-  bottomThin = ['p','ng'];
-  short = ['zh','u','o','sh','ou','f'];
+  bottomThin = ['p','ng','?'];
+  topSlant = ['sh','ou','a'];
+  bottomSlant = ['q','k','.','!'];
+  backBottomThin = ['t'];
+  backBottomSlant = ['ng','a','mb','k'];
+  short = ['u','o','sh','ou','f','Qu'];
   wide = [];
   double = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','S/', 'S|'];
 
