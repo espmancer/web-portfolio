@@ -142,7 +142,8 @@ class Dictionary {
       let currentY = (highestLine - lineNumber) * 125;
       let nextY = 0;
       let prevCompressed = false;
-	    let stackedTopSlant = false;  
+	    let stackedTopSlant = false;
+      let currentColor = this.colors.get("#n");  
       
       for (let i = 0; i < line.length; i++){
         //Capture glyphs
@@ -152,6 +153,16 @@ class Dictionary {
         let advance = 75;
         const wasStackedTopSlant = stackedTopSlant;
         stackedTopSlant = false;
+
+        //Check if this glyph is a color reference
+        if (currentGlyph === "#"){
+          const color = currentGlyph + nextGlyph;
+          currentColor = this.colors.get(color) ?? this.colors.get("#n");
+          i++;
+          
+          continue;
+        }
+        
         //Check for doubles
         const tempDouble = currentGlyph + (nextGlyph ?? "");
         const isDouble = this.double.includes(tempDouble);
@@ -175,7 +186,6 @@ class Dictionary {
         const isNextBottomThin = this.bottomThin.includes(nextGlyph);
         const isNextShort = this.short.includes(nextGlyph);
         const isAbovePrimaryLine = lineNumber > 0;
-        const isBelowPrimaryLine = lineNumber < 0;
 
         let compressed = false;
         let glyphY = currentY + nextY;
@@ -224,13 +234,6 @@ class Dictionary {
         if (isShort && isAbovePrimaryLine){
           glyphY += 50;
         }
-        /*
-          This glyph is short, isn't already compressed, is below the primary line, and the next glyph isn't short,
-          shift this glyph's Y by -50 px
-        */
-        /* if (!prevCompressed && isShort && isBelowPrimaryLine && !isNextShort){
-          glyphY += 25;
-        } */
         /*
           This glyph's bottom half slants forward down, and the next glyph's back bottom half slants forward down,
           so advance 25 px
