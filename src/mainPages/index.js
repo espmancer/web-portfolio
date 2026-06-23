@@ -132,7 +132,7 @@ class Dictionary {
     }));
     const highestLine = Math.max(...phrases.map(n => n.lineNumber));
     const lowestLine = Math.min(...phrases.map(p => p.lineNumber));
-    this.svgHeight = ((highestLine - lowestLine) + 1) * 87.5;
+    this.svgHeight = ((highestLine - lowestLine) + 1) * 125;
     const longestLineLength = Math.max(...phrases.map(n => n.line.length))
     
     for (phrase of phrases){
