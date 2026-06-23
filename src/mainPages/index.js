@@ -483,7 +483,7 @@ class IctukV5 extends Dictionary {
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
   thin = ['|', 'zh', 'S|'];
-  bottomThin = ['p','ng','?'];
+  bottomThin = ['p','?'];
   topSlant = ['sh','ou','a'];
   bottomSlant = ['q','k','.','!'];
   backBottomThin = ['t'];
