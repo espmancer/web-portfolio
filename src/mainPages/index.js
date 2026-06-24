@@ -150,6 +150,7 @@ class Dictionary {
         let previousGlyph = line[i-1];
         let currentGlyph = line[i];
         let nextGlyph = line[i+1];
+        let nextNextGlyph = line[i+2];
         let advance = 75;
         const wasStackedTopSlant = stackedTopSlant;
         stackedTopSlant = false;
@@ -165,12 +166,18 @@ class Dictionary {
         
         //Check for doubles
         const tempDouble = currentGlyph + (nextGlyph ?? "");
+        const tempNextDouble = nextGlyph + (nextNextGlyph ?? "");
         const isDouble = this.double.includes(tempDouble);
+        const isNextDouble = this.double.includes(tempNextDouble)
         
         if (isDouble){
           currentGlyph = tempDouble;
           i++;
           nextGlyph = line[i+1];
+        }
+        if (isNextDouble){
+          nextGlyph = tempNextDouble;
+          nextNextGlyph = line[i+2];
         }
 
         //Flags
@@ -217,7 +224,7 @@ class Dictionary {
         }
         /*
           This glyph is short, and the next glyph is short,
-          so if this glyph isn't already compressed, and isn't on the primary line,
+          if this glyph isn't already compressed, and isn't on the primary line,
           advance none and shift the next glyph's Y by 75 px,
           and flag that a short glyph is already compressed
         */
@@ -231,7 +238,7 @@ class Dictionary {
           This glyph is short, isn't already compressed, is above the primary line, and the next glyph isn't short,
           shift this glyph's Y by 50 px
         */
-        if (isShort && isAbovePrimaryLine){
+        if (!prevCompressed && isShort && isAbovePrimaryLine){
           glyphY += 50;
         }
         /*
@@ -265,27 +272,27 @@ class Dictionary {
         currentX += advance;
         
         if (line.length === longestLineLength){
-            this.svgWidth = Math.max(this.svgWidth, currentX + 75);
+            this.svgWidth = Math.max(this.svgWidth, currentX);
         }
         
         //Debug
-        /* console.log(`
-        PREV CURR NEXT
-        ${previousGlyph}\t\t${currentGlyph}\t${nextGlyph}
+        // console.log(`
+        // PREV CURR NEXT
+        // ${previousGlyph}\t\t${currentGlyph}\t${nextGlyph}
         
-        RULES
-        isThin: ${isThin}
-        isTopThin: ${isTopThin}
-        isShort: ${isShort}
-        isTopSlant: ${isTopSlant}
-        isBottomSlant: ${isBottomSlant}
-        isNextBackBottomThin: ${isNextBackBottomThin}
-        isNextBackBottomSlant: ${isNextBackBottomSlant}
-        isInvisible: ${isInvisible}
-        isBottomThin: ${isBottomThin}
-        isNextBottomThin: ${isNextBottomThin}
-        isNextShort: ${isNextShort}
-        `); */
+        // RULES
+        // isThin: ${isThin}
+        // isTopThin: ${isTopThin}
+        // isShort: ${isShort}
+        // isTopSlant: ${isTopSlant}
+        // isBottomSlant: ${isBottomSlant}
+        // isNextBackBottomThin: ${isNextBackBottomThin}
+        // isNextBackBottomSlant: ${isNextBackBottomSlant}
+        // isInvisible: ${isInvisible}
+        // isBottomThin: ${isBottomThin}
+        // isNextBottomThin: ${isNextBottomThin}
+        // isNextShort: ${isNextShort}
+        // `);
           }
         }
     
