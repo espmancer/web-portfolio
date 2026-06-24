@@ -194,6 +194,7 @@ class Dictionary {
         const isNextBottomThin = this.bottomThin.includes(nextGlyph);
         const isNextShort = this.short.includes(nextGlyph);
         const isAbovePrimaryLine = lineNumber > 0;
+        const isBelowPrimaryLine = lineNumber < 0;
 
         let compressed = false;
         let glyphY = currentY + nextY;
