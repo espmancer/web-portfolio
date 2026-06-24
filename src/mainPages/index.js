@@ -272,7 +272,7 @@ class Dictionary {
                 name: currentGlyph,
                 x: currentX,
                 y: glyphY,
-                color: "#bac2de"
+                color: currentColor;
             });
         }
               
