@@ -150,7 +150,7 @@ class Dictionary {
         //Capture glyphs
         let previousGlyph = line[i-1];
         let currentGlyph = line[i];
-        let nextGlyph = line[i+1];
+         let nextGlyph = (line[i+1] === "#") ? line[i+3] : line[i+1];
         let nextNextGlyph = line[i+2];
         let advance = 75;
         const wasStackedTopSlant = stackedTopSlant;
