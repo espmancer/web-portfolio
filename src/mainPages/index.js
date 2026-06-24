@@ -226,15 +226,15 @@ class Dictionary {
         }
         /*
           This glyph is short, and the next glyph is short,
-          if this glyph isn't already compressed, and isn't on the primary line,
+          this glyph isn't already compressed, isn't on the primary line, and isn't 'zh',
           advance none and shift the next glyph's Y by 75 px,
           and flag that a short glyph is already compressed
         */
-        if (!prevCompressed && isShort && isNextShort && !isAbovePrimaryLine){
+        if (!prevCompressed && isShort && isNextShort && !isAbovePrimaryLine && currentGlyph !== 'zh'){
           nextY += 75;
           advance = 0;
           compressed = true;
-          shortStacked = true;
+		      shortStacked = true;
           stackedTopSlant = isTopSlant;
         }
         /*
@@ -505,7 +505,7 @@ class IctukV5 extends Dictionary {
   bottomSlant = ['k','.','!'];
   backBottomThin = ['t'];
   backBottomSlant = ['ng','a','mb','k'];
-  short = ['u','o','sh','ou','f','Qu'];
+  short = ['u','o','sh','ou','f','Qu','zh'];
   wide = [];
   double = ['sh', 'zh', 'mb', 'ou', 'ng', 'Qu','S/', 'S|'];
 
