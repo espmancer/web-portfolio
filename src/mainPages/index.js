@@ -502,7 +502,7 @@ class IctukV5 extends Dictionary {
   thin = ['|', 'zh', 'S|'];
   bottomThin = ['p','?'];
   topSlant = ['sh','ou','a'];
-  bottomSlant = ['q','k','.','!'];
+  bottomSlant = ['k','.','!'];
   backBottomThin = ['t'];
   backBottomSlant = ['ng','a','mb','k'];
   short = ['u','o','sh','ou','f','Qu'];
