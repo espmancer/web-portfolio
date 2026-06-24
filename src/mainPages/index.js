@@ -134,7 +134,8 @@ class Dictionary {
     const lowestLine = Math.min(...phrases.map(p => p.lineNumber));
     this.svgHeight = ((highestLine - lowestLine) + 1) * 125;
     const longestLineLength = Math.max(...phrases.map(n => n.line.length))
-    
+    let shortStacked = false;
+
     for (phrase of phrases){
       const line = phrase.line;
       const lineNumber = phrase.lineNumber;
@@ -232,6 +233,7 @@ class Dictionary {
           nextY += 75;
           advance = 0;
           compressed = true;
+          shortStacked = true;
           stackedTopSlant = isTopSlant;
         }
         /*
@@ -240,6 +242,13 @@ class Dictionary {
         */
         if (!prevCompressed && isShort && isAbovePrimaryLine){
           glyphY += 50;
+        }
+        /*
+          This glyph is below the primary line, and the primary line has stacked short glyphs,
+          so shift this glyph's Y by 25 px
+        */
+        if (isBelowPrimaryLine && shortStacked){
+          glyphY += 25;
         }
         /*
           This glyph's bottom half slants forward down, and the next glyph's back bottom half slants forward down,
