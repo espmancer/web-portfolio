@@ -230,7 +230,7 @@ class Dictionary {
           advance none and shift the next glyph's Y by 75 px,
           and flag that a short glyph is already compressed
         */
-        if (!prevCompressed && isShort && isNextShort && !isAbovePrimaryLine && currentGlyph !== 'zh'){
+        if (!prevCompressed && isShort && isNextShort && !isAbovePrimaryLine && currentGlyph !== 'zh' && nextGlyph !== 'zh'){
           nextY += 75;
           advance = 0;
           compressed = true;
@@ -493,7 +493,7 @@ class IctukV5 extends Dictionary {
     "akozhob|powerless,powerlessness|Adj.,N.|devoid of strength or resources,the quality or state of being powerless|",
     "opupapshongu|head|N.|the upper or anterior division of the Ictuza body that contains the brain/the chief sense organs/the mouth/mandibles/antannae|",
     "fazhukupapsho|chest|N.|the part of the Ictuza body enclosed by the ribs and sternum|",
-    "fazhuouk|almost|very nearly but not exactly or entirely|"
+    "fazhuouk|almost|Adv.|very nearly but not exactly or entirely|"
 
     // TODO Add sounds for lines 356-376
   ];
