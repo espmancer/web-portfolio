@@ -252,10 +252,11 @@ class Dictionary {
           glyphY += 25;
         }
         /*
-          This glyph's bottom half slants forward down, and the next glyph's back bottom half slants forward down,
+          This glyph's bottom half slants forward down or is short, above the primary line, and slants at the top,
+		      and the next glyph's back bottom half slants forward down,
           so advance 25 px
         */
-        if (isBottomSlant && isNextBackBottomSlant){
+        if ((isBottomSlant || (isShort && isAbovePrimaryLine && isTopSlant)) && isNextBackBottomSlant){
           advance = 25;
         }
         /*
