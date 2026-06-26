@@ -402,7 +402,7 @@ class IctukV5 extends Dictionary {
     "akozho|need|N.,V.,V.|a lack of something requisite/desirable/useful,to be necessary,to require|",
     "hapo|have|V.|to hold  maintain (something tangible/intangible) as a possession/privilege/entitlement/responsibility|",
     "sho|this (1)|Pn.|the person/thing that is present  near in place/time/thought that has just been mentioned|",
-    "sha|that|Pn.,Cjn.|the person/thing indicated/mentioned/understood from the situation,—used as a function word to introduce a noun clause that is usually the subject or object of a verb or a predicate nominative|",
+    "sha|that (1)|Pn.|the person/thing indicated/mentioned/understood from the situation|",
     "shou|this (2)|Pn.|the idea/concept that is present  near in place/time/thought that has just been mentioned|",
     "shozh|these|Pn.|the people/things that are present near in place/time/thought that have just been mentioned|",
     "shazh|those (1)|Pn.|the people/things indicated/mentioned/understood from the situation|",
@@ -494,9 +494,8 @@ class IctukV5 extends Dictionary {
     "akozhob|powerless,powerlessness|Adj.,N.|devoid of strength or resources,the quality or state of being powerless|",
     "opupapshongu|head|N.|the upper or anterior division of the Ictuza body that contains the brain/the chief sense organs/the mouth/mandibles/antannae|",
     "fazhukupapsho|chest|N.|the part of the Ictuza body enclosed by the ribs and sternum|",
-    "fazhuouk|almost|Adv.|very nearly but not exactly or entirely|"
-
-    // TODO Add sounds for lines 356-376
+    "fazhuouk|almost|Adv.|very nearly but not exactly or entirely|",
+    "fako|that (2)|Cjn.|used as a function word to introduce a noun clause that is usually the subject or object of a verb or a predicate nominative|"
   ];
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
