@@ -399,6 +399,7 @@ class IctukV5 extends Dictionary {
     "opu|out|Prep.,Adv.|used as a function word to indicate an outward movement,in a direction away from the inside or center|",
     "fazhkoupu|through|Prep.|used as a function wd to indicate movement into something at one side  point and out at another and especially the opposite side of|",
     "fazhku|toward|Prep.|in the direction of|",
+    "fazhkou|about|Prep.|with regard to|",
     "akozho|need|N.,V.,V.|a lack of something requisite/desirable/useful,to be necessary,to require|",
     "hapo|have|V.|to hold  maintain (something tangible/intangible) as a possession/privilege/entitlement/responsibility|",
     "sho|this (1)|Pn.|the person/thing that is present  near in place/time/thought that has just been mentioned|",
@@ -495,7 +496,12 @@ class IctukV5 extends Dictionary {
     "opupapshongu|head|N.|the upper or anterior division of the Ictuza body that contains the brain/the chief sense organs/the mouth/mandibles/antannae|",
     "fazhukupapsho|chest|N.|the part of the Ictuza body enclosed by the ribs and sternum|",
     "fazhuouk|almost|Adv.|very nearly but not exactly or entirely|",
-    "fako|that (2)|Cjn.|used as a function word to introduce a noun clause that is usually the subject or object of a verb or a predicate nominative|"
+    "fako|that (2)|Cjn.|used as a function word to introduce a noun clause that is usually the subject or object of a verb or a predicate nominative|",
+    "shpotazho|scatterer|N.|a hammer-and-pick-like tool designed to break apart large flat pieces of soft rock or ice and scatter them from each other|",
+    "shpota|scatter,share (1)|V.,V.|to separate and go in various directions,to apportion and take shares of something|",
+    "shpot|piece,share (2)|N.,N.|a part of a whole,a portion belonging to/due to/contributed by an individual or group|",
+    "shponguho|feeling,reaction|N.,N.|an emotional state or reaction,a response to some treatment/situation/stimulus|",
+
   ];
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
