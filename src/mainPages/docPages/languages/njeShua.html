@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../styles.css"/>
+    <script src="../../index.js"></script>
+</head>
+<body onload="dictionaryInit('njeShua');">
+    <!-- Top Header -->
+    <div class="topBanner">
+        <table id="headerSections">
+            <td id="name">
+                <h1>Ictuk</h1>
+            </td>
+            <td id="mainButtons">
+                <a href="../../../index.html">
+                    <button>Home</button>
+                </a>
+            </td>
+        </table>
+    </div>
+    <h1>Notice</h1>
+    <p>
+        This is not my language, and this page is not linked
+        anywhere on my site. I am using this for myself only.
+    </p>
+    <h1 id="dictionary">Dictionary</h1>
+    <p>
+        Enter an English or Nje-Shua word here. If the definition doesn't pop up, you may have to put a (1) or other number next to it, 
+        as it has multiple definitions that English can't represent.
+    </p>
+    <input type="text" oninput="updateResult(this.value)">
+    <p id="entry"></p>
+</body>

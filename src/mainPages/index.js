@@ -531,11 +531,52 @@ class IctukV6 extends Dictionary {
   }
 }
 
+class NjeShua extends Dictionary {
+  rawEntries = [
+    "nge|what",
+    "da|very good",
+    "bon|good,correct",
+    "na|yes",
+    "naer|yes-ish,sort-of (1)",
+    "ka|no",
+    "kaer|no-ish,sort-of (2)",
+    "aho|hello",
+    "kaeo|goodbye,bye",
+    "ra'ah|angry",
+    "ulu|sad",
+    "ramuulu|frustrated",
+    "iberang|fight",
+    "mulaya|scared",
+    "fusu|calm",
+    "bo|neutral",
+    "bon'a|happy",
+    "mushi|laughing",
+    "msh|lol",
+    "sub|brain",
+    "subo|head"
+  ];
+
+  buildEntry(rawEntry) {
+    let elements = rawEntry.split("|");
+    let key = elements[0];
+    let name = this.toTitleCase(key);
+    let translation = this.toTitleCase(elements[1].replaceAll(',', ", "));
+    let entry = `<div>${name} | ${translation}</div><hr class='headerSeperator'/>`;
+
+    return entry;
+  }  
+
+  constructor(className) {
+    super(className);
+  }
+}
+
 const classMap = new Map();
 
 // Add all classes into map
 classMap.set("ictukV5", new IctukV5("ictukV5"));
 classMap.set("ictukV6", new IctukV6("ictukV6"));
+classMap.set("njeShua", new NjeShua("njeShua"));
 let conlang;
 
 //For html calling
