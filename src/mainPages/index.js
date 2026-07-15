@@ -501,7 +501,7 @@ class IctukV5 extends Dictionary {
     "shpota|scatter,share (1)|V.,V.|to separate and go in various directions,to apportion and take shares of something|",
     "shpot|piece,share (2)|N.,N.|a part of a whole,a portion belonging to/due to/contributed by an individual or group|",
     "shponguho|feeling,reaction|N.,N.|an emotional state or reaction,a response to some treatment/situation/stimulus|",
-
+    "kosh|hurt|V.,V.|to inflict with physical pain,to cause emotional pain or anguish to|"
   ];
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
