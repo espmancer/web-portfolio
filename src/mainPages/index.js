@@ -553,7 +553,10 @@ class NjeShua extends Dictionary {
     "mushi|laughing",
     "msh|lol",
     "sub|brain",
-    "subo|head"
+    "subo|head",
+    "sube|think,thought",
+    "sub'gu|idea",
+    "bonsu,bonsube|understand"
   ];
 
   buildEntry(rawEntry) {
@@ -561,7 +564,7 @@ class NjeShua extends Dictionary {
     let key = elements[0];
     let name = this.toTitleCase(key);
     let translation = this.toTitleCase(elements[1].replaceAll(',', ", "));
-    let entry = `<div>${name} | ${translation}</div><hr class='headerSeperator'/>`;
+    let entry = `<div>${name} | ${translation}</div>`;
 
     return entry;
   }  
