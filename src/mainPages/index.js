@@ -501,7 +501,10 @@ class IctukV5 extends Dictionary {
     "shpota|scatter,share (1)|V.,V.|to separate and go in various directions,to apportion and take shares of something|",
     "shpot|piece,share (2)|N.,N.|a part of a whole,a portion belonging to/due to/contributed by an individual or group|",
     "shponguho|feeling,reaction|N.,N.|an emotional state or reaction,a response to some treatment/situation/stimulus|",
-    "kosh|hurt|V.,V.|to inflict with physical pain,to cause emotional pain or anguish to|"
+    "kosh|hurt|V.,V.|to inflict with physical pain,to cause emotional pain or anguish to|",
+    "humbo|tree|N.,N.|a woody perennial plant having a single usually elongated main stem generally with few or no branches on its lower part,something in the form of or resembling a tree|",
+    "humb|branch (1)|N.|something that extends from or enters into a main body or source|",
+    "huumb|branch (2)|V.|to extend in different directions from a main part or point|"
   ];
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
