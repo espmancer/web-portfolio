@@ -53,6 +53,14 @@ html {
     text-align:center;
 }
 
+/* Link Chain */
+.linkChain {
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size:large;
+}
+
 /* Container */
 .container {
     width: 100%;
