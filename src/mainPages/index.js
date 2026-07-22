@@ -504,7 +504,8 @@ class IctukV5 extends Dictionary {
     "kosh|hurt|V.,V.|to inflict with physical pain,to cause emotional pain or anguish to|",
     "humbo|tree|N.,N.|a woody perennial plant having a single usually elongated main stem generally with few or no branches on its lower part,something in the form of or resembling a tree|",
     "humb|branch (1)|N.|something that extends from or enters into a main body or source|",
-    "huumb|branch (2)|V.|to extend in different directions from a main part or point|"
+    "huumb|branch (2)|V.|to extend in different directions from a main part or point|",
+    "aqo|rule|N.|a prescribed guide for conduct or action|"
   ];
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
