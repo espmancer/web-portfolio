@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="../styles.css"/>
 </head>
-<body>
+<body onload="dictionaryInit('crystal');">
     <!-- Top Header -->
     <div class="topBanner">
         <table id="headerSections">
@@ -55,17 +55,33 @@
         <li>Sound: The manipulation of pressure waves</li>
         <li>Nuclear: The manipulation of the strong and weak nuclear forces</li>
     </ul>
-    <h4 id="effectAttributes">Effect Attributes</h4>
+    <h4 id="cutsAndShapes">Cuts and Shapes</h4>
     <p>
-        Each effect has 2 attributes, radius and shape. There are 4 
-        effect shapes:
+        Certain cuts of crystal will produce different effect shapes. Uncut 
+        crystals often produce irregular shapes. 
     </p>
+    <strong>Common Shapes</strong>
     <ul>
         <li>Cylindrical</li>
         <li>Conical</li>
         <li>Cubical</li>
         <li>Spherical</li>
     </ul>
+    <h4 id="tiers">Effect Tiers</h4>
+    <p>
+        Tiers are organizational labels that can be used to compare 
+        or understand the rough scale of an effect. They are 
+        determined by the level of non-magic technology required to produce 
+        the same effect. Effects are formatted as "Effect #" (e.g. 
+        Temperature 3).
+    </p>
+    <ol>
+        <li>Tier 1: Produceable with household items</li>
+        <li>Tier 2: Produceable with industrial equipment</li>
+        <li>Tier 3: Produceable with specialized scientific equipment</li>
+        <li>Tier 4: Produceable with complex theoretical technology</li>
+        <li>Tier 5: Beyond technological reproduction</li>
+    </ol>
     <h3 id="crystals">Crystals</h3>
     <p>
         Crystals, including some <a href="https://en.wikipedia.org/wiki/Allotropy">allotropes</a>, 
@@ -108,7 +124,7 @@
     <p>
         Crystals can be fused together given that they vibrate at 
         a particular frequency with other crystals. Fused crystals can combine 
-        effects together, amplify existing effects, or create new effects altogether. 
+        effects together, amplify existing effects, or create new effects altogether.
         This frequency has been observed to be the sum of 
         every crystal's resonant frequency divided by e. 
     </p>
@@ -120,10 +136,12 @@
         fusing frequency. 
     </p>
     <p>&emsp;ln(hz)</p>
-    <h4 id="cuts">Cuts</h4>
+    <h3 id="crystalDb">Crystal Database</h1>
     <p>
-        Certain cuts of crystal will produce different effect shapes. Uncut 
-        crystals often produce irregular shapes. 
+        Enter a crystal name or code here. Fused crystals are 
+        each crystal's name seperated by a dash (-). 
     </p>
+    <input type="text" oninput="updateResult(this.value)">
+    <p id="entry"></p>
     <h2 id="documentDatabase"><a href="">Document Database</a></h2>
 </body>

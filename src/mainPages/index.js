@@ -736,12 +736,36 @@ class NjeShua extends Dictionary {
   }
 }
 
+class Crystal extends Dictionary {
+  rawEntries = ['diamond|887|round|temperature 2|spherical'];
+
+  buildEntry(rawEntry) {
+    let elements = rawEntry.split("|");
+    let key = elements[0];
+    let name = this.toTitleCase(key);
+    let frequency = elements[1];
+    let cuts = this.toTitleCase(elements[2]);
+    let effects = elements[3].split(',');
+    let effectShape = this.toTitleCase(elements[4]);
+    let entry = `<div>${name}<br>Fusing Frequency: ${frequency} hz<br>Cuts: ${cuts}<ul>`;
+
+    for (let i = 0; effects.length; i++){
+      entry += `<li>${this.toTitleCase(effects[i])}</li>`;
+    }
+
+    entry += `</ul>Effect Shape: ${effectShape}</div><hr class='headerSeperator'/>`
+
+    return entry;
+  } 
+}
+
 const classMap = new Map();
 
 // Add all classes into map
 classMap.set("ictukV5", new IctukV5("ictukV5"));
 classMap.set("ictukV6", new IctukV6("ictukV6"));
 classMap.set("njeShua", new NjeShua("njeShua"));
+classMap.set("crystal", new Crystal("crystal"));
 let conlang;
 
 //For html calling
