@@ -505,7 +505,11 @@ class IctukV5 extends Dictionary {
     "humbo|tree|N.,N.|a woody perennial plant having a single usually elongated main stem generally with few or no branches on its lower part,something in the form of or resembling a tree|",
     "humb|branch (1)|N.|something that extends from or enters into a main body or source|",
     "huumb|branch (2)|V.|to extend in different directions from a main part or point|",
-    "aqo|rule|N.|a prescribed guide for conduct or action|"
+    "aqo|rule|N.|a prescribed guide for conduct or action|",
+    "oupaqo|if|Cjn.|on condition that|",
+    "shakoha|magic|N.,N.|the use of means believed to have supernatural power over natural forces,a general term for the effects produced by the influence of arcanons",
+    "shka|crystal|N.|a body that is formed by the solidification of a chemical element/compound/mixture and has a regularly repeating internal arrangement of its atoms and often external plane faces",
+    "shakot|spellcast,cast|V.,V.,V.|to put forth,to cast a spell,to harness the release of arcanons from a charged crystal"
   ];
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
@@ -718,7 +722,13 @@ class NjeShua extends Dictionary {
     "kama|not equal",
     "pama|similar",
     "shusham|word",
-    "pi'shu|letter"
+    "pi'shu|letter",
+    "anjele|sky",
+    "rinje|cloud",
+    "aya|fire",
+    "rinje-aya|smoke",
+    "mel|dirt",
+    "i|of"
   ];
 
   buildEntry(rawEntry) {
