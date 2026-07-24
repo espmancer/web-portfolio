@@ -16,8 +16,12 @@ button {
     text-wrap: wrap;
 }
 /* a */
-a:link:not(.headerLink) {
+a {
     color:#89dceb;
+}
+.headerLink a,
+.mainNav a {
+    color: inherit;
 }
 a:visited {
     color:#74c7ec;
@@ -30,27 +34,43 @@ html {
 
 /* Top Banner */
 .topBanner {
-    background-color:#4D5060;
     position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index:1;
+    z-index: 10;
+    background-color: #4D5060;
+    margin-bottom: 25px;
 }
-.topBanner #headerSections {
-    width:100%;    
+
+.bannerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.topBanner #name {
-    width:65%;
-    text-align:left;
-    margin:auto;
+
+.siteName {
+    padding-left: 20px;   /* Extra padding on the left */
 }
-.spacer {
-    padding:10px;
+
+.siteName h1 {
+    margin: 0;
 }
-#scheduleTable, th, tr, td {
-    border:1px solid #BAC2DE;
-    text-align:center;
+
+.mainNav {
+    display: flex;
+}
+
+.mainNav a {
+    display: block;
+    padding: 18px 24px;
+    text-decoration: none;
+    background-color: #4D5060;
+	border: 1px solid #6B7085;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.mainNav a:hover {
+    background-color: #5b5f72;
 }
 
 /* Link Chain */
