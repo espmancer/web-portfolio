@@ -82,6 +82,10 @@ html {
     background-color: #5b5f72;
 }
 
+.mainNav a:visited {
+    color: inherit;
+}
+
 /* Link Chain */
 .linkChain {
 	text-align:center;
@@ -96,6 +100,7 @@ html {
     width: 100%;
     margin: auto;
     gap: 10px;
+    align-items: flex-start;
 }
 
 /* Header Links */
@@ -117,7 +122,8 @@ html {
 
 /* Sidebar */
 .container .headerList {
-    width: 17%;
+    flex: 0 0 auto;
+    width: auto;
     background-color: #4D5060;
     text-align: center;
     color: #bac2de;
