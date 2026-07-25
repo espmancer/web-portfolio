@@ -350,7 +350,7 @@ class IctukV5 extends Dictionary {
     "o|no,not,zero|Adv.,Adj.,Adj.,Intj.,N.|used as a function word to make negative a group of words or a word,not any,having no magnitude or quantity,not so,an act or instance of refusing or denying by the use of the word no|",
     "kofa|be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|",
     "u|only,single,just,one|Adj.,Adj.,Adv.,Adv.,Adv.|alone in a class or category,consisting of or having only one part/feature/portion,exactly,simply,barely|",
-    "fash|good,yes|Adj.,Adv.|of a high or desired quality,used as a function word to express assent or agreement|",
+    "fash|good,yes,right|Adj.,Adv.,Adj.|of a high or desired quality,used as a function word to express assent or agreement,conforming to facts or truth|",
     "apa|unit|N.|a determinate quantity adopted as a standard of measurement|",
     "mbupa|week|N.|any six consecutive days|",
     "fotap|fight|V.,V.,N.,N.|to contend in battle or physical combat,to struggle to endure or surmount,a hostile encounter,a verbal disagreement|",
@@ -398,11 +398,12 @@ class IctukV5 extends Dictionary {
     "oupu|in|Prep.|used as a function wd to indicate inclusion/location/position within limits|",
     "opu|out|Prep.,Adv.|used as a function word to indicate an outward movement,in a direction away from the inside or center|",
     "fazhkoupu|through|Prep.|used as a function wd to indicate movement into something at one side  point and out at another and especially the opposite side of|",
-    "fazhku|toward|Prep.|in the direction of|",
+    "fazhku|to,toward|Prep.,Prep.|used as a function word to suggest actual or figurative movement toward a place/person/thing to be reached,in the direction of|",
     "fazhkou|about|Prep.|with regard to|",
     "akozho|need|N.,V.,V.|a lack of something requisite/desirable/useful,to be necessary,to require|",
     "hapo|have|V.|to hold  maintain (something tangible/intangible) as a possession/privilege/entitlement/responsibility|",
-    "sho|this (1)|Pn.|the person/thing that is present  near in place/time/thought that has just been mentioned|",
+    "fazhapouk|bring|V.|to convey/lead/carry/cause to come along with one toward the place from which the action is being regarded|",
+    "sho|this (1)|Pn.|the person/thing that is present near in place/time/thought that has just been mentioned|",
     "sha|that (1)|Pn.|the person/thing indicated/mentioned/understood from the situation|",
     "shou|this (2)|Pn.|the idea/concept that is present  near in place/time/thought that has just been mentioned|",
     "shozh|these|Pn.|the people/things that are present near in place/time/thought that have just been mentioned|",
@@ -428,6 +429,8 @@ class IctukV5 extends Dictionary {
     "akozhoq|require,owe|V.,V.|to demand as necessary or essential,to be under obligation to render something|",
     "papsho|body|N.,N.|the main/central/principal part,the organized physical substance of an animal or plant either living or dead|",
     "papshongu|brain,mind|N.,N.|the organ inside the head that controls all body functions of a vertebrate,the element or complex of elements in an individual that feels/perceives/thinks/wills/reasons|",
+    "fazhpangu|eye|N.|a specialized light-sensitive sensory structure of animals that in nearly all vertebrates/most arthropods/some mollusks is the image-forming organ of sight",
+    "zhang|see|V.|to perceive by the eye|",
     "papshopaa|heart,love|N.,N.,N.,V.|a hollow muscular organ of vertebrate animals that by its rhythmic contraction acts as a force pump maintaining the circulation of the blood,strong affection for another arising out of kinship or personal ties,warm attachment/enthusiasm/devotion,to feel great affection for|",
     "paa|like|V.|to feel attraction toward or take pleasure in|",
     "ota|but,exception|Cjn.,Prep.|except for the fact,other than|",
@@ -472,7 +475,7 @@ class IctukV5 extends Dictionary {
     "shap|there|Adv.,N.,Pn.|in or at that place,that place,used as a function word to introduce a sentence or clause|",
     "shafo|away|Adv.,Adj.|from this or that place,distant in space or time|",
     "opunguho|say|V.|to express in words|",
-    "ngusho|feel|V.,V.|to receive or be able to receive a tactile sensation,to be conscious of an inward impression/state of mind/physical condition|",
+    "ngusho|feel,react|V.,V.,V.|to receive or be able to receive a tactile sensation,to be conscious of an inward impression/state of mind/physical condition,to change in response to a stimulus|",
     "oa|but,except|Cjn.,Cjn.,Prep.|except for the fact,with this exception,with the exception of|",
 	  "nguhoqosh|understand|V.|to grasp the meaning of|",
     "ngupapa|happy,happiness|Adj.,N.|enjoying or characterized by well-being and contentment,a state of well-being and contentment|",
@@ -500,11 +503,26 @@ class IctukV5 extends Dictionary {
     "shpotazho|scatterer|N.|a hammer-and-pick-like tool designed to break apart large flat pieces of soft rock or ice and scatter them from each other|",
     "shpota|scatter,share (1)|V.,V.|to separate and go in various directions,to apportion and take shares of something|",
     "shpot|piece,share (2)|N.,N.|a part of a whole,a portion belonging to/due to/contributed by an individual or group|",
+    "zhpang|reveal|V.,N.|to make (something secret or hidden) publicly or generally known,the act of reavealing something|",
     "shponguho|feeling,reaction|N.,N.|an emotional state or reaction,a response to some treatment/situation/stimulus|",
     "kosh|hurt|V.,V.|to inflict with physical pain,to cause emotional pain or anguish to|",
     "humbo|tree|N.,N.|a woody perennial plant having a single usually elongated main stem generally with few or no branches on its lower part,something in the form of or resembling a tree|",
     "humb|branch (1)|N.|something that extends from or enters into a main body or source|",
-    "huumb|branch (2)|V.|to extend in different directions from a main part or point|"
+    "huumb|branch (2)|V.|to extend in different directions from a main part or point|",
+    "aqo|rule|N.|a prescribed guide for conduct or action|",
+    "oupaqo|if|Cjn.|on condition that|",
+    "fazhoupaqo|then|Adv.|as a necessary consequence|",
+    "shakoha|magic|N.,N.|the use of means believed to have supernatural power over natural forces,a general term for the effects produced by the influence of arcanons|",
+    "shka|crystal|N.|a body that is formed by the solidification of a chemical element/compound/mixture and has a regularly repeating internal arrangement of its atoms and often external plane faces|",
+    "shakot|spellcast,cast|V.,V.,V.|to put forth,to cast a spell,to harness the release of arcanons from a charged crystal|",
+    "akozhotufposh|co-dependency|dependence on the needs of or on control by another|",
+    "kofazhouk|become|V.|to undergo change or development|",
+    "nguhunguho|intend,mean|V.|to have in mind as a purpose or goal|",
+    "fazhupo|open|V.|to make available for entry or passage by turning back|",
+    "zhupo|open|Adj.|being in a position or adjustment to permit passage|",
+    "ofazhupo|close|V.|to move so as to bar passage through something|",
+    "ozhupo|closed|Adj.|not open|"
+
   ];
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
@@ -717,7 +735,13 @@ class NjeShua extends Dictionary {
     "kama|not equal",
     "pama|similar",
     "shusham|word",
-    "pi'shu|letter"
+    "pi'shu|letter",
+    "anjele|sky",
+    "rinje|cloud",
+    "aya|fire",
+    "rinje-aya|smoke",
+    "mel|dirt",
+    "i|of"
   ];
 
   buildEntry(rawEntry) {
@@ -735,12 +759,36 @@ class NjeShua extends Dictionary {
   }
 }
 
+class Crystal extends Dictionary {
+  rawEntries = ['diamond|887|round|temperature 2|spherical'];
+
+  buildEntry(rawEntry) {
+    let elements = rawEntry.split("|");
+    let key = elements[0];
+    let name = this.toTitleCase(key);
+    let frequency = elements[1];
+    let cuts = this.toTitleCase(elements[2]);
+    let effects = elements[3].split(',');
+    let effectShape = this.toTitleCase(elements[4]);
+    let entry = `<div>${name}<br>Fusing Frequency: ${frequency} hz<br>Cuts: ${cuts}<ul>`;
+
+    for (let i = 0; effects.length; i++){
+      entry += `<li>${this.toTitleCase(effects[i])}</li>`;
+    }
+
+    entry += `</ul>Effect Shape: ${effectShape}</div><hr class='headerSeperator'/>`
+
+    return entry;
+  } 
+}
+
 const classMap = new Map();
 
 // Add all classes into map
 classMap.set("ictukV5", new IctukV5("ictukV5"));
 classMap.set("ictukV6", new IctukV6("ictukV6"));
 classMap.set("njeShua", new NjeShua("njeShua"));
+classMap.set("crystal", new Crystal("crystal"));
 let conlang;
 
 //For html calling
@@ -841,14 +889,15 @@ window.dictionaryInit = function(className) {
 */
 class Blog {
   rawEntries = [
-    "d033026t1740|Hello, world!|I wanted to overhaul my website a bit, as it was a little gross to look at. Coincidentally, I'm rebuilding it exactly one year after I last updated it. I would like to post semi-frequently here, no promises though, school has me pretty swamped, but maybe that's something I can talk about. Who knows! Admittedly, I'm still not experienced at all in HTML, but I have a little more patience to research now than I was last year. Still though, I'm warning you now if you decide to tread through my code, as it could be pretty attrocious, I dunno (I promise I'm better at backend, lol).",
-    "d040126t1432|Shutting this site down...|April fools! I'm probably about 75% of the way there with getting this site done. My biggest endeavor, which I saved for last, is the <a href=\"interestsPage.html\">interests page</a>, and its constituent pages. I intend on implementing the documentation for <a href=\"docPages/galusSystem.html\">my world</a> and all of my conlangs, which luckily both things already have docs that I just need to organize in HTML.<br> In other news, I am behind on school work, which is dreadful, but after making a to-do list of the things I need to do, it doesn't seem nearly as lengthy as it's felt.",
-    "d040226t1000|Creative Writing Prompt 1|When I was in highschool, I was in a creative writing club. This particular post had 4 restrictions: <ol> <li>Limit: 250 words (I used 247)</li> <li>Genre: Drama</li> <li>Phrase (large idea of narrative): People watching</li> <li>Word Required: Enter/enters</li> </ol> <strong>Fun Fact:</strong> The 1st couple sections (or paragraphs technically) are pulled from the prologue of my book at the time. <br><strong>What I Wrote</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The surrounding area makes a stinging iciness run down my spine that makes my heart pound harder than a hammer to a nail. Visions rush to my mind, an excruciating shock plunging deeply into the very depths of my body. Before I could even think of acting, agonizing pain and chill vanishes in an instant, and the discernment of anything dissipates. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The only perceptible sense was sight, as if my imagination had suddenly sparked like it had done in my early years of childhood. The glare of what seemed to be a star grows at a blinding rate, before revealing green fields, the warmth of a summer day feeding nostalgia of my past. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Panicked, I turned towards the direction of the question. Staring at me with a curious look was a little girl, about 5 years old, with long braided hair. A brunette, hazel eyes, that looked of Spanish descent. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>What?</i> The word becomes lost, air escaping my lips like it was ripped out of my body. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"That you helped destroy them?\" Her innocence was unearthly. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A piercing headache cuts through my mind and a vision of blurry humanoids forms into my line of sight. Loud beeping pounds my eardrums, and the only meager detail I can apprehend is the fear of everyone watching and working as they try to solve the cause of their distress.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several more people enter the room with great haste, panicked sweat glistening in fluorescent lighting. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"We\'re losing her!\"",
-    "d040726t2210|Karaoke + Linux (Inevitable Jank)|I've recently learned that there is software to program karaoke songs, so I may have a new hobby. For some context, my girlfriend's family loves to do karaoke, and the software they use is called <a href=\"https://www.karafun.com\">Karafun</a>. The program I currently use is called CDG Magic, which in order to run on my work laptop (that runs <a href=\"https://mxlinux.org\">MX Linux</a>), I had to run a program called <a href=\"https://usebottles.com\">Bottles</a>. Then, I realized the program only took WAV files, and required a very specific header format. To fix this, I found a <a href=\"https://www.reddit.com/r/ffmpeg/comments/kepmsa/comment/gg9esxk/?force-legacy-sct=1\">forum post</a> that recommended using sox to convert an mp3 into a WAV, and that finally worked. So now I'm making a karaoke file for <a href=\"https://www.youtube.com/watch?v=xIoXE4q-Jes\">Against the Kitchen Floor</a> by Will Wood.",
-    "d041726t1327|It was only a matter of time|I avoided it for as long as I can, but alas, I finally had to use JavaScript. I know, it's a terrible fate, I accept your grievances... <br/>Anyhow, I had to use it to make a dictionary lookup thing for the (WIP) 6th version of <a href=\"docPages/ictuk/ictukV6.html\">Ictuk</a>. I'm honestly pretty proud of it, it took some time and a lot of <a href=\"https://www.w3schools.com\">w3schools</a> lookups. My hope for the dictionary is to make an easy-to-use word search for when someone forgets a word when using the language. My original solution to this problem was to make a \"light dictionary\" tab in a Google sheet I used to V5, with one column being Ictuk words and the other being English, and it worked...okay, but Ictuk shares some letters with English, and CTRL+F on Google sheets uses some form of <a href=\"https://en.wikipedia.org/wiki/Regular_expression\">Regex</a>, so more often than not I'd still end up sifting through the dictionary that was intended not to be sifted through in the first place. With my new dictionary code, you can look up a specific word from either Ictuk or English, and it will pop up if there's a match (not case sensitive). As of making this post, there are only 2 Ictuk words, <i>kofa</i> and <i>o</i>.",
-    "d050926t1738|Summer break!|I'm finally free from this rough college semester. For the next 3 months, I'm mostly gonna be working, but past that I'm planning on racing with my dad, working on passjon projects (maybe finally working on my game lol), and I will especially be working on this site. Just this weekend I completely refactored my JavaScript code to be more object oriented, and I feel more sane looking at it than before it was refactored. Of course, being JavaScript, even the OOP-side has its quirks in syntax, but they're tolerable. There's currently 4 classes as of writing this: Dictionary, which is a parent class for all dictionary related functions (populating and filtering entries) in the conlang documentation pages, IctukV5 and IctukV6, which are child classes for Dictionary, and Blog, which uses the same formatting and functions as Dictionary, but for the blog posts instead. Both of the parent classes hopefully can make the HTML files noticeably smaller, and make my life easier by automating entries instead of me writing them individually.",
-	"d051326t1540|New parser! That was miserable|I just finished creating and implementing a parser for <a href=\"https://selisine.onrender.com/docPages/ictuk/ictukV5.html\">Ictuk</a>'s glyph system. It doesn't fully translate (yet?), but it can take in a specially-formatted string that generates the glyphs for me, which has already proved to be much faster than manually having to paste and adjust group references in SVG. I would like to add the ability to change the text color so I can replace the highlighted character examples (like all the ones in <a href=\"https://selisine.onrender.com/docPages/ictuk/ictukV5.html#Writing\">the writing section</a>. I would also like to add a section for user-input, in case someone wants to use it for chatting. I'll post a guide when I make it more user oriented. Overall, it's very rough around the edges, and implementing it into my Dictionary class structure has showed me that I need yet another refactoring, but that's for another day.<br>Here's an example with \"kofafashbut\". The string for this would be \"0kofabut 1////fash\".<br><img src=\"resources/ictukV5/glyphs/examples/kofafashbut.svg\">"
-    ]
+    `d033026t1740|Hello, world!|I wanted to overhaul my website a bit, as it was a little gross to look at. Coincidentally, I'm rebuilding it exactly one year after I last updated it. I would like to post semi-frequently here, no promises though, school has me pretty swamped, but maybe that's something I can talk about. Who knows! Admittedly, I'm still not experienced at all in HTML, but I have a little more patience to research now than I was last year. Still though, I'm warning you now if you decide to tread through my code, as it could be pretty attrocious, I dunno (I promise I'm better at backend, lol)."`,
+    `d040126t1432|Shutting this site down...|April fools! I'm probably about 75% of the way there with getting this site done. My biggest endeavor, which I saved for last, is the <a href="interestsPage.html">interests page</a>, and its constituent pages. I intend on implementing the documentation for <a href="docPages/galusSystem.html">my world</a> and all of my conlangs, which luckily both things already have docs that I just need to organize in HTML.<br> In other news, I am behind on school work, which is dreadful, but after making a to-do list of the things I need to do, it doesn't seem nearly as lengthy as it's felt."`,
+    `d040226t1000|Creative Writing Prompt 1|When I was in highschool, I was in a creative writing club. This particular post had 4 restrictions: <ol> <li>Limit: 250 words (I used 247)</li> <li>Genre: Drama</li> <li>Phrase (large idea of narrative): People watching</li> <li>Word Required: Enter/enters</li> </ol> <strong>Fun Fact:</strong> The 1st couple sections (or paragraphs technically) are pulled from the prologue of my book at the time. <br><strong>What I Wrote</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The surrounding area makes a stinging iciness run down my spine that makes my heart pound harder than a hammer to a nail. Visions rush to my mind, an excruciating shock plunging deeply into the very depths of my body. Before I could even think of acting, agonizing pain and chill vanishes in an instant, and the discernment of anything dissipates. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The only perceptible sense was sight, as if my imagination had suddenly sparked like it had done in my early years of childhood. The glare of what seemed to be a star grows at a blinding rate, before revealing green fields, the warmth of a summer day feeding nostalgia of my past. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Panicked, I turned towards the direction of the question. Staring at me with a curious look was a little girl, about 5 years old, with long braided hair. A brunette, hazel eyes, that looked of Spanish descent. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>What?</i> The word becomes lost, air escaping my lips like it was ripped out of my body. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"That you helped destroy them?" Her innocence was unearthly. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A piercing headache cuts through my mind and a vision of blurry humanoids forms into my line of sight. Loud beeping pounds my eardrums, and the only meager detail I can apprehend is the fear of everyone watching and working as they try to solve the cause of their distress.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Several more people enter the room with great haste, panicked sweat glistening in fluorescent lighting. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"We're losing her!"`,
+    `d040726t2210|Karaoke + Linux (Inevitable Jank)|I've recently learned that there is software to program karaoke songs, so I may have a new hobby. For some context, my girlfriend's family loves to do karaoke, and the software they use is called <a href="https://www.karafun.com">Karafun</a>. The program I currently use is called CDG Magic, which in order to run on my work laptop (that runs <a href="https://mxlinux.org">MX Linux</a>), I had to run a program called <a href="https://usebottles.com">Bottles</a>. Then, I realized the program only took WAV files, and required a very specific header format. To fix this, I found a <a href="https://www.reddit.com/r/ffmpeg/comments/kepmsa/comment/gg9esxk/?force-legacy-sct=1">forum post</a> that recommended using sox to convert an mp3 into a WAV, and that finally worked. So now I'm making a karaoke file for <a href="https://www.youtube.com/watch?v=xIoXE4q-Jes">Against the Kitchen Floor</a> by Will Wood.`,
+    `d041726t1327|It was only a matter of time|I avoided it for as long as I can, but alas, I finally had to use JavaScript. I know, it's a terrible fate, I accept your grievances... <br/>Anyhow, I had to use it to make a dictionary lookup thing for the (WIP) 6th version of <a href="docPages/ictuk/ictukV6.html">Ictuk</a>. I'm honestly pretty proud of it, it took some time and a lot of <a href="https://www.w3schools.com">w3schools</a> lookups. My hope for the dictionary is to make an easy-to-use word search for when someone forgets a word when using the language. My original solution to this problem was to make a "light dictionary" tab in a Google sheet I used to V5, with one column being Ictuk words and the other being English, and it worked...okay, but Ictuk shares some letters with English, and CTRL+F on Google sheets uses some form of <a href="https://en.wikipedia.org/wiki/Regular_expression">Regex</a>, so more often than not I'd still end up sifting through the dictionary that was intended not to be sifted through in the first place. With my new dictionary code, you can look up a specific word from either Ictuk or English, and it will pop up if there's a match (not case sensitive). As of making this post, there are only 2 Ictuk words, <i>kofa</i> and <i>o</i>.`,
+    `d050926t1738|Summer break!|I'm finally free from this rough college semester. For the next 3 months, I'm mostly gonna be working, but past that I'm planning on racing with my dad, working on passjon projects (maybe finally working on my game lol), and I will especially be working on this site. Just this weekend I completely refactored my JavaScript code to be more object oriented, and I feel more sane looking at it than before it was refactored. Of course, being JavaScript, even the OOP-side has its quirks in syntax, but they're tolerable. There's currently 4 classes as of writing this: Dictionary, which is a parent class for all dictionary related functions (populating and filtering entries) in the conlang documentation pages, IctukV5 and IctukV6, which are child classes for Dictionary, and Blog, which uses the same formatting and functions as Dictionary, but for the blog posts instead. Both of the parent classes hopefully can make the HTML files noticeably smaller, and make my life easier by automating entries instead of me writing them individually.`,
+    `d051326t1540|New parser! That was miserable|I just finished creating and implementing a parser for <a href="https://selisine.onrender.com/docPages/ictuk/ictukV5.html">Ictuk</a>'s glyph system. It doesn't fully translate (yet?), but it can take in a specially-formatted string that generates the glyphs for me, which has already proved to be much faster than manually having to paste and adjust group references in SVG. I would like to add the ability to change the text color so I can replace the highlighted character examples (like all the ones in <a href="https://selisine.onrender.com/docPages/ictuk/ictukV5.html#Writing">the writing section</a>. I would also like to add a section for user-input, in case someone wants to use it for chatting. I'll post a guide when I make it more user oriented. Overall, it's very rough around the edges, and implementing it into my Dictionary class structure has showed me that I need yet another refactoring, but that's for another day.<br>Here's an example with "kofafashbut?". The string for this would be "0kofabut? 1///|fash".<br><img src="resources/ictukV5/glyphs/kofabutfash?.png">`,
+    `d072226t1049|33 Days Left...|A little over a month of my summer break left, and so much has occured in the past 2 months. Apologies for not posting in said 2 months, I honestly just forgot, and I've been bouncing around projects. Worldbuilding has been my main focus, and worldbuilding I've done. After a good few revisions, I've added a <a href="docPages/omi.html">magic system</a>, and for Ictuk I've added a <a href="docPages/systems/galus.html">star system</a>, <a href="docPages/species/vemachiaSapiens.html">species</a>, and <a href="docPages/nations/suko.html">nation</a> page. I like to bounce between each one if I start getting burnt out working on one of them, the only caveat to this being that every page is a work in progress in some way. This isn't the end of the world, and it might get people to check in for new content, but that's the silver lining. I think if there was required incentive like "I have to complete A to allow ads" then I'd probably be more on top of it, but I'm just doing it as go cause I enjoy it. There will not be ads on this site ever, and if I break that promise I will personally allow someone to dump 3 gallons of hydrocloric acid directly onto my head. There'll be a whole laminated contract and everything, I'll frame it and put it right next to the <i>Declaration of Independence</i>, just don't let Nicholas Cage know about it; he might make another National Treasure.<br>Jokes aside, I've been thinking about ways to navigate these docs, and I think I'm gonna make a database thing where you can filter by what you want and which broad categories it's apart of. It's quite daunting, more than the parser (which has also gone through a lot of changes). I also want to start on my next language soon, but I'm not sure when to cut myself off with the documentation for Ictuza and Ictuk. Ictuk has structurally been done for a bit, but I had these ideas for a learner's guide for all the normal people who don't read fictional linguistic documentation as a hobby. It would work as a little booklet with units to get you through the basics of grammar, writing, and sound. That's probably where I'll stop with Ictuk development, and just invent words whenever necessary (hence the programmatic dictionary code). My next language will be Qvefozian (kay-voh-zhuhn), spoken by a species of frog-bird people known as Qvefoz. Thinking about it now, both speakers of my conlangs are named after their conlangs, which is the equivalent of calling English-speaking humans "Englishians" or something of the sort, so I'll probably change the Qvefozians' names. Anyhow, my only idea for the language right now is that it's highly inflectional, with one of the main gimmicks being the letter O for them. I want them to have some set of sounds and accented letters that stem from the letter O, like &#210; is "ow", &#211; is "or", &#212; is "oear", etc. I am not sure if I want to give them glyphs or not.<br>Final thing, I got commissioned to remake someone's website, for money! This is the first time ever I've been commissioned for something, and so far it's going okay. I am not the best at HTML5 (as you can see by my website lol), but I am pretty good at Googling things and planning out designs. With the person's permission I will probably add it to my <a href="careerPage.html">career page</a> once I'm done.` 
+  ]
 
   // Helper method for buildAllEntries
   buildEntry(rawEntry){

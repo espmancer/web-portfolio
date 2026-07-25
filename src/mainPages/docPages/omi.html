@@ -2,30 +2,27 @@
 <html>
 <head>
     <link rel="stylesheet" href="../styles.css"/>
+    <script src="../index.js"></script>
 </head>
-<body>
-    <!-- Top Header -->
-    <div class="topBanner">
-        <table id="headerSections">
-            <td id="name">
-                <h1>Omi</h1>
-            </td>
-            <td id="mainButtons">
-                <a href="../index.html">
-                    <button>Home</button>
-                </a>
-                <a href="#magic">
-                    <button>Magic</button>
-                </a>
-            </td>
-        </table>
-    </div>
-    <p>Under construction!</p>
+<body onload="dictionaryInit('crystal');">
+    <!-- Top Banner -->
+    <header class="topBanner">
+        <div class="bannerContent">
+            <div class="siteName">
+                <h1>Selisine</h1>
+            </div>
+            <nav class="mainNav">
+                <a href="../index.html">Home</a>
+                <a href="#magic">Magic</a>
+                <a href=""#documentDatabase">Document Database</a>
+            </nav>
+        </div>
+    </header>
     <table class="linkChain">
 		<tbody>
 		  <tr>
 			<td>Universe:</td>
-			<td><a href="omi.html"></a>Omi</td>
+			<td>Omi</td>
 		  </tr>
 		</tbody>
 	</table>
@@ -44,27 +41,41 @@
         by replicating their behavior or influencing them. 
     </p>
     <h3 id="effects">Effects</h3>
-    <p>Effects are the forces being affected. There are 7 effects:</p>
+    <p>Effects are the forces being affected. There are 5 effects:</p>
     <ul>
-        <li>Temperature</li>
-        <li>Electricity</li>
-        <li>Magnetism</li>
-        <li>Gravity</li>
-        <li>Light</li>
-        <li>Sound</li>
-        <li>Nuclear</li>
+        <li>Temperature: The manipulation of molecular motion</li>
+        <li>Electromagnetism: The manipulation of the electromagnetic force</li>
+        <li>Gravity: The manipulation of gravitational fields</li>
+        <li>Sound: The manipulation of pressure waves</li>
+        <li>Nuclear: The manipulation of the strong and weak nuclear forces</li>
     </ul>
-    <h4 id="effectAttributes">Effect Attributes</h4>
+    <h4 id="cutsAndShapes">Cuts and Shapes</h4>
     <p>
-        Each effect has 2 attributes, radius and shape. There are 
-        4 effect shapes:
+        Certain cuts of crystal will produce different effect shapes. Uncut 
+        crystals often produce irregular shapes. 
     </p>
+    <strong>Common Shapes</strong>
     <ul>
         <li>Cylindrical</li>
         <li>Conical</li>
         <li>Cubical</li>
         <li>Spherical</li>
     </ul>
+    <h4 id="tiers">Effect Tiers</h4>
+    <p>
+        Tiers are organizational labels that can be used to compare 
+        or understand the rough scale of an effect. They are 
+        determined by the level of non-magic technology required to produce 
+        the same effect. Effects are formatted as "Effect #" (e.g. 
+        Temperature 3).
+    </p>
+    <ol>
+        <li>Tier 1: Produceable with household items</li>
+        <li>Tier 2: Produceable with industrial equipment</li>
+        <li>Tier 3: Produceable with specialized scientific equipment</li>
+        <li>Tier 4: Produceable with complex theoretical technology</li>
+        <li>Tier 5: Beyond technological reproduction</li>
+    </ol>
     <h3 id="crystals">Crystals</h3>
     <p>
         Crystals, including some <a href="https://en.wikipedia.org/wiki/Allotropy">allotropes</a>, 
@@ -107,7 +118,7 @@
     <p>
         Crystals can be fused together given that they vibrate at 
         a particular frequency with other crystals. Fused crystals can combine 
-        effects together, amplify existing effects, or create new effects altogether. 
+        effects together, amplify existing effects, or create new effects altogether.
         This frequency has been observed to be the sum of 
         every crystal's resonant frequency divided by e. 
     </p>
@@ -119,13 +130,12 @@
         fusing frequency. 
     </p>
     <p>&emsp;ln(hz)</p>
-    <h4 id="cuts">Cuts</h4>
+    <h3 id="crystalDb">Crystal Database</h1>
     <p>
-        Certain cuts of crystal will produce different effect shapes. Uncut 
-        crystals often produce irregular shapes. 
+        Enter a crystal name or code here. Fused crystals are 
+        each crystal's name seperated by a dash (-). 
     </p>
-    <h2>Systems</h2>
-    <ul>
-        <li><a href="systems/galus.html">Galus</a></li>
-    </ul>
+    <input type="text" oninput="updateResult(this.value)">
+    <p id="entry"></p>
+    <h2 id="documentDatabase"><a href="">Document Database</a></h2>
 </body>
