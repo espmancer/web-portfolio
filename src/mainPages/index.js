@@ -523,7 +523,6 @@ class IctukV5 extends Dictionary {
     "ofazhupo|close|V.|to move so as to bar passage through something|",
     "ozhupo|closed|Adj.|not open|",
     "tufoa|name|N.|a word or phrase that constitutes the distinctive designation of a person or thing|"
-
   ];
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
@@ -773,7 +772,7 @@ class Crystal extends Dictionary {
     let effectShape = this.toTitleCase(elements[4]);
     let entry = `<div>${name}<br>Fusing Frequency: ${frequency} hz<br>Cuts: ${cuts}<ul>`;
 
-    for (let i = 0; effects.length; i++){
+    for (let i = 0; i < effects.length; i++){
       entry += `<li>${this.toTitleCase(effects[i])}</li>`;
     }
 
