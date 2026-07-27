@@ -521,7 +521,8 @@ class IctukV5 extends Dictionary {
     "fazhupo|open|V.|to make available for entry or passage by turning back|",
     "zhupo|open|Adj.|being in a position or adjustment to permit passage|",
     "ofazhupo|close|V.|to move so as to bar passage through something|",
-    "ozhupo|closed|Adj.|not open|"
+    "ozhupo|closed|Adj.|not open|",
+    "tufoa|name|N.|a word or phrase that constitutes the distinctive designation of a person or thing"
 
   ];
   invisible = ['/', '|', '<'];
