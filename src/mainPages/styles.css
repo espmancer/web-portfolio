@@ -66,6 +66,7 @@ html {
 
 .mainNav {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .mainNav a {
@@ -130,6 +131,9 @@ html {
     flex-shrink: 0;
     padding: 10px;
     box-sizing: border-box;
+    position: sticky;
+	top: 5%;
+	z-index: 1;
 }
 
 /* Main Content */
@@ -157,8 +161,15 @@ html {
     }
 
     .container .headerList {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+		position:relative;
+		z-index: 0;
+	}
+
+    .mainNav {
+		margin-left:5%;
+	}
+
+	.mainNav a {
+		flex: 1 1 50%;
+	}
 }
