@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles.css">
+    <script src="../../../index.js"></script>
+    <title>Ictuk Examples</title>
+</head>
+<body onload="dictionaryInit('ictukV5');">
+    <header class="topBanner">
+        <div class="bannerContent">
+            <div class="siteName">
+                <h1>Ictuk</h1>
+            </div>
+            <nav class="mainNav">
+                <a href="../../../index.html">Home</a>
+                <a href="../ictuk/ictukV5.html">Ictuk</a>
+				<a href="#format">Format</a>
+				<a href="#therapy">Therapy</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Glyph Defs -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+        <defs>
+            <g id="p">
+                <line x1="0" y1="0" x2="0" y2="100"/>
+                <line x1="0" y1="0" x2="50" y2="0"/>
+            </g>
+            <g id="b">
+                <line x1="0" y1="0" x2="0" y2="100"/>
+                <line x1="0" y1="100" x2="50" y2="100"/>
+            </g>
+            <g id="t">
+                <line x1="50" y1="0" x2="50" y2="100"/>
+                <line x1="0" y1="0" x2="50" y2="0"/>
+            </g>
+            <g id="k">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="100"/>
+            </g>
+            <g id="f">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="0" x2="50" y2="0"/>
+            </g>
+            <g id="sh">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="0" x2="50" y2="50"/>
+            </g>
+            <g id="zh">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+            </g>
+            <g id="h">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="50"/>
+                <line x1="50" y1="50" x2="50" y2="100"/>
+            </g>
+            <g id="u">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="50"/>
+                <line x1="0" y1="0" x2="50" y2="0"/>
+                <line x1="50" y1="0" x2="50" y2="50"/>
+            </g>
+            <g id="o">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="50"/>
+                <line x1="0" y1="0" x2="50" y2="0"/>
+            </g>
+            <g id="ou">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="50"/>
+                <line x1="0" y1="0" x2="50" y2="50"/>
+            </g>
+            <g id="a">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="0" x2="50" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="100"/>
+            </g>
+            <g id="q">
+                <line x1="50" y1="0" x2="50" y2="50"/>
+                <line x1="50" y1="0" x2="0" y2="50"/>
+                <line x1="50" y1="50" x2="0" y2="100"/>
+            </g>
+            <g id="mb">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="100"/>
+            </g>
+            <g id="ng">
+                <line x1="0" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="0"/>
+                <line x1="0" y1="50" x2="50" y2="100"/>
+            </g>
+            <g id=".">
+                <line x1="0" y1="0" x2="0" y2="100"/>
+                <line x1="0" y1="50" x2="50" y2="100"/>
+            </g>
+            <g id="?" transform="translate(0,100) scale(1,-1)">
+                <line x1="0" y1="0" x2="0" y2="100"/>
+                <line x1="0" y1="50" x2="50" y2="100"/>
+            </g>
+            <g id="!" transform="translate(0,50)">
+                <line x1="0" y1="50" x2="0" y2="-50"/>
+                <line x1="0" y1="50" x2="50" y2="0"/>
+                <line x1="0" y1="-50" x2="50" y2="-50"/>
+            </g>
+            <g id=",">
+                <line x1="0" y1="0" x2="0" y2="100"/>
+                <line x1="0" y1="50" x2="50" y2="50"/>
+            </g>
+            <g id="Qu">
+                <line x1="50" y1="0" x2="0" y2="50"/>
+            </g>
+            <g id="(">
+                <line x1="50" y1="0" x2="0" y2="50"/>
+                <line x1="0" y1="50" x2="50" y2="100"/>
+            </g>
+            <g id=")">
+                <line x1="0" y1="0" x2="50" y2="50"/>
+                <line x1="50" y1="50" x2="0" y2="100"/>
+            </g>
+            <g id="S/">
+                <line x1="50" y1="0" x2="0" y2="100"/>
+		        <line x1="50" y1="0" x2="50" y2="100"/>
+            </g>
+            <g id="S|">
+                <line x1="0" y1="0" x2="0" y2="100"/>
+            </g>
+        </defs>
+    </svg>
+	<h1 id="format">Format</h1>
+    <p>
+        (Romanized Ictuk)
+        <br>
+        (Glyphs)
+    </p>
+	<h1 id="therapy">Therapy from <i>Tick, Tick, Boom!</i></h1>
+    <a href="https://genius.com/Andrew-garfield-and-vanessa-hudgens-therapy-lyrics">Original Lyrics</a>
+	<p>
+		(zhoub)
+		<br>
+		ngushoofashtuf, fako ngushoofashbut
+		<br>
+		fazhkoutuf fazhongushoofashtuf, fazhkoubut fazhongushoofashbut
+		<br>
+		fazhkounguosh ofazhopunguhotuf, fazhkounguosh ofazhopunguhobut
+		<br>
+		fazhkoutuf fazhokofaoatshatufazhoshpota ushponguho
+	</p>
+	<br>	 
+	<span class="draw" data-phrase="(zhoub)"></span>
+	<br><br>
+	<span class="draw" data-phrase="ngushotuf,/fako/ngushobut 1///fash////////|fash 1.6///o//////////|o"></span>
+	<br><br>
+	<span class="draw" data-phrase="tuf//fazhongushotuf//but//fazhongushobut 1fazhkou//////||fash/fazhkou///////fash 1.6o/////////|o/////////////||o"></span>
+	<br><br>
+	<span class="draw" data-phrase="nguosh/ofazhpunguhotuf,/nguosh/ofazhopunguhobut 1fazhkou////////////fazhkou"></span>
+	<br><br>
+	<span class="draw" data-phrase="tuf//fazhokofatufazhoshpota/shponguho 1fazhkou///////////////u -1///////|o -1.6///////|atsha"></span>
+	<br><br>
+	<p>
+		(kambasha)
+		<br>
+		oupaqo ofazhnguhotuf fako ofazhnguhobut
+		<br>
+		ofazhkofaosh fako kouofazhnguhotuf fazhkouktufnguho fazhokofazhouk ushpot
+		<br>
+		fazhoupaqo uktufshponguho fazhkuukbutshponguho, fazhkuuktufshponguho
+		<br>
+		fazhoukofazhzhpangoshfazhaopapa
+	</p>
+	<br>
+	<span class="draw" data-phrase="(kambasha)"></span>
+	<br><br>
+	<span class="draw" data-phrase="oupaqo/ofazhnguhotuf/fako/nguosh//ofazhnguhobut"></span>
+	<br><br>
+	<span class="draw" data-phrase="ofazhkofaosh/fako/ofazhnguhotuf/nguho/fazhokofazhouk/shpot 1////////////kou////////uktuf//////////||u 2/////////////////////|fazhkou"></span>
+	<br><br>
+	<span class="draw" data-phrase="fazhoupaqo/shponguho/shponguho,/shponguho 1////////|uktuf///ukbut////uktuf 2///////////////||fazhku////||fazhku"></span>
+	<br><br>
+	<span class="draw" data-phrase="ofazh//zhpangosh 1fazhouk -1////|fazha -2////|opapa"></span>
+	<br><br>
+	<p>
+		(zhoub)
+		<br>
+		ofazhhapotuf akozh fako ofazhhapofazhabut akozh
+		<br>
+		oupaqo ofazhopunguhotuf fazhkubut fako ofazhhapotuf ukzhupapshopaa
+		<br>
+		oupaqo ohapobut uofashosh fazhauktufofashosh
+		<br>
+		tuofashosh kofaoshfashofashu akozhotufposh
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhoub)"></span>
+	<br><br>
+	<span class="draw" data-phrase="kofazhhapotuf/akozh/fako/ofazhhapobut/akozh -1////////////////////|fazha"></span>
+	<br><br>
+	<span class="draw" data-phrase="oupaqo/ofazhopunguhotuf/but//fako/ofazhhapotuf/zhupapshopaa 1/////////////////||fazhku/////////////||uk"></span>
+	<br><br>
+	<span class="draw" data-phrase="oupaqo/hapobut/osh////osh 1//////o/////||ofash/ofash 1.6////////////||u 2/////////////||////uktuf 3/////////////////||fazha"></span>
+	<br><br>
+	<span class="draw" data-phrase="osh////kofaosh//akozhotufposh 1ofash 2tu -1/////fashofash -2.2/////u"></span>
+	<br><br>
+	<p>
+		(kambasha)
+		<br>
+		fash, nguhoqtuf, fako shoufazh nguhoqbut
+		<br>
+		fako ofazhonguhoqtuf, fako ofazhonguhoqbut
+		<br>
+		fako ngufazh ofazhopunguhotuf, 'o,' ofazhnguhunguotuf, 'fash, nguhoqtuf'
+		<br>
+		aa fako shoufazh nguhoqtuf fako ofazhnguhoqbut, fako ofazhnguhoqtuf ofazhpapshopaabut tuf
+	</p>
+	<br>
+	<span class="draw" data-phrase="(kambasha)"></span>
+	<br><br>
+	<span class="draw" data-phrase="fash,/nguhoqtuf,fako/fazh/nguhoqbut 1/////////////////|shou"></span>
+	<br><br>
+	<span class="draw" data-phrase="fako/ofazhnguhoqtuf,/fako/ofazhnguhoqbut 1//////||o//////////////||o"></span>
+	<br><br>
+	<span class="draw" data-phrase="fako/ngufazh/ofazhopunguhotuf,/o,/ofazhnguhungutuf,/fash,/nguhoqtuf 1/////////////////////|Qu//////////////|Qu -1//////////////////////|Qu////////////////////////|Qu"></span>
+	<br><br>
+	<span class="draw" data-phrase="aa/fako/fazh/nguhoqtuf/fako/ofazhnguhoqbut,/fako/ofazhnguhoqtuf/fazhpapshopaabut/tuf 1///////|shou"></span>
+	<br><br>
+	<p>
+		(zhoub)
+		<br>
+		ofazhkofaofashtuf fazhko
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhab)"></span>
+	<br><br>
+	<span class="draw" data-phrase="ofazhkofatuf 1/////fash 1.6/////o"></span>
+	<br><br>
+	<p>
+		(kaousha)
+		<br>
+		fazhoopunguhotuf ofazhkofaofashbut fazhko
+	</p>
+	<br>
+	<span class="draw" data-phrase="(kambasha)"></span>
+	<br><br>
+	<span class="draw" data-phrase="fazhoopunguhotuf/ofazhkofabut//|fazhko 1/////////////////|ofash"></span>
+	<br><br>
+	<p>
+		(zhoub)
+		<br>
+		fazhoopunguhotuf ofazhkofaofashtuf fazhkou
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhoub)"></span>
+	<br><br>
+	<span class="draw" data-phrase="fazhoopunguhotuf/ofazhkofatuf//fazhkou 1////////////////||fash 1.6////////////////||o"></span>
+	<br><br>
+	<p>
+		(kambasha)
+		<br>
+		fazhokofaofashbut
+	</p>
+	<br>
+	<span class="draw" data-phrase="(kambasha)"></span>
+	<br><br>
+	<span class="draw" data-phrase="fazhokofabut 1//////||fash 1.6//////||o"></span>
+	<br><br>
+	<p>
+		(zhoub)
+		<br>
+		ngufazh ofazhopunguhobut fako
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhoub)"></span>
+	<br><br>
+	<span class="draw" data-phrase="ngufazh/ofazhopunguhobut/fako"></span>
+	<br><br>
+	<p>
+		(kambasha)
+		<br>
+		fazhofazhapouk tushka ofashkofaofashosh
+	</p>
+	<br>
+	<span class="draw" data-phrase="(kambasha)"></span>
+	<br><br>
+	<span class="draw" data-phrase="fazhofazhapouk/shka/ofashkofaosh 1/////////tu///////||fash 1.6//////////////////||o"></span>
+	<br><br>
+	<p>
+		(zhoub)
+		<br>
+		oupaqo ofazhnguhunguhotuf nguosh ofazhopunguhotuf
+		<br>
+		ngufazh ofazhopunguhotuf, 'shka ofazhshpozhobozh tuf'
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhoub)"></span>
+	<br><br>
+	<span class="draw" data-phrase="oupaqo/ofazhnguhunguhotuf/nguosh/ofazhopunguhotuf"></span>
+	<br><br>
+	<span class="draw" data-phrase="ngufazh/ofazhopunguhotuf,/shka/ofazhshpozhobozh/tuf 1////////////////////|Qu -1//////////////////////////////Qu"></span>
+	<br><br>
+	<p>
+		(zhoub aa kaousha)
+		<br>
+		okofanguhoshazhtuf fako ofazhkofazhouknguhoshazhbut ngufazh ofazhkofazhouknguhoshazhtuf
+		<br>
+		ngufazh ofazhopunguhobut ukoshakozhoqtuf
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhoub/aa/kambasha)"></span>
+	<br><br>
+	<span class="draw" data-phrase="kofatuf////|fako/ofazhkofazhoukbut////|ngufazh/ofazhkofazhouktuf 1o/||nguhoshazh/////////////nguhoshazh////////////||nguhoshazh"></span>
+	<br><br>
+	<span class="draw" data-phrase="ngufazh/ofazhopunguhobut/ukoshtuf -1////////////////|akozhoq"></span>
+	<br><br>
+	<p>
+		(zhoub)
+		<br>
+		oupaqu kofafazhkutuf but aa kouofazhoubtuf nguosh kouofazhobtuf
+		<br>
+		zhoubfazhatuf nguosh ofazhoubut
+		<br>
+		ngufazh ofazhshputuf but tushka
+		<br>
+		fazhanguosh kouofazhopunguhotuf
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhoub)"></span>
+	<br><br>
+	<span class="draw" data-phrase="oupaqu/kofatuf/but/aa/ofazhoubtuf/nguosh/ofazhoubtuf -1//////fazhku 1//////////////////kou/////////|kou"></span>
+	<br><br>
+	<span class="draw" data-phrase="zhoubtuf/nguosh/ofazhoubut -1fazha"></span>
+	<br><br>
+	<span class="draw" data-phrase="ngufazh/ofazhshputuf/but/shka 1///////////////|tu"></span>
+	<br><br>
+	<span class="draw" data-phrase="nguosh/ofazhopunguhotuf 1fazha||kou"></span>
+	<br><br>
+	<p>
+		(zhoub, (kambasha))
+		<br>
+		ngushoofashtuf, fako ngushoofashbut (ngushoofashtuf)
+		<br>
+		fazhkoutuf fazhongushoofashtuf, fazhkoubut fazhongushoofashbut (fazhkoubut)
+		<br>
+		fazhkounguosh ofazhopunguhotuf, fazhkounguosh ofazhopunguhobut (fazhongushoofashbut fazhkoutuf)
+		<br>
+		fazhkoutuf fazhokofaoatshatufazhoshpota ushponguho (fazhongushoofashtuf fazhkoubut)
+	</p>
+	<br>	 
+	<span class="draw" data-phrase="(zhoub)"></span>
+	<br><br>
+	<span class="draw" data-phrase="ngushotuf,/fako/ngushobut/(ngushotuf/) 1///fash////////|fash|(///fash) 1.6///o//////////|o//////|o"></span>
+	<br><br>
+	<span class="draw" data-phrase="tuf//fazhongushotuf//but//fazhongushobut/|(but/|) 1fazhkou//////||fash/fazhkou///////fash||(fazhkou) 1.6o/////////|o/////////////||o"></span>
+	<br><br>
+	<span class="draw" data-phrase="nguosh/ofazhpunguhotuf,/nguosh/ofazhopunguhobut/(fazhongushobut||) 1fazhkou////////////fazhkou////////////|(//////|fash) 1.6///////////////////////////////////////o"></span>
+	<br><br>
+	<span class="draw" data-phrase="tuf//fazhokofatufazhoshpota/shponguho/(fazhongushotuf//but/|) 1fazhkou///////////////u//////|(//////|fash/fazhkou) -1///////|o -1.6///////|atsha 1.6/////////////////////////////////|o"></span>
+	<br><br>
+	<p>
+		ofazhnguhotuf (oupaqo ofazhnguhotuf fako ofazhnguhobut)
+		<br>
+		ofazhnguhobut (ofazhkofaosh fako kouofazhnguhotuf fazhkouktufnguho fazhokofazhouk ushpot)
+		<br>
+		ofazhngushobut upapafazhupapa (fazhoupaqo uktufshponguho fazhkuukbutshponguho, fazhkuuktufshponguho)
+		<br>
+		ngufazh ofazhngushotuf fazhkubut (kouofazhpangfazhaopapaosh)
+	</p>
+	<br>
+	<span class="draw" data-phrase="ofazhnguhotuf/(oupaqo/ofazhnguhotuf/fako/nguosh//ofazhnguhobut)"></span>
+	<br><br>
+	<span class="draw" data-phrase="ofazhnguhobut/(ofazhkofaosh/fako/ofazhnguhotuf/nguho/fazhokofazhouk/shpot) 1/////////||(////////////kou////////uktuf//////////||u//|) 2/////////||(/////////////////////|fazhkou//////////////||)"></span>
+	<br><br>
+	<span class="draw" data-phrase="ofazhngushobut/fazhupapa/(fazhoupaqo/shponguho/shponguho,/shponguho) 1////////||upapa///|(////////|uktuf///ukbut////uktuf//) 2/////////////////(///////////////||fazhku////||fazhku//||)"></span>
+	<br><br>
+	<span class="draw" data-phrase="ngufazh/ofazhngushotuf/but//|(ofazhpangosh||) 1////////////||fazhku/(//kou///||) -1/////////////////|(//fazha/||)"</span>
+	<p>
+		okofanguhoshazhtuf, ofazhkofazhouknguhoshazhbut (okofanguhoshazhtuf fako ofazhkofazhouknguhoshazhbut ngufazh ofazhkofazhouknguhoshazhtuf)
+		<br>
+		ukoshakozhoqtuf (ngufazh ofazhopunguhobut ukoshakozhoqtuf)
+	</p>
+	<br>
+	<span class="draw" data-phrase="kofatuf,///|ofazhkofazhoukbut///|/(kofatuf////|fako/ofazhkofazhoukbut////|ngufazh/ofazhkofazhouktuf///||) 1o||/nguhoshazh////////||nguhoshazh/(o/||nguhoshazh/////////////nguhoshazh////////////||nguhoshazh)"></span>
+	<br><br>
+	<span class="draw" data-phrase="ukoshtuf/(ngufazh/ofazhopunguhobut/ukoshtuf) -1akozhoq/(////////////////|akozhoq)"></span>
+	<br><br>
+	<p>
+		oupaqu kofafazhkutuf but aa kouofazhoubtuf nguosh kouofazhobtuf (oupaqu kofafazhkutuf but)
+		<br>
+		zhoubfazhatuf nguosh ofazhoubut (oa okofatuf but)
+		<br>
+		fazhanguosh kouofazhopunguhotuf (opungotuf nguosh opungotuf)
+	</p>
+	<br>
+	<span class="draw" data-phrase="oupaqu/kofatuf/but/aa/ofazhoubtuf/nguosh/ofazhoubtuf/(oupaqu/kofatuf/but) -1//////fazhku/////////////////////////||(//////fazhku////|) 1//////////////////kou/////////|kou"></span>
+	<br><br>
+	<span class="draw" data-phrase="zhoubtuf/nguosh/ofazhoubut/(oa/kofatuf/but) -1fazha 1///////////////|(///o///////)"></span>
+	<br><br>
+	<span class="draw" data-phrase="nguosh/ofazhopunguhotuf/(ofazhopunguhotuf/nguosh/ofazhopunguhotuf) 1fazha||kou"></span>
+	<br><br>
+	<p>
+		(zhoub)
+		<br>
+		oa shoufazh kofaosh opuouputuzhupo
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhoub)"></span>
+	<br><br>
+	<span class="draw" data-phrase="oa/fazh/kofaosh/zhupo 1///shou//////||tu 2///////////||oupu 3///////////||opu"></span>
+	<br><br>
+	<p>
+		(kambasha)
+		<br>
+		shoufazh kofaosh ooupuktuzhfazhukupapsho
+	</p>
+	<br>
+	<span class="draw" data-phrase="(kambasha)"></span>
+	<br><br>
+	<span class="draw" data-phrase="fazh/kofaosh/fazhukupapsho 1shou//////||uktuzh 2////////||ooup"></span>
+	<br><br>
+	<p>
+		(zhoub aa kambasha)
+		<br>
+		shoufazh kofaosh tuakfazhafazhapa
+		<br>
+		aa fazhofazhfazhapo shpupapa fazhuapa
+		<br>
+		zhupshooatshabuzh fazhko kofaushkoakazhobaosh
+		<br>
+		kofaakozhoqubuzh
+	</p>
+	<br>
+	<span class="draw" data-phrase="(zhoub/aa/kambasha)"></span>
+	<br><br>
+	<span class="draw" data-phrase="fazh/kofaosh/afazhapa 1shou//////||fazh 2////////||ak 3////////||tu"></span>
+	<br><br>
+	<span class="draw" data-phrase="aa/fazhfazhapo/shpupapa/fazhapa 1///fazho//////////////|u"></span>
+	<br><br>
+	<span class="draw" data-phrase="zhupshobuzh/fazhko/kofaosh -1o//////////ushko -1.6atsha 1//////////////|akazhoba"></span>
+	<br><br>
+	<span class="draw" data-phrase="kofazhobuzh -1akozhoq -2u"></span>
+	<br><br>
+</body>
+</html>

@@ -19,9 +19,8 @@
                 <a href="#writing">Writing</a>
                 <a href="#numbers">Numbers</a>
                 <a href="#grammar">Grammar</a>
-                <a href="#parser">Parser</a>
-                <a href="#dictionary">Dictionary</a>
-                <a href="#bigExamples">Big Examples</a>
+                <a href="../dictionaries/ictukV5DictionaryParser.html">Dictionary & Parser</a>
+                <a href="../examples/ictukV5Examples.html">Big Examples</a>
             </nav>
         </div>
     </header>
@@ -1111,104 +1110,5 @@
         bad")).
     </p>
     <span class="draw" data-phrase="ngushotuf/fazhko/ngushobut 1///fash///////||fash 1.6///o/////////||o"></span>
-    <h1 id="parser">Parser</h1>
-    <p>
-        Type Ictuk letters to convert them into glyphs. Here are some rules:
-    </p>
-    <ul>
-        <li>
-            This is not a translator, and the phrases will look 
-            different to how they're pronounced and actually written.
-        </li>
-        <li>
-            Use spaces to seperate lines.
-            <br>
-            "0kofatuf. 1////fash -1////ta"
-        </li>
-        <li>
-            Numbers represent the line that the glyphs are on, relative 
-            to the <a href="#primaryLine">primary line</a> at 0. Everything below is 
-            negative, everything above is positive.
-            <br>
-            On the primary line, half-height glyphs automatically can stack. Any 
-            number can be put as a line, though, so manual 
-            height adjustment is possible.
-            <br>
-            "<u>0</u>kofatuf. <u>.5</u>////fash -1////ta"
-        </li>
-        <li>
-            / and | are both considered glyph spaces. They are 
-            invisible in the render, but they space out other glyphs. 
-            This is important for glyphs on other lines, as if 
-            these spaces aren't used, all of the words outside of 
-            the primary line will be above the first word.
-            <br>
-            / is a normal sized space, which means it will 
-            space all glyphs after it by the width of 1 
-            normal sized glyph.
-            <br>
-            | is a thin sized space, which means it will 
-            space all glyphs after it by the width of 1 
-            thin sized glyph.
-            <ul>
-                <li>
-                    A thin sized glyph is 1/3 the size of a 
-                    normal sized glyph. In Ictuk, <i>Zh</i> is the only visible 
-                    thin sized glyph.
-                </li>
-            </ul>
-            "0kofatuf. 1<u>//||</u>fash -1<u>//||</u>ta"
-        </li>
-        <li>
-            Normal and thin spacer glyphs are represented as S/ and S| respectively. 
-        </li>
-        <li>
-            Colors are an optional feature, and there are 2 default 
-            colors: <i>highlighted</i> and normal. I made this primarily for examples 
-            where I needed to highlight certain glyphs.
-            <br>
-            Normal is indicated with "#n", and highlighted is indicated with 
-            "#h". Like line numbers, the most recent color is what 
-            the glyphs will be colored.
-            <br>
-            "0<u>#h</u>kofa<u>#n</u>tuf. 1////fash"
-        </li>
-        <li>
-            Input is case sensitive; all glyph letters should be in lowercase.
-        </li>
-        <li>
-            All punctuation can be typed as they are in English, 
-            except for the quotation mark, which is represented with "Qu".
-        </li>
-        <li>
-            This is still a work in progress.
-        </li>
-    </ul>
-    <input id="userParser" style="width: 95%;" type="text">
-    <br>
-    <button onclick="copyToClipboard();">Copy</button>
-    <br>
-    <span id="drawAsync" data-phrase=""></span>
-    <h1 id="dictionary">Dictionary</h1>
-    <p>
-        Enter an English or Ictuk word here. If the definition 
-        doesn't pop up, you may have to put a (1) 
-        or other number next to it, as it has multiple 
-        definitions that English can't represent.
-    </p>
-    <input type="text" oninput="updateResult(this.value)">
-    <p id="entry"></p>
-    <h1 id="bigExamples">Big Examples</h1>
-    <h2 id="therapy">Therapy from <i>Tick, Tick, Boom!</i></h2>
-    <a href="https://genius.com/Andrew-garfield-and-vanessa-hudgens-therapy-lyrics">Original Lyrics</a>
-    <p>Currently in the works. I will release it once every word has been invented.</p>
-    <strong>Format</strong>
-    <p>
-        [NAME]
-        <br>
-        (Romanized Ictuk)
-        <br>
-        (Glyphs)
-    </p>
 </body>
 </html>

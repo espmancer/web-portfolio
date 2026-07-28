@@ -469,6 +469,7 @@ class IctukV5 extends Dictionary {
     "zhuzh|wings,fly,honor|N.,V.,N.|plural of wing,to move in or pass through the air with wings,respect that is given to someone who is admired|",
     "fazhupapsho|leg|N.|a limb of  an animal used especially for supporting the body and for walking|",
     "zhupsho|penis,fuck (1)|N.,V.|a male copulatory and erogenous organ,to engage in coitus with|",
+    "zhupapshopaa|intimate,intimacy|Adj.,N.|marked by very close association/contact/familiarity,the state of being intimate|",
     "psho|fuck (2), fucking|Intj.,Adj.,Adv.|expression of anger/contempt/disgust,used to intensify a word,used to intensify a word|",
     "zhuzha|vagina|N.|a canal in a female Ictuza comprised of an ovipositor and ovipore|",
     "faazhupapsho|foot|N.|the terminal part of a leg upon which an individual stands|",
@@ -528,7 +529,8 @@ class IctukV5 extends Dictionary {
     "zhupo|open|Adj.|being in a position or adjustment to permit passage|",
     "ofazhupo|close|V.|to move so as to bar passage through something|",
     "ozhupo|closed|Adj.|not open|",
-    "tufoa|name|N.|a word or phrase that constitutes the distinctive designation of a person or thing|"
+    "tufoa|name|N.|a word or phrase that constitutes the distinctive designation of a person or thing|",
+    "akazhoba|late|Adj.|far advanced toward the close of the day or night|"
   ];
   
   invisible = ['/', '|', '<'];
@@ -872,8 +874,13 @@ async function copyToClipboard() {
 
 window.dictionaryInit = function(className) {
   conlang = classMap.get(className);
+  const entry = document.getElementById("entry");
+  
   conlang.buildEntryMaps();
-  conlang.updateResult();
+  
+  if (entry) {
+		conlang.updateResult();
+	}
   
   const glyphs = document.querySelectorAll(".draw");
   
