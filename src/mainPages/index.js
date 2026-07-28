@@ -393,15 +393,17 @@ class IctukV5 extends Dictionary {
     "ozh|they (4)|Pn.|those animals/things|",
     "pozhozh|they (5)|Pn.|those other people|",
     "ozhozh|they (6)|Pn.|those other animals/things|",
-    "oup|on|Prep.,Prep.|used as a function wd to indicate position in contact with and suppted by the top surface of,used as a function wd to indicate position in  in contact with an outer surface|",
+    "oup|on|Prep.,Prep.|used as a function word to indicate position in contact with and suppted by the top surface of,used as a function word to indicate position in contact with an outer surface|",
+    "ooup|off|Prep.|used as a function word to indicate physical separation or distance from a position of rest",
     "fazha|with|Prep.|in respect to|",
-    "oupu|in|Prep.|used as a function wd to indicate inclusion/location/position within limits|",
+    "oupu|in|Prep.|used as a function word to indicate inclusion/location/position within limits|",
     "opu|out|Prep.,Adv.|used as a function word to indicate an outward movement,in a direction away from the inside or center|",
     "fazhkoupu|through|Prep.|used as a function wd to indicate movement into something at one side  point and out at another and especially the opposite side of|",
     "fazhku|to,toward|Prep.,Prep.|used as a function word to suggest actual or figurative movement toward a place/person/thing to be reached,in the direction of|",
     "fazhkou|about|Prep.|with regard to|",
     "akozho|need|N.,V.,V.|a lack of something requisite/desirable/useful,to be necessary,to require|",
     "hapo|have|V.|to hold  maintain (something tangible/intangible) as a possession/privilege/entitlement/responsibility|",
+    "fazhapo|get|V.|to gain possession of|",
     "fazhapouk|bring|V.|to convey/lead/carry/cause to come along with one toward the place from which the action is being regarded|",
     "sho|this (1)|Pn.|the person/thing that is present near in place/time/thought that has just been mentioned|",
     "sha|that (1)|Pn.|the person/thing indicated/mentioned/understood from the situation|",
@@ -495,7 +497,9 @@ class IctukV5 extends Dictionary {
     "akozhqa|stressed,stress|Adj.,N.|subjected to or affected by stress,a physical/chemical/emotional factor that causes bodily or mental tension|",
     "akozhqashta|anxious,anxiety|Adj.,N.|characterized by extreme uneasiness of mind or brooding fear about some contingency,apprehensive uneasiness or nervousness usually over an impending or anticipated misfortune|",
     "akozhto|embarassed,embarassment|Adj.,N.|feeling or showing a state of self-conscious confusion and distress,the state of being embarrassed|",
-    "akozhob|powerless,powerlessness|Adj.,N.|devoid of strength or resources,the quality or state of being powerless|",
+    "akozhob|powerless,tired,powerlessness|Adj.,Adj.,N.|devoid of strength or resources,drained of strength and energy,the quality or state of being powerless|",
+    "shpozhob|bore|V.|to cause to feel weariness and restlessness through lack of interest|",
+    "kofazhob|sleep|V.|to rest in a state of sleep|",
     "opupapshongu|head|N.|the upper or anterior division of the Ictuza body that contains the brain/the chief sense organs/the mouth/mandibles/antannae|",
     "fazhukupapsho|chest|N.|the part of the Ictuza body enclosed by the ribs and sternum|",
     "fazhuouk|almost|Adv.|very nearly but not exactly or entirely|",
@@ -503,6 +507,8 @@ class IctukV5 extends Dictionary {
     "shpotazho|scatterer|N.|a hammer-and-pick-like tool designed to break apart large flat pieces of soft rock or ice and scatter them from each other|",
     "shpota|scatter,share (1)|V.,V.|to separate and go in various directions,to apportion and take shares of something|",
     "shpot|piece,share (2)|N.,N.|a part of a whole,a portion belonging to/due to/contributed by an individual or group|",
+    "shput|give|V.|to provide to someone else|",
+    "shpupapa|help|V.,N.|to give assistance or support to,the act or an instance of doing or supplying something to make it easier for another to complete a task",
     "zhpang|reveal|V.,N.|to make (something secret or hidden) publicly or generally known,the act of reavealing something|",
     "shponguho|feeling,reaction|N.,N.|an emotional state or reaction,a response to some treatment/situation/stimulus|",
     "kosh|hurt|V.,V.|to inflict with physical pain,to cause emotional pain or anguish to|",
@@ -524,6 +530,7 @@ class IctukV5 extends Dictionary {
     "ozhupo|closed|Adj.|not open|",
     "tufoa|name|N.|a word or phrase that constitutes the distinctive designation of a person or thing|"
   ];
+  
   invisible = ['/', '|', '<'];
   topThin = ['k','b','.']
   thin = ['|', 'zh', 'S|'];
