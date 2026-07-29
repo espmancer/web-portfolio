@@ -453,7 +453,7 @@ class IctukV5 extends Dictionary {
     "paazh|want,desire|V.,N.|to have or feel need,conscious impulse toward something that promises enjoyment or satisfaction in its attainment|",
     "opa|from|Prep.|used as a function word to indicate a starting point of a physical movement or a starting point in measuring or reckoning or in a statement of limits|",
     "fazhu|under|Adv.,Prep.|in or into a position below or beneath something,below or beneath so as to be overhung/surmounted/covered/protected/concealed by|",
-    "fazhko|for,because (2)|Prep.,Conj.|used as a function word to indicate purpose,for the reason that|",
+    "fazhko|for,because (2)|Prep.,Prep.,Conj.|used as a function word to indicate purpose,used as a function word to indicate duration of time or extent of space,for the reason that|",
     "fazhuu|beside|Prep.|by the side of|",
     "fazhapapshongu|mouth|N.|the natural opening through which food passes into the body of an animal|",
     "asho|eat|V.|to take in through the mouth as food|",
