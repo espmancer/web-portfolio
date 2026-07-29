@@ -550,17 +550,6 @@ class IctukV5 extends Dictionary {
   }
 }
 
-class IctukV6 extends Dictionary {
-  rawEntries = [
-    'o|no,not,zero|O|No, Not, Zero|Adv.,Adj.,Adj.,Intj.,N.|used as a function word to make negative a group of words or a word,not any,having no magnitude or quantity,not so,an act or instance of refusing or denying by the use of the word no|From Kzhkaa "kka","not" or later just "ka", mishearing of "kk", "not" from Kzh.',
-    'kofa|be|Kofa|Be|V.,V.|to have identity with: to constitute the same idea or object as,to have a specified qualification or characterization|From Zhoktuk "gofa", "being, existence", from Kzhokuut "goa", "living thing", from Kzhkaa "ka", "living person", from Kzh "k", "person"',
-  ];
-
-  constructor(className) {
-    super(className);
-  }
-}
-
 class NjeShua extends Dictionary {
   rawEntries = [
     "nge|what",
