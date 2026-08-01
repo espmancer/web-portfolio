@@ -879,9 +879,13 @@ window.dictionaryInit = function(className) {
   //Listen for user parser event
   const userParser = document.getElementById("userParser");
 
-  userParser.addEventListener("input", function (event) {
-    document.getElementById("drawAsync").innerHTML = conlang.draw(userParser.value);
-  });
+  try {
+    userParser.addEventListener("input", function (event) {
+      document.getElementById("drawAsync").innerHTML = conlang.draw(userParser.value);
+    });
+  } catch {
+    console.log("No parser input element found.");
+  }
 };
 
 /*
