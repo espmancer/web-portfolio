@@ -784,7 +784,6 @@ const classMap = new Map();
 
 // Add all classes into map
 classMap.set("ictukV5", new IctukV5("ictukV5"));
-classMap.set("ictukV6", new IctukV6("ictukV6"));
 classMap.set("njeShua", new NjeShua("njeShua"));
 classMap.set("crystal", new Crystal("crystal"));
 let conlang;
